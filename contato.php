@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<head>
 
-  </body>
+	<title></title>
+
+	<?php 
+
+		include "cabecalho.php";
+
+	?>
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+<?php
+
+	include "rodape.php";
+
+?>
+
+
+</body>
 </html>
