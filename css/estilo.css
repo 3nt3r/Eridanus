@@ -4,3 +4,13 @@
   position: absolute;
   width: 100%;
 }
+#paginas{
+  padding: 10px;
+  text-align: center;
+  width: 87vw;
+  height: auto;
+}
+.card{
+  float: left;
+  margin: 10px;
+}
