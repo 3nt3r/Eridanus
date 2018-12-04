@@ -1,4 +1,4 @@
-<footer class="page-footer light-green accent-4" id="rodape">
+<footer class="page-footer light-green accent-4">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
