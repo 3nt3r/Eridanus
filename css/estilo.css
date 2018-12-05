@@ -11,17 +11,18 @@
 	left: 25%;
 }
 
-#login-menu{
-	border: 2px solid #64DD17;
-	width: 300px;
-	height: 140px;
-	position: absolute;
-	top: 50px;
-	right: 50px;
-	top: 20px;
+#login-cadastro tr td{
+	border: 1px solid #D3D3D3;
+	box-shadow: -1px -1px 2px #D3D3D3;
+	font-size: 1em;
+	text-align: center;
+	font-weight: bolder;
 }
 
-#formMenu label{
-	font-size: 10px;
-
+#login-cadastro{
+	position: absolute;
+	width: 10%;
+	height: 12%;
+	left: 77%;
+	top: 7%;
 }

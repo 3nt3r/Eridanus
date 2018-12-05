@@ -1,16 +1,23 @@
 <img src="imagens/eridanus-menu.png" id="foto-menu">
 
-<div id="login-menu">
-  
-  <form method="#" action="#" id="formMenu">
-    
-    <label>Usuário: </label><input type="text" name="usuario">
-    <label>Senha: </label><input type="password" name="senha">
-    <input type="submit" name="btnEntrar">
 
-  </form>
 
-</div>
+
+
+<table id="login-cadastro">
+  <tr>
+    <td><a href="#" style="text-decoration: none; color: #64DD17;"> Entre </a></td> 
+  </tr>
+  <tr>
+    <td><a href="#" style="text-decoration: none; color: #64DD17;"> Cadastre-se </a></td> 
+  </tr>
+
+</table>
+
+
+
+
+
 
 <nav class="navbar navbar-expand-lg navbar-light corFundoMenu">
   <a class="navbar-brand" href="#">Eridanus</a>
@@ -19,7 +26,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Início</a>
+      <a class="nav-item nav-link active" href="index.php">Início</a>
       <a class="nav-item nav-link" href="residuos.php">Resíduos</a>
       <a class="nav-item nav-link" href="projetos.php">Projetos</a>
       <a class="nav-item nav-link" href="locais.php">Locais</a>
