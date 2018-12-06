@@ -9,24 +9,18 @@
   </tr>
 </table>
 
+  <nav class="nav-extended">
 
+    <div class="nav-content" style="background-color: #64DD17; margin-bottom: .3em;">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="index.php">Início</a></li>
+        <li class="tab"><a href="residuos.php">Resíduos</a></li>
+        <li class="tab"><a href="projetos.php">Projetos</a></li>
+        <li class="tab"><a href="locais.php">Locais</a></li>
+        <li class="tab"><a href="trocas.php">Trocas</a></li>
+        <li class="tab"><a href="projetos-usuarios.php">Público</a></li>
+        <li class="tab"><a href="contato.php">Contato</a></li>
 
-
-
-  <nav>
-    <div class="nav-wrapper" style="background-color: #64DD17;">
-      <ul id="nav-mobile" class="hide-on-med-and-down menu">
-        <li><a href="index.php">Início</a></li>
-        <li><a href="residuos.php">Resíduos</a></li>
-        <li><a href="projetos.php">Projetos</a></li>
-        <li><a href="locais.php">Locais</a></li>
-        <li><a href="trocas.php">Trocas</a></li>
-        <li><a href="projetos-usuarios.php">Público</a></li>
-        <li><a href="contato.php">Contato</a></li>
       </ul>
     </div>
   </nav>
-
-
-
-
