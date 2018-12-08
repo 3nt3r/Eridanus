@@ -2,10 +2,10 @@
 
 <table id="login-cadastro">
   <tr>
-    <td><a href="login.php" style="text-decoration: none; color: #64DD17;"> Entre </a></td> 
+    <td><a href="login.php" style="text-decoration: none; color: #64DD17;"> Entre </a></td>
   </tr>
   <tr>
-    <td><a href="cadastre-se.php" style="text-decoration: none; color: #64DD17;"> Cadastre-se </a></td> 
+    <td><a href="cadastre-se.php" style="text-decoration: none; color: #64DD17;"> Cadastre-se </a></td>
   </tr>
 </table>
 
@@ -24,3 +24,7 @@
       </ul>
     </div>
   </nav>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
