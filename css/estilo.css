@@ -42,27 +42,25 @@
 
 /* ====================== Página residuos ============================ */
 
-.mySlides{
-	display: none;
+#titulo-texto{
+	margin-top: 30px;
+	font-weight: bolder;
+	text-align: center;
 }
 
-div.row {
-    height: 100%;
-    display: inline-block;
+#texto-residuos{
+	margin-left: 70px;
+	margin-right: 70px;
 }
 
-   
-div.col-md-1 {
-    width: 38%;
-    display: inline-block;
-    padding: 5vw 0vw 5vw 0vw;
-    min-width:40vw;
+#fonte-residuos{
+	font-size: .7em;
 }
 
-div.col-md-3 {
-    width: 38%;
-    display: inline-block;
-    margin-right: 0vw;
-    padding: 5vw 0vw 5vw 0vw;
-    min-width:40vw;
+#tabela-residuos{
+	margin-left: 2em;
+}
+
+#tabela-residuos tr td{
+		border: 1px solid black;
 }
