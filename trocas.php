@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title></title>
+	<title>Trocas - Eridanus</title>
 
 	<?php 
 

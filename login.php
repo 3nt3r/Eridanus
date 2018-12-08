@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title></title>
+	<title>Faça Login - Eridanus</title>
 
 	<?php 
 

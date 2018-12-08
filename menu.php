@@ -1,4 +1,4 @@
-<img src="imagens/eridanus-menu.png" id="foto-menu">
+<a href="index.php"><img src="imagens/eridanus-menu.png" id="foto-menu"></a>
 
 <table id="login-cadastro">
   <tr>
@@ -20,7 +20,6 @@
         <li class="tab"><a href="trocas.php">Trocas</a></li>
         <li class="tab"><a href="projetos-usuarios.php">Público</a></li>
         <li class="tab"><a href="contato.php">Contato</a></li>
-
       </ul>
     </div>
   </nav>

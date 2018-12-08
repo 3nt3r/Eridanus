@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title></title>
+	<title>Cadastre-se - Eridanus</title>
 
 	<?php
 
@@ -28,7 +28,7 @@
  <br>
 
 	 <div class="col m1 l2"></div>
-	  <form class="col s12 m9 l8" action="cadastra.php">
+	  <form class="col s12 m9 l8" action="cadastra.php" method="post">
       <div class="row">
         <div class="input-field col s6">
           <input id="first_name" type="text" class="validate">

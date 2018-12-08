@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title></title>
+	<title>Locais - Eridanus</title>
 
 	<?php 
 
