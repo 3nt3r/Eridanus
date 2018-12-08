@@ -12,7 +12,11 @@
 	position: relative;
 	left: 25%;
 }
-
+#foto-menu-mobile{
+  padding: 20px;
+	width: 90%;
+  height: 15%;
+}
 #login-cadastro tr td{
 	border: 1px solid #D3D3D3;
 	box-shadow: -1px -1px 2px #D3D3D3;
@@ -66,4 +70,3 @@
 .tabela-residuos td{
 	padding: 15px;
 }
-
