@@ -7,6 +7,7 @@
  	<script type="text/javascript" src="js/materialize.js"></script>
  	<script type="text/javascript" src="js/materialize.min.js"></script>
  	<script type="text/javascript" src="js/script.js"></script>
+
 	<?php 
 
 		include "cabecalho.php";
@@ -30,8 +31,28 @@
 
 
 
-  <div class="carousel carousel-slider center" data-indicators="true">
-    <div class="carousel-item red white-text" href="#one!" style="background-image: url('imagens/1.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="carousel carousel-slider center">
+    <div class="carousel-fixed-item center">
+      <a class="btn waves-effect white grey-text darken-text-2" href="projetos-usuarios.php">Envie seu Projeto!</a>
+    </div>
+    <div class="carousel-item red white-text" href="#one!">
       <h2>First Panel</h2>
       <p class="white-text">This is your first panel</p>
     </div>
@@ -51,11 +72,45 @@
 
 
 
-<script type="text/javascript">$('.carousel.carousel-slider').carousel({
+<script type="text/javascript">
+	
+	  var instance = M.Carousel.init({
     fullWidth: true,
     indicators: true
   });
+
+  // Or with jQuery
+
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+
+
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -85,119 +140,50 @@
 		<br>
 	</p>
 
+      <table class="striped tabela-residuos">
+        <thead>
+          <tr>
+              <th>#</th>
+              <th>Produto</th>
+              <th>Anos</th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Pilhas</td>
+            <td>100 a 500</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Metais</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Plásticos</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Vidro</td>
+            <td>4.000 a 1.000.000</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Alumínio</td>
+            <td>200 a 500</td>
+          </tr> 
+           <tr>
+            <td>6</td>
+            <td>Borracha</td>
+            <td>Indeterminado</td>
+          </tr>                            
+        </tbody>
+      </table>
 
-
-
-
-
-
-
-
-<table id="tabela-residuos">
-						<thead>
-							<tr>
-								<th>
-									#
-								</th>
-								<th>
-									Produto
-								</th>								
-								<th>
-									Anos
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									1
-								</td>
-								<td>
-									Pilhas
-								</td>								
-								<td>
-									100 a 500
-								</td>
-							</tr>
-							<tr>
-								<td>
-									2
-								</td>								
-								<td>
-									Metais
-								</td>
-								<td>
-									450
-								</td>
-							</tr>
-							<tr>
-								<td>
-									3
-								</td>
-								<td>
-									Plásticos
-								</td>
-								<td>
-									450
-								</td>
-							</tr>
-							<tr>
-								<td>
-									4
-								</td>
-								<td>
-									Vidro
-								</td>
-								<td>
-									4.000 a 1.000.000
-								</td>
-							</tr>
-							<tr>
-								<td>
-									5
-								</td>
-								<td>
-									Alumínio
-								</td>
-								<td>
-									200 a 500
-								</td>
-							</tr>
-							<tr>
-								<td>
-									6
-								</td>
-								<td>
-									Borracha
-								</td>
-								<td>
-									indeterminado
-								</td>
-							</tr>
-						</tbody>
-					</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<center style="margin-bottom: 50px;"><span id="fonte-residuos"><b>Fonte:</b> Delta Saneamento e Setor Reciclagem</span></center>
 
 <?php
 

@@ -57,10 +57,13 @@
 	font-size: .7em;
 }
 
-#tabela-residuos{
-	margin-left: 2em;
+.tabela-residuos{
+	width: 45%;
+	margin-left: 30%;
+	margin-right: 30%;
 }
 
-#tabela-residuos tr td{
-		border: 1px solid black;
+.tabela-residuos td{
+	padding: 15px;
 }
+

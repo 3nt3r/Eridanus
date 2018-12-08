@@ -22,7 +22,6 @@
         <li <?php if(strpos($_SERVER['REQUEST_URI'], "contato.php")){echo "class='active'";}?>><a href="contato.php">Contato</a></li>
       </ul>
       <ul id="menu-mobile" class="side-nav">
-        <img src="imagens/eridanus-menu.png" id="foto-menu">
         <li><a href="index.php">Início</a></li>
         <li><a href="residuos.php">Resíduos</a></li>
         <li><a href="projetos.php">Projetos</a></li>
