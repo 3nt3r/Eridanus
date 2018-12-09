@@ -1,5 +1,5 @@
 
-<img src="imagens/eridanus-menu.png" id="foto-menu">
+<a href="index.php"><img src="imagens/eridanus-menu.png" id="foto-menu"></a>
 <table id="login-cadastro" class="hide-on-med-and-down">
   <tr>
     <td><a href="login.php" style="text-decoration: none; color: #64DD17;"> Entre </a></td>

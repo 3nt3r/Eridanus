@@ -14,7 +14,7 @@
 }
 #foto-menu-mobile{
   padding: 20px;
-	width: 90%;
+  width: 90%;
   height: 15%;
 }
 #login-cadastro tr td{
@@ -55,6 +55,7 @@
 #texto-residuos{
 	margin-left: 70px;
 	margin-right: 70px;
+	text-indent: 50px;
 }
 
 #fonte-residuos{
@@ -69,4 +70,11 @@
 
 .tabela-residuos td{
 	padding: 15px;
+}
+
+/* ================================================================= */
+
+.nav-wrapper li{ /* Links menu */
+	padding-left: 25px;
+	padding-right: 25px;
 }

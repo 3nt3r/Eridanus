@@ -24,38 +24,17 @@
  ?>
 
 
-
-
  <h5 id="titulo-texto">Quase todo lixo eletrônico do Brasil é descartado de maneira errada</h5>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  <div class="carousel carousel-slider center">
-	<div class="carousel-item red white-text" href="#one!" style="background-image: url('imagens/residuos-01.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+	<div class="carousel-item red white-text" href="#one!" style="background-image: url('imagens/residuos-03.png'); background-repeat: no-repeat; background-size: 100% 100%;">
 
 	</div>
 	<div class="carousel-item amber white-text" href="#two!" style="background-image: url('imagens/residuos-02.png'); background-repeat: no-repeat; background-size: 100% 100%;">
 
 	</div>
-	<div class="carousel-item amber white-text" href="#tree!" style="background-image: url('imagens/residuos-03.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+	<div class="carousel-item amber white-text" href="#tree!" style="background-image: url('imagens/residuos-01.png'); background-repeat: no-repeat; background-size: 100% 100%;">
 
 	</div>
 </div>
@@ -70,32 +49,6 @@
 
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

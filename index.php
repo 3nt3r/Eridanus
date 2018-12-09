@@ -20,12 +20,12 @@
  ?>
 
 
-   <div class="carousel carousel-slider center">
+   <div class="carousel carousel-slider center" style="margin-top: 1.2em; margin-bottom: 1.2em;">
     <div class="carousel-item red white-text" href="#one!" style="background-image: url('imagens/inicio-1.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
-      <p class="white-text" style="font-size: 1.4em; margin-top: 22%; text-shadow: 0.1em 0.1em #333;">Lixo eletrônico é tudo aquilo e você vê, lê e acha que não serve para nada, então outros reciclam, selecionam e constroi o seu pensamento.</p>
+      <p class="white-text" style="font-size: 1.2em; margin-top: 20%; text-shadow: 0.1em 0.1em #333; background-color: rgba(100, 221, 23, .7);">Lixo eletrônico é tudo aquilo e você vê, lê e acha que não serve para nada, então outros reciclam, selecionam e constroi o seu pensamento. - João de Paula</p>
     </div>
-    <div class="carousel-item amber white-text" href="#two!" style="background-image: url('imagens/inicio-2.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
-      <p class="white-text" style="font-size: 1.4em; margin-top: 22%; text-shadow: 0.1em 0.1em #333;">Se o descarte do lixo eletrônico for feito de modo incorreto, pode liberar resíduos tóxicos que contaminam o solo e os lençóis freáticos, colocando em risco a saúde pública.</p>
+    <div class="carousel-item amber white-text" href="#two!" style="background-image: url('imagens/inicio-1.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+      <p class="white-text" style="font-size: 1.2em; margin-top: 20%; text-shadow: 0.1em 0.1em #333; background-color: rgba(100, 221, 23, .7);">Se o descarte do lixo eletrônico for feito de modo incorreto, pode liberar resíduos tóxicos que contaminam o solo e os lençóis freáticos, colocando em risco a saúde pública.</p>
     </div>
   </div>
 <script type="text/javascript">$('.carousel.carousel-slider').carousel({
