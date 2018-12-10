@@ -21,6 +21,8 @@
 
 
 
+<br>
+<br>
 
 
 
@@ -34,6 +36,44 @@
 
 
 
+
+<div class="row">
+	 <h3 class=" teat-text" style="margin-left: 17%;">Acesse a sua Conta!</h3>
+<br>
+
+<div class="col m1 l2"></div>
+	<form class="col s12 m9 l8" action="acesse-conta.php" method="post">
+
+
+
+    <div class="row">
+    	<div class="input-field col s12">
+          <input id="email-entrar" type="email" class="validate">
+          <label for="email">Email:</label>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+    	<div class="input-field col s12">
+          <input id="senha-entrar" type="password" class="validate">
+          <label for="password">Senha:</label>
+        </div>
+    </div>
+
+
+	<button class="btn light-green accent-4" type="submit" name="action">Entrar <i class="material-icons right">chevron_right</i> </button>
+
+    </form>
+	<div class="col m1 l2"></div>
+</div>
+
+
+
+
+<br>
+<br>
 
 
 

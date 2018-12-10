@@ -24,6 +24,24 @@
 
 
 
+
+
+
+<!-- google my maps -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 
 	include "rodape.php";

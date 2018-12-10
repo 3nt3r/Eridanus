@@ -24,7 +24,7 @@
 
 
  <div class="row">
-	 <h3 class=" teat-text" style="margin-left: 17%;">Cadastre-se</h3>
+	 <h3 class=" teat-text" style="margin-left: 17%;">Cadastre-se!</h3>
  <br>
 
 	 <div class="col m1 l2"></div>

@@ -20,7 +20,7 @@
  ?>
 
 
-   <div class="carousel carousel-slider center" style="margin-top: 1.2em; margin-bottom: 1.2em;">
+   <div class="carousel carousel-slider center" style="margin-top: 1.2em;">
     <div class="carousel-item red white-text" href="#one!" style="background-image: url('imagens/inicio-1.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
       <p class="white-text" style="font-size: 1.2em; margin-top: 20%; text-shadow: 0.1em 0.1em #333; background-color: rgba(100, 221, 23, .7);">Lixo eletrônico é tudo aquilo e você vê, lê e acha que não serve para nada, então outros reciclam, selecionam e constroi o seu pensamento. - João de Paula</p>
     </div>
