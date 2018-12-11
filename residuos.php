@@ -56,20 +56,16 @@
 		Dezoito meses é o tempo médio de vida de um novo smartphone. Conforme um novo aparelho chega às lojas,
 		outros tantos são aposentados e, assim, o que era um artigo quase fundamental, vira um problema.
 		<br>
-		<br>
 		O mesmo acontece com computadores, televisões, videogames e câmeras fotográficas: no final, sobram
 		44,7 milhões de toneladas de lixo eletrônico todo ano, o equivalente a 4,5 mil torres Eiffel.
-		<br>
 		<br>
 		A estimativa é que, em média, sejam descartados 6,7 quilos de lixo eletrônico para cada habitante do
 		nosso planeta. No Brasil, o problema não é menor. Sétimo maior produtor do mundo, com 1,5 mil toneladas
 		por ano, estima-se que em 2018 cada um de nós jogará fora pelo menos 8,3 quilos de eletrônicos.
 		<br>
-		<br>
 		Apesar de um estudo com números de 2016 ter demonstrado que o reaproveitamento do material descartado naquele
 		ano poderia render R$240 bilhões de reais em todo planeta, apenas 20% do lixo eletrônico do planeta é reciclado.
 		Por aqui, somente 3% são coletados da forma adequada.
-		<br>
 		<br>
 		<span id="fonte-residuos"><b>Fonte:</b> Revista Gallileu - Reportagem de Maio de 2018</span>
 		<br>

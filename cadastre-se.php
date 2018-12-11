@@ -55,8 +55,8 @@
           <label for="email">Email:</label>
         </div>
       </div>
-			<button class="btn light-green accent-4" type="submit" name="action">Enviar
-	 <i class="material-icons right">send</i>
+			<button class="btn light-green accent-4" type="submit" name="action">Criar Conta
+	 <i class="material-icons right">assignment_ind</i>
  </button>
     </form>
 		 <div class="col m1 l2"></div>
