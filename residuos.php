@@ -24,7 +24,7 @@
  ?>
 
 
- <h5 id="titulo-texto">Quase todo lixo eletrônico do Brasil é descartado de maneira errada</h5>
+ <h5 class="titulo-pagina">Quase todo lixo eletrônico do Brasil é descartado de maneira errada</h5>
 
 
  <div class="carousel carousel-slider center">

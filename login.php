@@ -38,7 +38,7 @@
 
 
 <div class="row">
-	 <h3 class=" teat-text" style="margin-left: 17%;">Acesse a sua Conta!</h3>
+	 <h3 class=" teat-text titulo-pagina" style="margin-left: 17%; text-align: left;">Acesse a sua Conta!</h3>
 <br>
 
 <div class="col m1 l2"></div>
