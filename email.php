@@ -65,28 +65,20 @@
 
 
 
-
-
-
   <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
+    <div class="col s12 m6" style="margin-left: 25%; margin-top: 2%;">
+      <div class="card light-green accent-4">
         <div class="card-content white-text">
           <span class="card-title">Email enviado com sucesso!</span>
           <p>Assim que possível, vamos analisar sua mensagem e responder o mais rápido possível!</p>
         </div>
         <div class="card-action">
-          <a href="index.php">Voltar ao início</a>
-          <a href="contato.php">Enviar outro email</a>
+          <a href="index.php"><span style="color: white;">Voltar ao início</span></a>
+          <a href="contato.php"><span style="color: white;">Enviar outro email</span></a>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
-
 
 
 
