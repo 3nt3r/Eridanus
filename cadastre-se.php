@@ -41,18 +41,18 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
           <input id="password" type="password" class="validate">
           <label for="password">Senha:</label>
         </div>
         <div class="input-field col s12">
           <input id="password2" type="password" class="validate">
           <label for="password">Recoloque a Senha:</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email:</label>
         </div>
       </div>
 			<button class="btn light-green accent-4" type="submit" name="action">Criar Conta

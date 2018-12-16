@@ -5,65 +5,58 @@
 	<title>Fale-Conosco - Eridanus</title>
   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 
-	<?php 
+<?php 
 
-		include "cabecalho.php";
+	include "cabecalho.php";
 
-	?>
+?>
 
 </head>
 <body>
+
 
 <?php 
 
 	include "menu.php";
 
- ?>
+?>
 
 
-
- <p class="titulo-pagina">Preencha os dados corretamente!</p>
+<p class="titulo-pagina">Preencha as informações corretamente!</p>
 
 
 <div>
-
 	<form action="email.php" method="post" id="form-contato">
-				
 		<div class="input-field col s6">
-          <input id="last_name" type="text" class="validate" name="nome">
-          <label for="last_name">Nome</label>
-        </div>
+      <input id="last_name" type="text" class="validate" name="nome">
+      <label for="last_name">Nome</label>
+    </div>
 				
+    <div class="input-field col s6">
+      <input id="last_name" type="text" class="validate" name="assunto">
+      <label for="last_name">Assunto</label>
+    </div>
+
 		<div class="input-field col s6">
-          <input id="last_name" type="email" class="validate" name="email">
-          <label for="last_name">Email</label>
-        </div>
+      <input id="last_name" type="email" class="validate" name="email">
+      <label for="last_name">Email</label>
+    </div>
 				
-		<div class="input-field col s6">
-          <input id="last_name" type="text" class="validate" name="assunto">
-          <label for="last_name">Assunto</label>
-        </div>
-		
-        <div class="input-field col s12">
-          	<textarea id="textarea1" class="materialize-textarea" name="mensagem"></textarea>
-          	<label for="textarea1">Mensagem</label>
-        </div>
+    <div class="input-field col s12">
+      <textarea id="textarea1" class="materialize-textarea" name="mensagem"></textarea>
+      <label for="textarea1">Mensagem</label>
+    </div>
 
   <center>
+    <button class="btn waves-effect waves-light" type="submit" name="btn-enviar" style="background-color: #64DD17;">Enviar
+      <i class="material-icons right">send</i>
+    </button>
 
-  <button class="btn waves-effect waves-light" type="submit" name="btn-enviar" style="background-color: #64DD17;">Enviar
-    <i class="material-icons right">send</i>
-  </button>
-
-  <button class="btn waves-effect waves-light" type="reset" name="action" style="background-color: #64DD17;">Limpar
-    <i class="material-icons right">cached</i>
-  </button>
-
-  </center>
-
-	<br>
+    <button class="btn waves-effect waves-light" type="reset" name="action" style="background-color: #64DD17;">Limpar
+      <i class="material-icons right">cached</i>
+    </button>
+  </center> <br>
 	</form>
-
 </div>
 
 
