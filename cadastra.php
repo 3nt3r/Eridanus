@@ -1,92 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-	<title>xxxx - Eridanus</title>
-
-	<?php 
-
-		include "cabecalho.php";
-
-	?>
-
-</head>
-<body>
-
-<?php 
-
-	include "menu.php";
-
- ?>
-
-
-<?php 
+<?php
 /////////////////////////////////////////////////////////////////////////////
 
-	$nome = htmlspecialchars($_POST['nome_cad']);
-	$sobrenome = htmlspecialchars($_POST['sobrenome_cad']);
-	$email = htmlspecialchars($_POST['email_cad']);
-	$senha = htmlspecialchars($_POST['senha_cad']);
-	$senhacomp = htmlspecialchars($_POST['senhacomp_cad']);
 
-	if(!empty($nome) && !empty($sobrenome) && !empty($email) && !empty($senha) && !empty($senhacomp)){
-		if($senha == $senhacomp){
+	if(isset($_POST['nome_cad']) && isset($_POST['sobrenome_cad']) && isset($_POST['email_cad']) && isset($_POST['senha_cad']) && isset($_POST['senhacomp_cad'])){
+				$nome = trim(htmlspecialchars($_POST['nome_cad']));
+				$sobrenome = trim(htmlspecialchars($_POST['sobrenome_cad']));
+				$email = trim(htmlspecialchars($_POST['email_cad']));
+				$senha = trim(htmlspecialchars($_POST['senha_cad']));
+				$senhacomp = trim(htmlspecialchars($_POST['senhacomp_cad']));
+				///////////////////////
+				if(!empty($nome) && !empty($sobrenome) && !empty($email) && !empty($senha) && !empty($senhacomp)){
+				$banco = new mysqli('localhost', 'root', '', 'eridanus');
+				///////////////////////
+				if(mysqli_connect_errno()){
+					echo 'erroBanco';
+					exit;
+				}
+			if($senha == $senhacomp){
+				$nome = strval($nome);
+				$sobrenome = strval($sobrenome);
+				$email = strval($email);
+				$senha = md5(strval($senha));
 
-			///////////////////////
-			$banco = new mysqli('localhost', 'usuario_banco', 'senha_banco', 'nome_banco');
-			///////////////////////
-			if(mysqli_connect_errno()){
-				?>
-					<h3 class="titulo-pagina">Não foi possível a conexão com o banco de dados. Por favor, tente mais tarde!</h3>
-				<?php
+				$verifica = "select email from usuario where email = ?";
+				$prepare = $banco->prepare($verifica);
+				$prepare->bind_param("s",$email);
+				$prepare->bind_result($emailB);
+				$prepare->execute();
+				$prepare->store_result();
+				$prepare->fetch();
+				if($emailB == $email){
+					echo "email";
+					exit;
+				}else{
+				$inserir = "INSERT INTO usuario (nome, sobrenome, email, senha) VALUES (?, ?, ?, ?)";
+
+				$prepare = $banco->prepare($inserir);
+				$prepare->bind_param("ssss", $nome, $sobrenome, $email, $senha);
+				$prepare->execute();
+				echo "<h3 class=\"teat-text titulo-pagina\">Cadastro efetuado com sucesso!</h3>
+				<i class=\"material-icons large\" style=\"color: rgb(100,221,23);\">check_circle_outline</i>";
+			}
+			}else{
+				sleep(2);
+				echo "senha1";
 				exit;
 			}
-
-			$nome = strval($nome);
-			$sobrenome = strval($sobrenome);
-			$email = strval($email);
-			$senha = strval($senha);
-
-
-
-
-
-			$inserir = "INSERT INTO usuario (nome, sobrenome, email, senha) VALUES (?, ?, ?, ?)";
-
-			$prepare = $banco->prepare($inserir);
-			$prepare->bind_param("ssss", $nome, $sobrenome, $email, $senha);
-			$prepare->execute();
-
-
-
-			//////////////////////
-
 		}else{
-			?>
-				<h3 class="titulo-pagina">As senhas não batem, tente novamente!</h3>
-			<?php
-			exit;
+				sleep(2);
+				echo "form";
+				exit;
 		}
 	}else{
-		?>
-			<h3 class="titulo-pagina">Por favor, preencha todos os dados!</h3>
-		<?php
+		sleep(2);
+		echo "form";
 		exit;
 	}
 
-
 /////////////////////////////////////////////////////////////////////////////
 ?>
-
-
-
-
-<?php
-
-	include "rodape.php";
-
-?>
-
-
-</body>
-</html>

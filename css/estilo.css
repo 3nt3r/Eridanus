@@ -82,6 +82,15 @@ body{
 .erro{
 	color: red;
 	display: inline;
+	font-size: 10pt;
+}
+.esconde{
+	display: none;
+}
+#preloader{
+	margin-left: 10px;
+	display: none;
+
 }
 /* ================================================================= */
 
@@ -98,7 +107,6 @@ body{
 	margin-bottom: 35px;
 	margin-top: 35px;
 }
-
 .erro-email{
 	text-align: center;
 	color: #64DD17;
