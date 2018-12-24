@@ -1,13 +1,29 @@
 
 <a href="index.php"><img src="imagens/eridanus-menu.png" id="foto-menu"></a>
-<table id="login-cadastro" class="hide-on-med-and-down">
-  <tr>
-    <td><a href="login.php" style="text-decoration: none; color: #64DD17;"> Entre </a></td>
-  </tr>
-  <tr>
-    <td><a href="cadastre-se.php" style="text-decoration: none; color: #64DD17;"> Cadastre-se </a></td>
-  </tr>
-</table>
+<?php
+	session_start();
+	if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){
+
+?>    <table id="login-cadastro" class="hide-on-med-and-down">
+      <tr>
+        <td><a href="login.php" style="text-decoration: none; color: #64DD17;"> Entre </a></td>
+      </tr>
+      <tr>
+        <td><a href="cadastre-se.php" style="text-decoration: none; color: #64DD17;"> Cadastre-se </a></td>
+      </tr>
+    </table>
+    <?php
+	}else{
+		?>
+		<table id="login-cadastro" class="hide-on-med-and-down">
+			<tr>
+				<td><a href="acesse-conta.php" style="text-decoration: none; color: #64DD17;">Olá <?php echo $_SESSION['nome'];?></a></td>
+			</tr>
+		</table>
+		<?php
+	}
+ ?>
+
 
   <nav>
     <div class="nav-wrapper" style="background-color: #64DD17; margin-bottom: .3em;">

@@ -12,10 +12,10 @@ if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
 	$email = trim(htmlspecialchars($_POST['email-entrar']));
   $senha = md5(trim(htmlspecialchars($_POST['senha-entrar'])));
 	var_dump($senha);
-	$verifica = 'select email,senha from usuario where email = ? AND senha = ?';
+	$verifica = 'select id,nome,email,senha from usuario where email = ? AND senha = ?';
 	$prepare = $banco->prepare($verifica);
 	$prepare->bind_param("ss", $email, $senha);
-	$prepare->bind_result($emailB, $senhaB);
+	$prepare->bind_result($idB, $nomeB, $emailB, $senhaB);
 	$prepare->execute();
 	$prepare->store_result();
 	$prepare->fetch();
@@ -23,6 +23,8 @@ if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
 		session_start();
 		$_SESSION['email'] = $emailB;
 		$_SESSION['senha'] = $senhaB;
+		$_SESSION['nome'] = $nomeB;
+		$_SESSION['id'] = $idB;
 		header("Location: acesse-conta.php");
 	}else{
 			header("Location: login.php?erro=1&email=$email");

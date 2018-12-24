@@ -59,7 +59,7 @@
     	<div class="input-field col s12">
           <input id="senha-entrar" name="senha-entrar" type="password" class="validate">
           <label for="password">Senha:</label>
-					<p class="erro" <?php session_start(); session_destroy(); if(isset($_GET['erro'])){echo" style='display: inline;'>"; if($_GET['erro'] == 1){echo "email e/ou senha incorreto(s)!";}else if($_GET['erro'] == 2){echo "Por favor preencha os dados!";}}else{echo">";} ?></p>
+					<p class="erro" <?php if(isset($_GET['erro'])){echo" style='display: inline;'>"; if($_GET['erro'] == 1){echo "email e/ou senha incorreto(s)!";}else if($_GET['erro'] == 2){echo "Por favor preencha os dados!";}}else{echo">";} ?></p>
         </div>
     </div>
 
