@@ -1,10 +1,11 @@
+<?php session_start();  ?>
 <!DOCTYPE html>
 <html>
 <head>
 
 	<title>Email - Eridanus</title>
 
-	<?php 
+	<?php
 
 		include "cabecalho.php";
 
@@ -13,7 +14,7 @@
 </head>
 <body>
 
-<?php 
+<?php
 
 	include "menu.php";
 
@@ -21,31 +22,31 @@
 
 
 
-<?php		
+<?php
 
 	$nome = htmlspecialchars($_POST['nome']);
 	$email = htmlspecialchars($_POST['email']);
 	$assunto = htmlspecialchars($_POST['assunto']);
 	$mensagem = htmlspecialchars($_POST['mensagem']);
 	$verificador = 0;
-	
+
 	if (isset($_POST['btn-enviar'])){
-		
-		
+
+
 
 		if(preg_match('([A-Za-z])', $nome)){
 			$verificador++;
 		} else{
 			echo "<p class='erro-email'>Nome inválido!</p>";
 		}
-		
+
 
 		if(preg_match('([A-Za-z0-9])', $assunto)){
 			$verificador++;
 		}else{
 			echo "<p class='erro-email'>Assunto inválido!</p>";
-		} 
-		
+		}
+
 
 		if(preg_match('^[_.a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^', $email)){
 			$verificador++;

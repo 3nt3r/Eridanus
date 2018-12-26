@@ -1,10 +1,11 @@
+<?php session_start();  ?>
 <!DOCTYPE html>
 <html>
 <head>
 
 	<title>Projetos - Eridanus</title>
 
-	<?php 
+	<?php
 
 		include "cabecalho.php";
 
@@ -13,7 +14,7 @@
 </head>
 <body>
 
-<?php 
+<?php
 
 	include "menu.php";
 

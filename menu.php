@@ -1,7 +1,6 @@
 
 <a href="index.php"><img src="imagens/eridanus-menu.png" id="foto-menu"></a>
 <?php
-	session_start();
 	if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){
 
 ?>    <table id="login-cadastro" class="hide-on-med-and-down">
