@@ -10,7 +10,7 @@
 				$senhacomp = trim(htmlspecialchars($_POST['senhacomp_cad']));
 				///////////////////////
 				if(!empty($nome) && !empty($sobrenome) && !empty($email) && !empty($senha) && !empty($senhacomp)){
-				$banco = new mysqli('localhost', 'root', '', 'eridanus');
+				$banco = new mysqli('localhost', 'id8224055_user_eridanus', 'softwarescalistorjbc', 'id8224055_eridanus');
 				///////////////////////
 				if(mysqli_connect_errno()){
 					echo 'erroBanco';
