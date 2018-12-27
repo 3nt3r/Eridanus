@@ -3,7 +3,7 @@ body{
 }
 
 .card{
-  text-align: center;
+	text-align: center;
 }
 
 .corFundoMenu{
@@ -18,9 +18,9 @@ body{
 }
 
 #foto-menu-mobile{
-  padding: 20px;
-  width: 90%;
-  height: 15%;
+  	padding: 20px;
+  	width: 90%;
+  	height: 15%;
 }
 
 #login-cadastro tr td{
@@ -58,7 +58,7 @@ body{
 	font-size: 2.3em;
 }
 
-/* ====================== Página residuos ============================ */
+/* ====================== PAGINA RESIDUOS ============================ */
 
 #texto-residuos{
 	margin-left: 70px;
@@ -79,27 +79,30 @@ body{
 .tabela-residuos td{
 	padding: 15px;
 }
+
 .erro{
 	color: red;
 	display: inline;
 	font-size: 10pt;
 }
+
 .esconde{
 	display: none;
 }
+
 #preloader{
 	margin-left: 10px;
 	display: none;
-
 }
-/* ================================================================= */
 
-.nav-wrapper li{ /* Links menu */
+/* ====================== LINKS MENU ============================ */
+
+.nav-wrapper li{
 	padding-left: 25px;
 	padding-right: 25px;
 }
 
-/* ==================Pagina Contato========================= */
+/* ====================== PAGINA CONTATO ============================ */
 
 #form-contato{
 	width: 350px;
@@ -107,6 +110,7 @@ body{
 	margin-bottom: 35px;
 	margin-top: 35px;
 }
+
 .erro-email{
 	text-align: center;
 	color: #64DD17;
@@ -117,12 +121,13 @@ body{
 	text-shadow: 1px .5px #64DD17;
 }
 
-/* ================================================================= */
+/* ====================== PAGINA DO USUARIO ============================ */
 
 .menu-usuario{
 	height: 35em;
 	width: 15em;
-	background-color: #A9A9A9;
+	background-color: #64dd17;
+	box-shadow: 3px 3px 3px gray;
 }
 
 .menu-usuario a{
@@ -135,9 +140,12 @@ body{
 	color: #64dd17;
 }
 
-#frame-usuario{
-	
+/* ====================== LINKS USUARIO MENU ============================ */
+
+.login-cadastro{
+	position: absolute;
+	width: 10%;
+	height: 12%;
+	left: 77%;
+	top: 10%;
 }
-
-
-

@@ -21,7 +21,6 @@
 ?>
 
 
-
 <?php
 
 	$nome = htmlspecialchars($_POST['nome']);
@@ -32,14 +31,11 @@
 
 	if (isset($_POST['btn-enviar'])){
 
-
-
 		if(preg_match('([A-Za-z])', $nome)){
 			$verificador++;
 		} else{
 			echo "<p class='erro-email'>Nome inválido!</p>";
 		}
-
 
 		if(preg_match('([A-Za-z0-9])', $assunto)){
 			$verificador++;
@@ -47,13 +43,11 @@
 			echo "<p class='erro-email'>Assunto inválido!</p>";
 		}
 
-
 		if(preg_match('^[_.a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^', $email)){
 			$verificador++;
 		} else{
 			echo "<p class='erro-email'>Email inválido!</p>";
 		}
-
 
 		if ($verificador == 3){
 			mail("calistosoftwares@gmail.com", "Assunto: ".$assunto.", ".$nome, $mensagem, $email);
@@ -61,10 +55,6 @@
 
 
 			?>
-
-
-
-
 
   <div class="row">
     <div class="col s12 m6" style="margin-left: 25%; margin-top: 2%;">
@@ -81,10 +71,6 @@
     </div>
   </div>
 
-
-
-
-
   		<?php
 
 
@@ -99,9 +85,6 @@
 
 
 ?>
-
-
-
 
 
 <?php

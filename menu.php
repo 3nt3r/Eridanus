@@ -1,34 +1,45 @@
 
 <a href="index.php"><img src="imagens/eridanus-menu.png" id="foto-menu"></a>
+
 <?php
 	if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){
+  ?>  <table id="login-cadastro" class="hide-on-med-and-down">
+        <tr>
+          <td><a href="login.php" style="text-decoration: none; color: #64DD17;"> Entre </a></td>
+        </tr>
+        <tr>
+          <td><a href="cadastre-se.php" style="text-decoration: none; color: #64DD17;"> Cadastre-se </a></td>
+        </tr>
+      </table>
 
-?>    <table id="login-cadastro" class="hide-on-med-and-down">
-      <tr>
-        <td><a href="login.php" style="text-decoration: none; color: #64DD17;"> Entre </a></td>
-      </tr>
-      <tr>
-        <td><a href="cadastre-se.php" style="text-decoration: none; color: #64DD17;"> Cadastre-se </a></td>
-      </tr>
-    </table>
-    <?php
+  <?php
 	}else{
-		?>
-		<table id="login-cadastro" class="hide-on-med-and-down">
-			<tr>
-				<td><a href="acesse-conta.php" style="text-decoration: none; color: #64DD17;">
+	?>
 
-          Olá, <?php echo $_SESSION['nome'];?>! 
+  <div class="login-cadastro" style="top: 10%; width: 80em;">    
+    <a class='dropdown-button btn' href='#' data-activates='dropdown1' style="background-color: #64dd17;">Olá, <?php echo $_SESSION['nome']; ?>!</a>
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="acesse-conta.php" style="color: #64dd17;">Meu Painel</a></li>
+      <li><a href="sair.php" style="color: #64dd17;">Sair</a></li>
+    </ul>
 
-          <a class="btn-floating btn-large waves-effect waves-light light-green accent-4" style="margin-top: 10px;" href="acesse-conta.php"><i class="material-icons">assignment_ind</i></a> 
-
-          </a></td>
-			</tr>
-		</table>
+    <script type="text/javascript">
+      $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false,
+      hover: true, 
+      gutter: 0,
+      belowOrigin: false,
+      alignment: 'left',
+      stopPropagation: false
+      }
+      );
+    </script>
+  </div>
 		<?php
 	}
  ?>
-
 
   <nav>
     <div class="nav-wrapper" style="background-color: #64DD17; margin-bottom: .3em;">

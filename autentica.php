@@ -30,15 +30,3 @@ if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
   header("Location: login.php?erro=2");
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-
-	<title>Autênticando - Eridanus</title>
-
-</head>
-<body>
-
-</body>
-</html>
