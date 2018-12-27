@@ -124,10 +124,11 @@ body{
 /* ====================== PAGINA DO USUARIO ============================ */
 
 .menu-usuario{
-	height: 35em;
+	height: 100%;
 	width: 15em;
+	padding: 0px;
 	background-color: #64dd17;
-	box-shadow: 3px 3px 3px gray;
+	
 }
 
 .menu-usuario a{

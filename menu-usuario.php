@@ -1,14 +1,15 @@
-<div class="menu-usuario">
-	
+<div class="row" style="margin-bottom: 0;">
+<div class="menu-usuario col l3">
+
 
 <table>
 
 	<tr>
-		<th> 
-			<center> 
-				<span style="color: white;"> <i class="material-icons" style="margin-right: 5px;">pan_tool</i> Olá, <?php echo $_SESSION['nome']; ?>! 
-				</span> 
-			</center> 
+		<th>
+			<center>
+				<span style="color: white;"> <i class="material-icons" style="margin-right: 5px;">pan_tool</i> Olá, <?php echo $_SESSION['nome']; ?>!
+				</span>
+			</center>
 		</th>
 	</tr>
 
@@ -27,7 +28,7 @@
 
 		<tr>
 			<td> <a href="#"> <span> <i class="material-icons" style="margin-right: 5px;">near_me</i> Enviar Projeto </span> </a> </td>
-		</tr>		
+		</tr>
 
 
 		<tr>
@@ -37,7 +38,7 @@
 
 		<tr>
 			<td> <a href="#"> <span> <i class="material-icons" style="margin-right: 5px;">near_me</i> Enviar Objeto </span> </a> </td>
-		</tr>		
+		</tr>
 
 
 		<tr>
@@ -46,10 +47,19 @@
 
 
 		<tr>
-			<td> <a href="sair.php"> <span> <i class="material-icons" style="margin-right: 5px;">exit_to_app</i> Sair </span> </a> </td>
-		</tr>	
+			<td> <a href="sair.php"> <span> <i class="material-icons" style="margin-right: 5px; margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> </td>
+		</tr>
 
 
 	</table>
 
+</div>
+
+<div id="conteudo" class="col l8" style="background-color: red; margin-left: 30px; height: auto;">
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
 </div>
