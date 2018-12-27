@@ -1,5 +1,5 @@
 <?php
-$banco = new mysqli('localhost', 'id8224055_user_eridanus', 'softwarescalistorjbc', 'id8224055_eridanus');
+$banco = new mysqli('localhost:3307', 'root', '', 'eridanus');
 if(mysqli_connect_errno()){
 	?>
 		<h3 class="titulo-pagina">Não foi possível a conexão com o banco de dados. Por favor, tente mais tarde!</h3>
@@ -9,7 +9,7 @@ if(mysqli_connect_errno()){
 if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
 	$email = trim(htmlspecialchars($_POST['email-entrar']));
   	$senha = md5(trim(htmlspecialchars($_POST['senha-entrar'])));
-	$verifica = 'select id,nome,email,senha from usuario where email = ? AND senha = ?';
+	$verifica = 'select id, nome, email, senha from usuario where email = ? AND senha = ?';
 	$prepare = $banco->prepare($verifica);
 	$prepare->bind_param("ss", $email, $senha);
 	$prepare->bind_result($idB, $nomeB, $emailB, $senhaB);
@@ -35,7 +35,7 @@ if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
 <html>
 <head>
 
-	<title>Autênticando...</title>
+	<title>Autênticando - Eridanus</title>
 
 </head>
 <body>

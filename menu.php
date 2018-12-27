@@ -16,7 +16,13 @@
 		?>
 		<table id="login-cadastro" class="hide-on-med-and-down">
 			<tr>
-				<td><a href="acesse-conta.php" style="text-decoration: none; color: #64DD17;">Olá <?php echo $_SESSION['nome'];?></a></td>
+				<td><a href="acesse-conta.php" style="text-decoration: none; color: #64DD17;">
+
+          Olá, <?php echo $_SESSION['nome'];?>! 
+
+          <a class="btn-floating btn-large waves-effect waves-light light-green accent-4" style="margin-top: 10px;" href="acesse-conta.php"><i class="material-icons">assignment_ind</i></a> 
+
+          </a></td>
 			</tr>
 		</table>
 		<?php

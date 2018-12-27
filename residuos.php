@@ -48,7 +48,6 @@
     indicators: true
   });
 
-
 </script>
 
 
@@ -116,6 +115,7 @@
       </table>
 
 <center style="margin-bottom: 50px;"><span id="fonte-residuos"><b>Fonte:</b> Delta Saneamento e Setor Reciclagem</span></center>
+
 
 <?php
 

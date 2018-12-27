@@ -53,9 +53,9 @@ body{
 	text-align: center;
 	color: #64DD17;
 	font-weight: bolder;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 2.6em;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	font-size: 2.3em;
 }
 
 /* ====================== Página residuos ============================ */
@@ -116,3 +116,28 @@ body{
 	font-size: 1.5em;
 	text-shadow: 1px .5px #64DD17;
 }
+
+/* ================================================================= */
+
+.menu-usuario{
+	height: 35em;
+	width: 15em;
+	background-color: #A9A9A9;
+}
+
+.menu-usuario a{
+	font-size: 1.1em;
+	color: white;
+	font-weight: bolder;
+}
+
+.menu-usuario a:hover{
+	color: #64dd17;
+}
+
+#frame-usuario{
+	
+}
+
+
+
