@@ -1,5 +1,15 @@
-<div class="row" style="margin-bottom: 0;">
-<div class="menu-usuario col l3">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/painel.js">
+
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	if($('#linha').height() < $('#conteudo').height())
+		$('#linha').height($('#conteudo').height());
+});
+</script>
+<div class="row" id="linha" style="margin-bottom: 0; height: 100%;">
+<div class="menu-usuario col l3 m3" style="height: 100%;">
 
 
 <table>
@@ -22,7 +32,7 @@
 
 
 		<tr>
-			<td> <a href="informacoes-usuario.php"> <span> <i class="material-icons" style="margin-right: 5px;">person</i> Informações do Usuário </span> </a> </td>
+			<td> <a href="informacoes-usuario.php" id="btnAlt"> <span> <i class="material-icons" style="margin-right: 5px;">person</i> Informações do Usuário </span> </a> </td>
 		</tr>
 
 
@@ -55,11 +65,7 @@
 
 </div>
 
-<div id="conteudo" class="col l8" style="background-color: red; margin-left: 30px; height: auto;">
-<br>
-<br>
-<br>
-<br>
-<br>
+<div id="conteudo" class="col l8 m8" style="margin-left: 30px; height: auto;">
+	
 </div>
 </div>

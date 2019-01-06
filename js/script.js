@@ -42,7 +42,9 @@ $(document).ready(function(){
               $("#aviso").show();
               $("#aviso").html(data);
           }else{
-              alert(data);
+						$("#cadastro").hide();
+						$("#aviso").show();
+						$("#aviso").html(data);
           }
         })
 			  .fail(function(){

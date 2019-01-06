@@ -125,10 +125,9 @@ body{
 
 .menu-usuario{
 	height: 100%;
-	width: 15em;
+	width: 100%;
 	padding: 0px;
 	background-color: #64dd17;
-	
 }
 
 .menu-usuario a{

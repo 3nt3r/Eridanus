@@ -5,7 +5,7 @@
 	}
  ?>
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
 <head>
 
 	<title>Painel de Controle - Eridanus</title>
@@ -17,40 +17,14 @@
 	?>
 
 </head>
-<body>
+<body style="height: 100%;">
 
-
-
-<?php 
+<?php
 
 	include_once "menu-usuario.php";
 
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-
-	include "rodape.php";
-
-?>
 
 
 </body>

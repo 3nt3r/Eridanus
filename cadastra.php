@@ -40,17 +40,14 @@
 				<i class=\"material-icons large\" style=\"color: rgb(100,221,23);\">check_circle_outline</i>";
 			}
 			}else{
-				sleep(2);
 				echo "senha1";
 				exit;
 			}
 		}else{
-				sleep(2);
 				echo "form";
 				exit;
 		}
 	}else{
-		sleep(2);
 		echo "form";
 		exit;
 	}
