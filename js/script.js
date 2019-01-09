@@ -1,7 +1,16 @@
+$(window).resize(function(){
+	var largura = $("body").width();
+	if(largura < 700){
+		$("#foto-menu").css('width', '60%');
+		$("#foto-menu").css('height', '80%');
+	}else{
+		$("#foto-menu").css('width', '');
+		$("#foto-menu").css('height', '');
+	}
+});
 $(document).ready(function(){
 		$('#form').submit(function(){
 			var dados = $( this ).serialize();
-
 			$.ajax({
 				type: "POST",
 				url: "cadastra.php",
