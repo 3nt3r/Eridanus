@@ -1,6 +1,11 @@
 <center>
-<a href="index.php"><img src="imagens/eridanus-menu.png" id="foto-menu"></a>
+<a href="index.php"><img src="imagens/eridanus-menu.png" id="foto-menu" usemap="admin"></a>
 </center>
+
+  <map name="admin">
+    <area shape="rect" coords="352, 115, 396, 144" href="login-admin.php">
+  </map>
+  
 <?php
 	if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){
   ?>  <table id="login-cadastro" class="hide-on-med-and-down">
@@ -92,3 +97,5 @@
   <script type="text/javascript">
     $(".button-collapse").sideNav();
   </script>
+
+
