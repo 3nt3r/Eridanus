@@ -8,12 +8,9 @@
 
 				if(!empty($nome) && !empty($sobrenome) && !empty($email) && !empty($senha) && !empty($senhacomp)){
 
-				$banco = new mysqli('localhost:3307', 'root', '', 'eridanus');
+				include "conexao.php";
 
-				if(mysqli_connect_errno()){
-					echo 'erroBanco';
-					exit;
-				}
+
 			if($senha == $senhacomp){
 				$nome = strval($nome);
 				$sobrenome = strval($sobrenome);

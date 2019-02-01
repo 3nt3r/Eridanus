@@ -1,10 +1,8 @@
 <?php
   session_start();
-  $banco = new mysqli("localhost", "root", "", "eridanus");
-  if(mysqli_connect_errno()){
-    echo "erro";
-    exit;
-  }
+
+  include "conexao.php";
+
   if(isset($_POST['nome_cad']) && isset($_POST['sobrenome_cad']) && isset($_POST['email_cad']) && isset($_SESSION['id'])){
     $nome = $_POST['nome_cad'];
     $sobrenome = $_POST['sobrenome_cad'];
