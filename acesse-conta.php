@@ -4,6 +4,7 @@
 		header("Location: login.php");
 	}
  ?>
+
 <!DOCTYPE html>
 <html style="height: 100%;">
 <head>
@@ -24,8 +25,6 @@
 	include_once "menu-usuario.php";
 
 ?>
-
-
 
 </body>
 </html>
