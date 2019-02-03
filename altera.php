@@ -12,7 +12,6 @@
     $prepare = $banco->prepare($update);
     $prepare->bind_param("sssi", $nome, $sobrenome, $email, $id);
     $prepare->execute();
-    sleep(2); //remover
   }else if(isset($_POST['senha']) && isset($_POST['senhaConf']) && isset($_POST['senhaNova']) && isset($_SESSION['id'])){
     $id = (int) $_SESSION['id'];
     $senha = md5($_POST['senha']);
@@ -34,7 +33,6 @@
           echo "certo";
           $_SESSION = array();
           session_destroy();
-          sleep(2); //remover
       }else{
         echo "As senhas não coincidem!";
       }

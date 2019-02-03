@@ -54,7 +54,7 @@ body{
 	font-weight: bolder;
 	padding-top: 13px;
 	padding-bottom: 13px;
-	font-size: 2.3em;
+	font-size: 2.2em;
 }
 
 /* ====================== PAGINA RESIDUOS ============================ */
@@ -136,7 +136,11 @@ body{
 }
 
 .menu-usuario a:hover{
-	color: #64dd17;
+	color: #82877f;
+}
+
+.menu-usuario i{
+	margin-right: 5px;
 }
 
 /* ====================== LINKS USUARIO MENU ============================ */

@@ -10,7 +10,6 @@
 
 				include "conexao.php";
 
-
 			if($senha == $senhacomp){
 				$nome = strval($nome);
 				$sobrenome = strval($sobrenome);

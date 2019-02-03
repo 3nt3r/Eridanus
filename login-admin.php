@@ -25,32 +25,31 @@
 <br>
 
 <div class="col m1 l2"></div>
-	<form class="col s12 m9 l8" action="autentica-admin.php" method="post">
+
+
+	<form class="col s12 m9 l8" action="autentica-admin.php" method="post" style="margin-bottom: 1.5em;">
 
     <div class="row">
     	<div class="input-field col s12">
-          <input id="email-entrar" <?php if(isset($_GET['email'])){$e = $_GET['email'];echo "value='$e'";}?> name="email-entrar" type="email" class="validate">
+          <input id="entrar_admin" name="email-entrar_admin" type="email" class="validate">
           <label for="email">Email:</label>
         </div>
     </div>
 
     <div class="row">
     	<div class="input-field col s12">
-          <input id="senha-entrar" name="senha-entrar" type="password" class="validate">
+          <input id="entrar_admin" name="senha-entrar_admin" type="password" class="validate">
           <label for="password">Senha:</label>
-					<p class="erro" <?php if(isset($_GET['erro'])){echo" style='display: inline;'>"; if($_GET['erro'] == 1){echo "email e/ou senha incorreto(s)!";}else if($_GET['erro'] == 2){echo "Por favor preencha os dados!";}}else{echo">";} ?></p>
         </div>
     </div>
 
 	<button class="btn light-green accent-4" type="submit" name="action">Entrar <i class="material-icons right">chevron_right</i> </button>
 
-    </form>
+  </form>
+
+
 	<div class="col m1 l2"></div>
 </div>
-
-<br>
-<br>
-
 
 <?php
 

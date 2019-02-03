@@ -2,7 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <a href="index.php"><img src="imagens/eridanus-pequeno.png"></a>
+        <a href="index.php"> 
+          <img src="imagens/eridanus-pequeno.png"> 
+        </a>
         <p class="grey-text text-lighten-4" style="font-size: 12px;">"Mudanças são necessárias. Reciclagem não é só no meio ambiente, mas também no ambiente do nosso ser." - Daniel Carvalho</p>
       </div>
       <div class="col l4 offset-l2 s12">
@@ -12,6 +14,7 @@
           <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
           <li><a class="grey-text text-lighten-3" href="#!">Youtube</a></li>
           <li><a class="grey-text text-lighten-3" href="contato.php">Fale Conosco</a></li>
+          <li><a class="grey-text text-lighten-3" href="login-admin.php">Administrador</a></li>
         </ul>
       </div>
     </div>

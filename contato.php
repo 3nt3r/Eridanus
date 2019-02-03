@@ -23,29 +23,29 @@
 ?>
 
 
-<p class="titulo-pagina">Preencha as informações corretamente!</p>
+<p class="titulo-pagina" style="margin: .2em 0em;">Preencha as informações corretamente!</p>
 
 
 <div>
 	<form action="email.php" method="post" id="form-contato">
 		<div class="input-field col s6">
       <input id="last_name" type="text" class="validate" name="nome">
-      <label for="last_name">Nome</label>
+      <label for="last_name">Nome Completo</label>
     </div>
 				
     <div class="input-field col s6">
       <input id="last_name" type="text" class="validate" name="assunto">
-      <label for="last_name">Assunto</label>
+      <label for="last_name">Assunto do E-mail</label>
     </div>
 
 		<div class="input-field col s6">
       <input id="last_name" type="email" class="validate" name="email">
-      <label for="last_name">Email</label>
+      <label for="last_name">Seu Email</label>
     </div>
 				
     <div class="input-field col s12">
       <textarea id="textarea1" class="materialize-textarea" name="mensagem"></textarea>
-      <label for="textarea1">Mensagem</label>
+      <label for="textarea1">Deixe-nos uma Mensagem</label>
     </div>
 
   <center>

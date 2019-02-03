@@ -20,15 +20,14 @@
 
  ?>
 
-<div class="row">
-	 <h3 class=" teat-text titulo-pagina" style="margin-left: 17%; text-align: left;">Acesse a sua Conta!</h3>
-<br>
+<div class="row" style="padding-bottom: 1.5em;">
+  <h3 class=" teat-text titulo-pagina" style="margin-left: 17%; text-align: left;">Acesse a sua Conta!</h3>
 
-<div class="col m1 l2"></div>
-	<form class="col s12 m9 l8" action="autentica.php" method="post">
+  <div class="col m1 l2"></div>
+    <form class="col s12 m9 l8" action="autentica.php" method="post">
 
-    <div class="row">
-    	<div class="input-field col s12">
+      <div class="row">
+    	 <div class="input-field col s12">
           <input id="email-entrar" <?php if(isset($_GET['email'])){$e = $_GET['email'];echo "value='$e'";}?> name="email-entrar" type="email" class="validate">
           <label for="email">Email:</label>
         </div>
@@ -47,9 +46,6 @@
     </form>
 	<div class="col m1 l2"></div>
 </div>
-
-<br>
-<br>
 
 
 <?php

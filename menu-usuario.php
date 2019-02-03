@@ -24,42 +24,37 @@ $(document).ready(function() {
 	</tr>
 
 	<tr>
-		<td> <a href="index.php"> <span> <i class="material-icons" style="margin-right: 5px;">home</i> Voltar ao Início </span> </a> </td>
+		<td> <a href="index.php"> <span> <i class="material-icons">home</i> Voltar ao Início </span> </a> </td>
+	</tr>
+
+	<tr>
+		<td> <a href="informacoes-usuario.php" id="btnAlt"> <span> <i class="material-icons">person</i> Informações do Usuário </span> </a> </td>
 	</tr>
 
 
+	<tr>
+		<td> <a href="#"> <span> <i class="material-icons">near_me</i> Enviar Projeto </span> </a> </td>
+	</tr>
 
 
-
-		<tr>
-			<td> <a href="informacoes-usuario.php" id="btnAlt"> <span> <i class="material-icons" style="margin-right: 5px;">person</i> Informações do Usuário </span> </a> </td>
-		</tr>
-
-
-		<tr>
-			<td> <a href="#"> <span> <i class="material-icons" style="margin-right: 5px;">near_me</i> Enviar Projeto </span> </a> </td>
-		</tr>
+	<tr>
+		<td> <a href="#"> <span> <i class="material-icons">edit</i> Gerenciar Projeto </span> </a> </td>
+	</tr>
 
 
-		<tr>
-			<td> <a href="#"> <span> <i class="material-icons" style="margin-right: 5px;">edit</i> Gerenciar Projeto </span> </a> </td>
-		</tr>
+	<tr>
+		<td> <a href="#"> <span> <i class="material-icons">near_me</i> Enviar Objeto </span> </a> </td>
+	</tr>
 
 
-		<tr>
-			<td> <a href="#"> <span> <i class="material-icons" style="margin-right: 5px;">near_me</i> Enviar Objeto </span> </a> </td>
-		</tr>
+	<tr>
+		<td> <a href="#"> <span> <i class="material-icons">edit</i> Gerenciar Objeto </span> </a> </td>
+	</tr>
 
 
-		<tr>
-			<td> <a href="#"> <span> <i class="material-icons" style="margin-right: 5px;">edit</i> Gerenciar Objeto </span> </a> </td>
-		</tr>
-
-
-		<tr>
-			<td> <a href="sair.php"> <span> <i class="material-icons" style="margin-right: 5px; margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> </td>
-		</tr>
-
+	<tr>
+		<td> <a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> </td>
+	</tr>
 
 	</table>
 

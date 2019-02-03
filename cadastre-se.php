@@ -23,9 +23,7 @@
 <br>
 <br>
 <center>
-	<div id="aviso" class="esconde">
-
-	</div>
+	<div id="aviso" class="esconde"></div>
 </center>
 
  <div class="row">

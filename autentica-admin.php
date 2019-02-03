@@ -2,9 +2,9 @@
 
 include "conexao.php";
 
-if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
-	$email = trim(htmlspecialchars($_POST['email-entrar']));
-  	$senha = md5(trim(htmlspecialchars($_POST['senha-entrar'])));
+if(isset($_POST['email-entrar_admin']) && isset($_POST['senha-entrar_admin'])){
+	$email = trim(htmlspecialchars($_POST['email-entrar_admin']));
+  	$senha = trim(htmlspecialchars($_POST['senha-entrar_admin']));
 	$verifica = 'select nome, email, senha from administrador where email = ? AND senha = ?';
 	$prepare = $banco->prepare($verifica);
 	$prepare->bind_param("ss", $email, $senha);
@@ -12,17 +12,26 @@ if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
 	$prepare->execute();
 	$prepare->store_result();
 	$prepare->fetch();
+
 	if($email == $emailB && $senha == $senhaB){
 		session_start();
-		$_SESSION['email'] = $emailB;
-		$_SESSION['senha'] = $senhaB;
-		$_SESSION['nome'] = $nomeB;
+		$_SESSION['email_admin'] = $emailB;
+		$_SESSION['senha_admin'] = $senhaB;
+		$_SESSION['nome_admin'] = $nomeB;
 		
-		//header("Location: acesse-conta.php");
+		header("Location: painel-admin.php");
 	}else{
-			//header("Location: login.php?erro=1&email=$email");
+		echo "<script type=\"text/javascript\">
+				alert(\"Você não está cadastrado!\");
+			</script>";
+  		header("Location: login-admin.php");
 	}
 }else{
-  //header("Location: login.php?erro=2");
+	echo "<script type=\"text/javascript\">
+			alert(\"Preencha todos os campos!\");
+		</script>";
+  	header("Location: login-admin.php");
 }
+
+
 ?>
