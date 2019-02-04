@@ -1,5 +1,6 @@
+
 $(window).resize(function(){
-	var largura = $("body").width();
+	var largura = $(this).width();
 	if(largura < 700){
 		$("#foto-menu").css('width', '60%');
 		$("#foto-menu").css('height', '80%');
@@ -8,6 +9,7 @@ $(window).resize(function(){
 		$("#foto-menu").css('height', '');
 	}
 });
+
 $(document).ready(function(){
 		$('#form').submit(function(){
 			var dados = $( this ).serialize();

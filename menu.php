@@ -61,7 +61,7 @@
         <li <?php if(strpos($_SERVER['REQUEST_URI'], "contato.php")){echo "class='active'";}?>><a href="contato.php">Contato</a></li>
       </ul>
       <ul id="menu-mobile" class="side-nav">
-        <img src="imagens/eridanus-menu.png" id="foto-menu-mobile">
+        <img src="imagens/eridanus-menu.png" id="foto-menu-mobile" class="responsive-img">
 				<?php
 						if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){
 				?>
