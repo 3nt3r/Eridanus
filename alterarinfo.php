@@ -1,8 +1,9 @@
+<?php  session_start(); ?>
 <script type="text/javascript" src="js/painel.js">
 
 </script>
 <?php
-session_start();
+
 include "cabecalho.php";
 
 include "conexao.php";
