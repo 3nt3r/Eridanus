@@ -1,7 +1,7 @@
 <?php  session_start(); ?>
-<script type="text/javascript" src="js/painel.js">
 
-</script>
+<script type="text/javascript" src="js/painel-usuario.js"></script>
+
 <?php
 
 include "cabecalho.php";
@@ -15,13 +15,18 @@ $prepare->bind_result($nome, $sobrenome, $email, $senha);
 $prepare->execute();
 $prepare->store_result();
 $prepare->fetch();
+
 ?>
+
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/materialize.js"></script>
 <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+
 <div class="row" style="margin-top: 10vw;">
 <form id="alterar">
+
   <div class="row">
+  	<h5 class="titulo-pagina flow-text"> Informações do Usuário </h5>
     <div class="input-field col s6">
       <input id="first_name" type="text" class="validate" disabled value="<?php echo $nome; ?>"  name="nome_cad">
       <label for="first_name">Nome:</label>
@@ -31,6 +36,7 @@ $prepare->fetch();
       <label for="last_name">Sobrenome:</label>
     </div>
   </div>
+
   <div class="row">
     <div class="input-field col s8">
       <input id="email" type="email" class="validate" disabled value="<?php echo $email;  ?>" name="email_cad">
@@ -38,15 +44,13 @@ $prepare->fetch();
       <span class="erro" id="erroE"></span>
     </div>
   </div>
-  <button class="btn light-green accent-4" id="btncad" type="button" style="margin-right: 15px;">Editar dados
-<i class="material-icons right">edit</i>
-<button class="btn light-green accent-4" id="btncads" type="button">Alterar senha
-<i class="material-icons right">edit</i>
-</button>
-<button class="btn light-green accent-4" id="btnsalvar" type="submit" style="display: none;">Salvar
-<i class="material-icons right">done</i>
 
-</button>
+  	<button class="btn light-green accent-4" id="btncad" type="button" style="margin-right: 15px;">Editar dados <i class="material-icons right">edit</i>
+
+	<button class="btn light-green accent-4" id="btncads" type="button"> Alterar senha <i class="material-icons right"> edit </i> </button>
+
+	<button class="btn light-green accent-4" id="btnsalvar" type="submit" style="display: none;"> Salvar <i class="material-icons right">done</i> </button>
+
 <div id="preloader">
  <div class="preloader-wrapper small active">
 	<div class="spinner-layer spinner-blue">
@@ -90,5 +94,6 @@ $prepare->fetch();
 	</div>
  </div>
 </div>
+
 </form>
 </div>

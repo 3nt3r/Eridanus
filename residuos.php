@@ -4,10 +4,6 @@
 <head>
 
 	<title>Resíduos - Eridanus</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
- 	<script type="text/javascript" src="js/materialize.js"></script>
- 	<script type="text/javascript" src="js/materialize.min.js"></script>
- 	<script type="text/javascript" src="js/script.js"></script>
 
 	<?php
 
@@ -24,28 +20,24 @@
 
  ?>
 
+ <h5 class="titulo-pagina flow-text"> Quase todo lixo eletrônico do Brasil é descartado de maneira errada! </h5>
 
- <h5 class="titulo-pagina">Quase todo lixo eletrônico do Brasil é descartado de maneira errada</h5>
+ <div class="carousel carousel-slider center carousel-pgindex">
+	<div class="carousel-item red white-text" style="background-image: url('imagens/residuos-03.png');"></div>
 
+	<div class="carousel-item amber white-text" style="background-image: url('imagens/residuos-02.png');"></div>
 
- <div class="carousel carousel-slider center">
-	<div class="carousel-item red white-text" href="#one!" style="background-image: url('imagens/residuos-03.png'); background-repeat: no-repeat; background-size: 100% 100%;"> 
-  </div>
-	<div class="carousel-item amber white-text" href="#two!" style="background-image: url('imagens/residuos-02.png'); background-repeat: no-repeat; background-size: 100% 100%;">
-	</div>
-	<div class="carousel-item amber white-text" href="#tree!" style="background-image: url('imagens/residuos-01.png'); background-repeat: no-repeat; background-size: 100% 100%;">
-	</div>
+	<div class="carousel-item amber white-text" style="background-image: url('imagens/residuos-01.png');"></div>
 </div>
 
 <script type="text/javascript">
-
   $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
   });
-
 </script>
 
+<div class="toggle flow-text">
 	<p id="texto-residuos">
 		Dezoito meses é o tempo médio de vida de um novo smartphone. Conforme um novo aparelho chega às lojas,
 		outros tantos são aposentados e, assim, o que era um artigo quase fundamental, vira um problema.
@@ -64,8 +56,11 @@
 		<span id="fonte-residuos"><b>Fonte:</b> Revista Gallileu - Reportagem de Maio de 2018</span>
 		<br>
 	</p>
+</div>  
 
-      <table class="striped tabela-residuos">
+    <h5 class="titulo-pagina flow-text"> Veja na tabela abaixo, o tempo de decomposição dos principais componentes e elementos que estão presentes nos smartphones e eletrônicos em geral. </h5>
+
+      <table class="striped tabela-residuos centered">
         <thead>
           <tr>
               <th>#</th>
@@ -108,15 +103,13 @@
         </tbody>
       </table>
 
-<center style="margin-bottom: 50px;"><span id="fonte-residuos"><b>Fonte:</b> Delta Saneamento e Setor Reciclagem</span></center>
-
+<center class="fonte-fim"><span id="fonte-residuos"><b>Fonte:</b> Delta Saneamento e Setor Reciclagem</span></center>
 
 <?php
 
 	include "rodape.php";
 
 ?>
-
 
 </body>
 </html>

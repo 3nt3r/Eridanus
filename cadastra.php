@@ -28,7 +28,6 @@
 					exit;
 				}else{
 				$inserir = "INSERT INTO usuario (nome, sobrenome, email, senha) VALUES (?, ?, ?, ?)";
-
 				$prepare = $banco->prepare($inserir);
 				$prepare->bind_param("ssss", $nome, $sobrenome, $email, $senha);
 				$prepare->execute();
@@ -40,8 +39,8 @@
 				exit;
 			}
 		}else{
-				echo "form";
-				exit;
+			echo "form";
+			exit;
 		}
 	}else{
 		echo "form";

@@ -1,10 +1,9 @@
-<?php session_start();  ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
 
 	<title>Fale-Conosco - Eridanus</title>
-  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 
 <?php 
 
@@ -22,42 +21,42 @@
 
 ?>
 
-
-<p class="titulo-pagina" style="margin: .2em 0em;">Preencha as informações corretamente!</p>
-
+<p class="titulo-pagina flow-text">Preencha as informações corretamente!</p>
 
 <div>
+
 	<form action="email.php" method="post" id="form-contato">
 		<div class="input-field col s6">
-      <input id="last_name" type="text" class="validate" name="nome">
+      <input id="last_name" type="text" class="validate" name="nome" required>
       <label for="last_name">Nome Completo</label>
     </div>
 				
     <div class="input-field col s6">
-      <input id="last_name" type="text" class="validate" name="assunto">
+      <input id="last_name" type="text" class="validate" name="assunto" required>
       <label for="last_name">Assunto do E-mail</label>
     </div>
 
 		<div class="input-field col s6">
-      <input id="last_name" type="email" class="validate" name="email">
+      <input id="last_name" type="email" class="validate" name="email" required>
       <label for="last_name">Seu Email</label>
     </div>
 				
     <div class="input-field col s12">
-      <textarea id="textarea1" class="materialize-textarea" name="mensagem"></textarea>
+      <textarea id="textarea1" class="materialize-textarea" name="mensagem" required></textarea>
       <label for="textarea1">Deixe-nos uma Mensagem</label>
     </div>
 
   <center>
-    <button class="btn waves-effect waves-light" type="submit" name="btn-enviar" style="background-color: #64DD17;">Enviar
+    <button class="btn waves-effect waves-light cor-btn" type="submit" name="btn-enviar">Enviar
       <i class="material-icons right">send</i>
     </button>
 
-    <button class="btn waves-effect waves-light" type="reset" name="action" style="background-color: #64DD17;">Limpar
+    <button class="btn waves-effect waves-light cor-btn" type="reset" name="action">Limpar
       <i class="material-icons right">cached</i>
     </button>
   </center> <br>
 	</form>
+  
 </div>
 
 

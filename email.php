@@ -1,4 +1,4 @@
-<?php session_start();  ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +19,6 @@
 	include "menu.php";
 
 ?>
-
 
 <?php
 
@@ -51,21 +50,19 @@
 
 		if ($verificador == 3){
 			mail("calistosoftwares@gmail.com", "Assunto: ".$assunto.", ".$nome, $mensagem, $email);
-			$verificador = 0;
-
 
 			?>
 
   				<div class="row">
-    				<div class="col s12 m6" style="margin-left: 25%; margin-top: 2%;">
+    				<div class="col s12 m12 l12 divp-email">
       					<div class="card light-green accent-4">
         					<div class="card-content white-text">
-          						<span class="card-title">Email enviado com sucesso!</span>
+          						<span class="card-title flow-text">Email enviado com sucesso!</span>
           						<p>Assim que possível, vamos analisar sua mensagem e responder o mais rápido possível!</p>
         					</div>
         					<div class="card-action">
-          						<a href="index.php"><span style="color: white;">Voltar ao início</span></a>
-          						<a href="contato.php"><span style="color: white;">Enviar outro email</span></a>
+          						<a href="index.php"><span class="flow-text cor-span">Voltar ao início</span></a>
+          						<a href="contato.php"><span class="flow-text cor-span">Enviar outro email</span></a>
        	 					</div>
       					</div>
    		 			</div>
@@ -73,16 +70,31 @@
 
   		<?php
 
-
 		}else{
-			echo "<p class='erro-email'>Email não enviado, preencha todos os campos corretamente!</p>";
-			echo"<center><a class=\"btn-floating btn-large light-green accent-4 pulse\" href=\"contato.php\"><i class=\"material-icons\">arrow_back</i></a></center><br><br>";
+			?>
+
+			<p class='erro-email'>Email não enviado! Por favor, tente mais tarde!</p>
+			<center>
+				<a class="btn-floating btn-large light-green accent-4 pulse" href="contato.php">
+					<i class="material-icons">arrow_back</i>
+				</a>
+			</center>
+
+			<br>
+			<br>
+
+			<?php
 		}
 
 	}else{
-		echo "<script> alert('Preencha todos os campos!'); window.location.href = 'contato.php'; </script>";
-	}
+		?>
 
+		<script> 
+			alert('Preencha todos os campos!'); window.location.href = 'contato.php'; 
+		</script>
+
+		<?php
+	}
 
 ?>
 
@@ -92,7 +104,6 @@
 	include "rodape.php";
 
 ?>
-
 
 </body>
 </html>

@@ -20,9 +20,10 @@ if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
 		$_SESSION['id'] = $idB;
 		header("Location: acesse-conta.php");
 	}else{
-			header("Location: login.php?erro=1&email=$email");
+		header("Location: login.php?erro=1&email=$email");
 	}
 }else{
   header("Location: login.php?erro=2");
 }
+
 ?>

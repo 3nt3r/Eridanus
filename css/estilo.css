@@ -1,60 +1,39 @@
+/* ====================== TODAS AS PAGINAS ============================ */
+
 body{
 	background-color: #fafafa;
 }
 
-.card{
-	text-align: center;
-}
-
-.corFundoMenu{
-	background-color: white;
-}
-
-#foto-menu{
-	padding-bottom: 20px;
-	padding-top: 20px;
-	position: relative;
-}
-
-#foto-menu-mobile{
-  	padding: 20px;
-  	width: 90%;
-  	height: 15%;
-}
-
-#login-cadastro tr td{
-	border: 1px solid #D3D3D3;
-	box-shadow: -1px -1px 2px #D3D3D3;
-	font-size: 1em;
-	text-align: center;
-	font-weight: bolder;
-}
-
-#login-cadastro{
-	position: absolute;
-	width: 10%;
-	height: 12%;
-	left: 77%;
-	top: 7%;
-}
-
-.tela-login{
-	left: 50%;
-	margin-right: 20%;
-	position: relative;
-}
-
-.menu{
-	text-align: center;
-}
-
 .titulo-pagina{
 	text-align: center;
-	color: #64DD17;
-	font-weight: bolder;
+	color: #64DD17 !important;
+	font-weight: bolder !important;
 	padding-top: 13px;
 	padding-bottom: 13px;
 	font-size: 2.2em;
+}
+
+/* ====================== PAGINA INDEX ============================ */
+
+.carousel-pgindex{
+	margin-top: 1em;
+}
+
+.carousel-pgindex p{
+	font-size: 1.1em; 
+	margin-top: 20%; 
+	text-shadow: 0.1em 0.1em #333; 
+	background-color: rgba(100, 221, 23, .7);
+}
+
+.carousel-pgindex div{
+	background-repeat: no-repeat; 
+	background-size: 100% 100%;
+}
+
+.btn-centro{
+	color: #64DD17 !important; 
+	font-weight: bolder;
 }
 
 /* ====================== PAGINA RESIDUOS ============================ */
@@ -62,7 +41,7 @@ body{
 #texto-residuos{
 	margin-left: 70px;
 	margin-right: 70px;
-	text-indent: 50px;
+	text-indent: 40px;
 }
 
 #fonte-residuos{
@@ -79,6 +58,184 @@ body{
 	padding: 15px;
 }
 
+.fonte-fim{
+	margin-bottom: 45px;
+}
+
+/* ====================== PAGINA CONTATO E EMAIL ============================ */
+
+.cor-btn{
+	background-color: #64DD17 !important;
+}
+
+.divp-email{
+	margin-left: 25%; 
+	margin-top: 2%;
+}
+
+.cor-span{
+	color: white !important;
+}
+
+/* ====================== MENU DA PAGINA ============================ */
+
+.tabela-login{
+	text-decoration: none !important; 
+	color: #64DD17 !important;
+}
+
+#login-cadastro{
+	position: absolute;
+	width: 10%;
+	height: 12%;
+	left: 77%;
+	top: 10%;
+}
+
+.menu-login{
+	background-color: #64dd17 !important;
+}
+
+.cor-menu-usuario{
+	color: #64dd17 !important;
+}
+
+.menu-dispositivo-movel{
+	background-color: #64DD17; 
+	margin-bottom: .3em;
+}
+
+.login-dispositivo-movel{
+	color: #64DD17 !important;
+	border: 1px solid #D3D3D3 !important; 
+	box-shadow: -1px -1px 2px #D3D3D3 !important;
+}
+
+.cadastre-se-dispositivo-m{
+	margin-bottom: 30px !important; 
+	color: #64DD17 !important; 
+	border: 1px solid #D3D3D3 !important; 
+	box-shadow: -1px -1px 2px #D3D3D3 !important;
+}
+
+#foto-menu{
+	padding-bottom: 20px;
+	padding-top: 20px;
+	position: relative;
+}
+
+#foto-menu-mobile{
+  	padding: 20px;
+  	width: 90%;
+  	height: 15%;
+}
+
+.nav-wrapper li{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+/* ====================== PAGINA LOGIN USUARIO ============================ */
+
+.div-principal-login{
+	padding-bottom: 1.5em;
+}
+
+.div-principal-login h3{
+	margin-left: 18%; 
+	text-align: left;
+}
+
+/* ====================== PAGINA CADASTRE-SE ============================ */
+
+.titulo-pagina-cadastre-se{
+	margin-left: 17%; 
+	text-align: left;
+}
+
+/* ====================== RODAPE ======================================= */
+
+.frase-rodape{
+	font-size: 12px;
+}
+
+/* ====================== PAGINA DO USUARIO ============================ */
+
+.menu-usuario{
+	background-color: #64dd17;
+	margin-top: 1.1em;
+}
+
+.menu-usuario a{
+	font-size: 1.1em;
+	color: white;
+	font-weight: bolder;
+}
+
+.menu-usuario a:hover{
+	color: #82877f;
+}
+
+.menu-usuario i{
+	margin-right: 5px;
+}
+
+.ola-usuario{
+	color: white;
+}
+
+.ola-usuario i{
+	margin-right: 5px;
+}
+
+/* ============================================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .erro{
 	color: red;
 	display: inline;
@@ -94,12 +251,43 @@ body{
 	display: none;
 }
 
-/* ====================== LINKS MENU ============================ */
-
-.nav-wrapper li{
-	padding-left: 25px;
-	padding-right: 25px;
+.card{
+	text-align: center;
 }
+
+.corFundoMenu{
+	background-color: white;
+}
+
+
+
+#login-cadastro tr td{
+	border: 1px solid #D3D3D3;
+	box-shadow: -1px -1px 2px #D3D3D3;
+	font-size: 1em;
+	text-align: center;
+	font-weight: bolder;
+}
+
+
+
+.tela-login{
+	left: 50%;
+	margin-right: 20%;
+	position: relative;
+}
+
+.menu{
+	text-align: center;
+}
+
+
+
+
+
+
+
+
 
 /* ====================== PAGINA CONTATO ============================ */
 
@@ -120,28 +308,7 @@ body{
 	text-shadow: 1px .5px #64DD17;
 }
 
-/* ====================== PAGINA DO USUARIO ============================ */
 
-.menu-usuario{
-	height: 100%;
-	width: 100%;
-	padding: 0px;
-	background-color: #64dd17;
-}
-
-.menu-usuario a{
-	font-size: 1.1em;
-	color: white;
-	font-weight: bolder;
-}
-
-.menu-usuario a:hover{
-	color: #82877f;
-}
-
-.menu-usuario i{
-	margin-right: 5px;
-}
 
 /* ====================== LINKS USUARIO MENU ============================ */
 
@@ -152,3 +319,5 @@ body{
 	left: 77%;
 	top: 10%;
 }
+
+
