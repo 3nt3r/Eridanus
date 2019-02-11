@@ -52,7 +52,7 @@
 				<td> <a href="informacoes-usuario.php" id="btnAlt"> <span> <i class="material-icons">person</i> Informações do Usuário </span> </a> </td>
 			</tr>
 			<tr>
-				<td> <a href="#"> <span> <i class="material-icons">near_me</i> Enviar Projeto </span> </a> </td>
+				<td> <a href="#EnviarProjeto" id="bntEnviarProj"> <span> <i class="material-icons">near_me</i> Enviar Projeto </span> </a> </td>
 			</tr>
 			<tr>
 				<td> <a href="#"> <span> <i class="material-icons">edit</i> Gerenciar Projeto </span> </a> </td>
@@ -72,9 +72,9 @@
 
 	<div class="col s9">
  		<div id="conteudo" class="col s9 l10 m9" style="margin-left: 30px; height: auto;">
- 			
+
  			<h5 class="titulo-pagina flow-text"> Painel de Controle do Usuário </h5>
- 			
+
  		</div>
 	</div>
 

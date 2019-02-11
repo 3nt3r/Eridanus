@@ -6,6 +6,12 @@ $(document).ready(function(){
     $("#conteudo").html(data);
   })
   });
+  $('#bntEnviarProj').click(function(event){
+  event.preventDefault();
+  $.get("enviarproj.php", function(data){
+  $("#conteudo").html(data);
+});
+});
   $('#btncads').click(function(event){
     event.preventDefault();
     $.get("alterarsenha.php", function(data){
