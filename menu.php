@@ -6,7 +6,7 @@
 <?php
 
 	if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){
-    ?>  
+    ?>
 
     <table id="login-cadastro" class="hide-on-med-and-down">
       <tr>
@@ -25,7 +25,7 @@
 
   <div class="login-cadastro hide-on-med-and-down">
 
-    <a class='dropdown-button btn menu-login' id="1" href='#' data-activates='dropdown1'> Olá, <?php echo $_SESSION['nome']; ?>! </a>
+    <a class='dropdown-button btn menu-login' id="1" style="width: 200px;" href='#' data-activates='dropdown1'> Olá, <?php echo $_SESSION['nome']; ?>! </a>
 
     <ul id='dropdown1' class='dropdown-content'>
       <li><a href="acesse-conta.php" class="cor-menu-usuario"> Meu Painel </a></li>
@@ -76,9 +76,9 @@
 
         <img src="imagens/eridanus-menu.png" id="foto-menu-mobile" class="responsive-img">
 
-				<?php 
+				<?php
 
-          if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){ 
+          if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){
         ?>
 
 				  <li><a href="login.php" class="login-dispositivo-movel">Entre</a></li>

@@ -27,6 +27,8 @@ $prepare->fetch();
 
   <div class="row">
   	<h5 class="titulo-pagina flow-text"> Informações do Usuário </h5>
+    <br>
+    <br>
     <div class="input-field col s6">
       <input id="first_name" type="text" class="validate" disabled value="<?php echo $nome; ?>"  name="nome_cad">
       <label for="first_name">Nome:</label>

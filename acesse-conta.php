@@ -55,10 +55,10 @@
 				<td> <a href="enviarproj.php" id="bntEnviarProj"> <span> <i class="material-icons">near_me</i> Enviar Projeto </span> </a> </td>
 			</tr>
 			<tr>
-				<td> <a href="#"> <span> <i class="material-icons">edit</i> Gerenciar Projeto </span> </a> </td>
+				<td> <a href="#EditarProjetos" id="btnEditarProj"> <span> <i class="material-icons">edit</i> Gerenciar Projeto </span> </a> </td>
 			</tr>
 			<tr>
-				<td> <a href="#"> <span> <i class="material-icons">near_me</i> Enviar Objeto </span> </a> </td>
+				<td> <a href="#EnviarObjeto" id="bntEnviarObjeto"> <span> <i class="material-icons">near_me</i> Enviar Objeto </span> </a> </td>
 			</tr>
 			<tr>
 				<td> <a href="#"> <span> <i class="material-icons">edit</i> Gerenciar Objeto </span> </a> </td>

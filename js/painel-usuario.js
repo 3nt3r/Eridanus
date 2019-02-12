@@ -8,7 +8,12 @@ $(document).ready(function(){
   })
   });
 
-
+  $('#bntEnviarObjeto').click(function(event){
+  event.preventDefault();
+  $.get("enviarObjeto.php", function(data){
+  $("#conteudo").html(data);
+});
+});
 
 
   $('#bntEnviarProj').click(function(event){
@@ -18,7 +23,12 @@ $(document).ready(function(){
 });
 });
 
-
+$('#btnEditarProj').click(function(event){
+    event.preventDefault();
+    $.get("editarproj.php", function(data){
+    $("#conteudo").html(data);
+  });
+});
 
 
   $('#btncads').click(function(event){
