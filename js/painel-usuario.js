@@ -15,17 +15,30 @@ $(document).ready(function(){
 });
 });
 
-
   $('#bntEnviarProj').click(function(event){
   event.preventDefault();
   $.get("enviarproj.php", function(data){
   $("#conteudo").html(data);
 });
 });
-
-$('#btnEditarProj').click(function(event){
+$('.btnEditarProj').click(function(){
+  event.preventDefault();
+    var dado = $(this).attr("data");
+    $.post("editarproj.php", "data="+dado,function(data){
+    $("#conteudo").html(data);
+  });
+});
+$('.btnExcluirProj').click(function(){
+    var dado = $(this).attr("data");
+    $.post("excluirproj.php", "data="+dado,function(data){
+      $.get("listarproj.php", function(data){
+      $("#conteudo").html(data);
+    });
+  });
+});
+$('#btnListarProj').click(function(event){
     event.preventDefault();
-    $.get("editarproj.php", function(data){
+    $.get("listarproj.php", function(data){
     $("#conteudo").html(data);
   });
 });
@@ -117,6 +130,6 @@ $('#btnEditarProj').click(function(event){
 
 
 
-
+$('.modal').modal();
 
 });

@@ -20,19 +20,19 @@ body{
 }
 
 .carousel-pgindex p{
-	font-size: 1.1em; 
-	margin-top: 20%; 
-	text-shadow: 0.1em 0.1em #333; 
+	font-size: 1.1em;
+	margin-top: 20%;
+	text-shadow: 0.1em 0.1em #333;
 	background-color: rgba(100, 221, 23, .7);
 }
 
 .carousel-pgindex div{
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
 .btn-centro{
-	color: #64DD17 !important; 
+	color: #64DD17 !important;
 	font-weight: bolder;
 }
 
@@ -69,7 +69,7 @@ body{
 }
 
 .divp-email{
-	margin-left: 25%; 
+	margin-left: 25%;
 	margin-top: 2%;
 }
 
@@ -80,7 +80,7 @@ body{
 /* ====================== MENU DA PAGINA ============================ */
 
 .tabela-login{
-	text-decoration: none !important; 
+	text-decoration: none !important;
 	color: #64DD17 !important;
 }
 
@@ -101,20 +101,20 @@ body{
 }
 
 .menu-dispositivo-movel{
-	background-color: #64DD17; 
+	background-color: #64DD17;
 	margin-bottom: .3em;
 }
 
 .login-dispositivo-movel{
 	color: #64DD17 !important;
-	border: 1px solid #D3D3D3 !important; 
+	border: 1px solid #D3D3D3 !important;
 	box-shadow: -1px -1px 2px #D3D3D3 !important;
 }
 
 .cadastre-se-dispositivo-m{
-	margin-bottom: 30px !important; 
-	color: #64DD17 !important; 
-	border: 1px solid #D3D3D3 !important; 
+	margin-bottom: 30px !important;
+	color: #64DD17 !important;
+	border: 1px solid #D3D3D3 !important;
 	box-shadow: -1px -1px 2px #D3D3D3 !important;
 }
 
@@ -142,14 +142,14 @@ body{
 }
 
 .div-principal-login h3{
-	margin-left: 18%; 
+	margin-left: 18%;
 	text-align: left;
 }
 
 /* ====================== PAGINA CADASTRE-SE ============================ */
 
 .titulo-pagina-cadastre-se{
-	margin-left: 17%; 
+	margin-left: 17%;
 	text-align: left;
 }
 
@@ -187,7 +187,10 @@ body{
 .ola-usuario i{
 	margin-right: 5px;
 }
-
+td button{
+	background-color: inherit;
+	border: none;
+}
 /* ============================================================ */
 
 
@@ -319,5 +322,3 @@ body{
 	left: 77%;
 	top: 10%;
 }
-
-

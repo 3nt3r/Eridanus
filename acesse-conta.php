@@ -29,6 +29,7 @@
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/painel-usuario.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		if($('#linha').height() < $('#conteudo').height())
@@ -55,7 +56,7 @@
 				<td> <a href="enviarproj.php" id="bntEnviarProj"> <span> <i class="material-icons">near_me</i> Enviar Projeto </span> </a> </td>
 			</tr>
 			<tr>
-				<td> <a href="#EditarProjetos" id="btnEditarProj"> <span> <i class="material-icons">edit</i> Gerenciar Projeto </span> </a> </td>
+				<td> <a href="#EditarProjetos" id="btnListarProj"> <span> <i class="material-icons">edit</i> Gerenciar Projeto </span> </a> </td>
 			</tr>
 			<tr>
 				<td> <a href="#EnviarObjeto" id="bntEnviarObjeto"> <span> <i class="material-icons">near_me</i> Enviar Objeto </span> </a> </td>

@@ -13,7 +13,7 @@
   $titulo = $_POST["titulo"];
   $autor = $_SESSION['nome'];
   $descricao = $_POST["descricao"];
-  $status = 'Em avaliação';
+  $status = 'em avaliacao';
   $arquivo = $_FILES["imagem"];
   $nome = $arquivo["name"];
   $tmp = $arquivo["tmp_name"];
