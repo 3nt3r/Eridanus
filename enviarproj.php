@@ -1,26 +1,32 @@
 <?php
+
 session_start();
 if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
   header("Location: login.php");
 }
+
 ?>
+
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/materialize.js"></script>
 <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-<div class="row" style="margin-top: 10vw;">
+
+<div class="row" style="margin-top: 3.5vw;">
+
+  <h5 class="titulo-pagina flow-text"> Preencha todos os campos para enviar seu projeto! </h5>
+
   <form id="enviarp" action="cadastraproj.php" method="post" enctype="multipart/form-data">
+
     <div class="input-field col s6">
       <input id="titulo" type="text" class="validate" name="titulo">
       <label for="titulo">Titulo:</label>
     </div>
-    <div class="input-field col s6">
-      <input id="autor" type="text" class="validate" name="autor">
-      <label for="autor">Autor:</label>
-    </div>
-    <div class="input-field col s8">
-      <input id="descricao" type="text" class="validate" name="descricao">
-      <label for="descricao">Descrição:</label>
-    </div>
+
+    <div class="input-field col s12">
+      <textarea id="descricao" class="materialize-textarea validate" name="descricao"></textarea>
+      <label for="descricao">Descrição do Projeto:</label>
+    </div> 
+
     <div class="file-field input-field col s8">
       <div class="btn light-green accent-4">
         <span>Imagem</span>
@@ -30,10 +36,22 @@ if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
         <input class="file-path validate" type="text">
       </div>
     </div>
+
+    <div class="input-field col s12">
+      <textarea id="materiais" class="materialize-textarea validate" name="materiais"></textarea>
+      <label for="materiais">Materiais Necessários:</label>
+    </div>   
+
+    <div class="input-field col s6">
+      <input id="video" type="text" class="validate" name="video">
+      <label for="video">Link do Vídeo (Youtube):</label>
+    </div>
+
     <div class="file-field input-field col s8" style="margin-top: 60px;">
-    <button class="btn btn-small light-green accent-4" id="btncad" type="submit" name="action">Enviar
- <i class="material-icons right">send</i>
-</button>
-</div>
+      <button class="btn btn-small light-green accent-4" id="btncad" type="submit" name="action"> Enviar <i class="material-icons right">send</i>
+      </button>
+    </div>
+
   </form>
+
 </div>

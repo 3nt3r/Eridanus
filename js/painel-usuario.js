@@ -1,23 +1,36 @@
 
 $(document).ready(function(){
+
   $('#btnAlt').click(function(event){
     event.preventDefault();
     $.get("alterarinfo.php", function(data){
     $("#conteudo").html(data);
   })
   });
+
+
+
+
   $('#bntEnviarProj').click(function(event){
   event.preventDefault();
   $.get("enviarproj.php", function(data){
   $("#conteudo").html(data);
 });
 });
+
+
+
+
   $('#btncads').click(function(event){
     event.preventDefault();
     $.get("alterarsenha.php", function(data){
     $("#conteudo").html(data);
   })
   });
+
+
+
+
   $('#btncad').click(function(){
     $(this).hide();
     $('#btncads').hide();
@@ -26,6 +39,10 @@ $(document).ready(function(){
     $('#last_name').removeAttr("disabled");
     $('#email').removeAttr("disabled");
   });
+
+
+
+
   $('#alterar').submit(function(){
     var dados = $(this).serialize();
     $.ajax({
@@ -50,6 +67,12 @@ $(document).ready(function(){
     });
     return false;
   });
+
+
+
+
+
+
   $('#alterarSenha').submit(function(){
     var dados = $(this).serialize();
     $('#erroSenhaC').html("");
@@ -73,11 +96,17 @@ $(document).ready(function(){
       }else{
         alert("erro");
       }
-
     })
     .fail(function(){
       alert('ok');
     });
     return false;
   });
+
+
+
+
+
+
+
 });

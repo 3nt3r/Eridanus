@@ -52,7 +52,7 @@
 				<td> <a href="informacoes-usuario.php" id="btnAlt"> <span> <i class="material-icons">person</i> Informações do Usuário </span> </a> </td>
 			</tr>
 			<tr>
-				<td> <a href="#EnviarProjeto" id="bntEnviarProj"> <span> <i class="material-icons">near_me</i> Enviar Projeto </span> </a> </td>
+				<td> <a href="enviarproj.php" id="bntEnviarProj"> <span> <i class="material-icons">near_me</i> Enviar Projeto </span> </a> </td>
 			</tr>
 			<tr>
 				<td> <a href="#"> <span> <i class="material-icons">edit</i> Gerenciar Projeto </span> </a> </td>
