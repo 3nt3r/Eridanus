@@ -31,6 +31,8 @@
 				$prepare = $banco->prepare($inserir);
 				$prepare->bind_param("ssss", $nome, $sobrenome, $email, $senha);
 				$prepare->execute();
+				mkdir("imagens-projetos/".$nome, 0777);
+				mkdir("imagens-objetos/".$nome, 0777);
 				echo "<h3 class=\"teat-text titulo-pagina\">Cadastro efetuado com sucesso!</h3>
 				<i class=\"material-icons large\" style=\"color: rgb(100,221,23);\">check_circle_outline</i>";
 			}

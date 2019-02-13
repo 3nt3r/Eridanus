@@ -1,5 +1,4 @@
 <?php
-// Lembrar de criar uma pasta para cada usuario, pois eles podem usar o mesmo nome de imagem.
 session_start();
 if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
   header("Location: login.php");

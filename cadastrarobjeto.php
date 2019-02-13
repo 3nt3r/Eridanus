@@ -20,8 +20,8 @@
 
   $extensao = explode(".", $nome);
   $ext = end($extensao);
-  $novoNome = md5($nome).".$ext";
-  move_uploaded_file($tmp, "imagens-objetos/".$novoNome);
+  $novoNome = rand(12233, 999999).".$ext";
+  move_uploaded_file($tmp, "imagens-objetos/".$_SESSION['nome']."/".$novoNome);
 
   $sql = "insert into objeto(nome, descricao, data_publicacao, status_atual, id_usuario, imagem) value(?, ?, ?, ?, ?, ?)";
   $prepare = $banco->prepare($sql);

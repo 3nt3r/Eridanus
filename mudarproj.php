@@ -19,7 +19,7 @@
       $extensao = explode(".", $nome);
       $ext = end($extensao);
       $novoNome = md5($nome).".$ext";
-      move_uploaded_file($tmp, "imagens-projetos/".$novoNome);
+      move_uploaded_file($tmp, "imagens-projetos/".$_SESSION['nome']."/".$novoNome);
       $sql = "update projeto set titulo = ?, descricao = ?, status_atual = ?, materiais = ?, video = ?, imagem = ? where codigo = ?";
       $prepare = $banco->prepare($sql);
       $prepare->bind_param("ssssssi", $titulo, $descricao, $status, $materiais, $video, $novoNome,$id_proj);
