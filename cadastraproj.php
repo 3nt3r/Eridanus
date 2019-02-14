@@ -19,8 +19,9 @@
   $tmp = $arquivo["tmp_name"];
   $materiais = $_POST['materiais'];
   $data_atual = date("Y-m-d");
-  $video = $_POST['video'];
 
+  $video = explode("=", $_POST['video']);
+  $video_certo = "https://youtube.com/embed/".end($video);
   $extensao = explode(".", $nome);
   $ext = end($extensao);
   $novoNome = rand(12233, 999999).".$ext";
@@ -28,7 +29,7 @@
 
   $sql = "insert into projeto(titulo, autor, descricao, data_publicacao, status_atual, id_usuario, imagem, materiais, video) value(?, ?, ?, ?, ?, ?,?,?,?)";
   $prepare = $banco->prepare($sql);
-  $prepare->bind_param("sssssisss", $titulo, $autor, $descricao, $data_atual, $status, $id, $novoNome, $materiais, $video);
+  $prepare->bind_param("sssssisss", $titulo, $autor, $descricao, $data_atual, $status, $id, $novoNome, $materiais, $video_certo);
   $prepare->execute();
   $banco->close();
   echo "<script>alert('Projeto cadastrado com sucesso!'); window.location.href = 'acesse-conta.php';</script>"

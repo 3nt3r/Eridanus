@@ -61,7 +61,18 @@ $(document).ready(function(){
       $("#conteudo").html(data);
     });
   });
-
+  $('#bntTodosProj').click(function(event){
+    event.preventDefault();
+    $.get("todosproj.php", function(data){
+      $("#conteudo").html(data);
+    });
+  });
+  $('#bntTodosObje').click(function(event){
+    event.preventDefault();
+    $.get("todosobje.php", function(data){
+      $("#conteudo").html(data);
+    });
+  });
   $('#btncads').click(function(event){
     event.preventDefault();
     $.get("alterarsenha.php", function(data){
@@ -74,8 +85,28 @@ $(document).ready(function(){
     $.get("gerenciarobjetos.php", function(data){
       $("#conteudo").html(data);
     })
-  })
-
+  });
+  $('.btnMudarStatus').click(function(){
+    event.preventDefault();
+    var dado = $(this).attr("data");
+    var status = $(this).attr("status");
+    $.post("mudarstatusproj.php", "data="+dado+"&status="+status,function(data){
+      $.get("todosproj.php", function(data){
+         $("#conteudo").html(data);
+       });
+    });
+  });
+  $('.btnMudarStatusObje').click(function(){
+    event.preventDefault();
+    var dado = $(this).attr("data");
+    var status = $(this).attr("status");
+    $.post("mudarstatusobje.php", "data="+dado+"&status="+status,function(data){
+      $("#conteudo").html(data);
+      $.get("todosobje.php", function(data){
+         $("#conteudo").html(data);
+       });
+    });
+  });
   $('#btncad').click(function(){
     $(this).hide();
     $('#btncads').hide();

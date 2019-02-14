@@ -4,7 +4,7 @@ include "conexao.php";
 
 if(isset($_POST['email-entrar_admin']) && isset($_POST['senha-entrar_admin'])){
 	$email = trim(htmlspecialchars($_POST['email-entrar_admin']));
-  	$senha = trim(htmlspecialchars($_POST['senha-entrar_admin']));
+  $senha = md5(trim(htmlspecialchars($_POST['senha-entrar_admin'])));
 	$verifica = 'select nome, email, senha from administrador where email = ? AND senha = ?';
 	$prepare = $banco->prepare($verifica);
 	$prepare->bind_param("ss", $email, $senha);
