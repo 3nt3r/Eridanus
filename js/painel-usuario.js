@@ -1,58 +1,80 @@
-
 $(document).ready(function(){
 
   $('#btnAlt').click(function(event){
     event.preventDefault();
     $.get("alterarinfo.php", function(data){
-    $("#conteudo").html(data);
-  })
+      $("#conteudo").html(data);
+    })
   });
 
   $('#bntEnviarObjeto').click(function(event){
-  event.preventDefault();
-  $.get("enviarObjeto.php", function(data){
-  $("#conteudo").html(data);
-});
-});
-
-  $('#bntEnviarProj').click(function(event){
-  event.preventDefault();
-  $.get("enviarproj.php", function(data){
-  $("#conteudo").html(data);
-});
-});
-$('.btnEditarProj').click(function(){
-  event.preventDefault();
-    var dado = $(this).attr("data");
-    $.post("editarproj.php", "data="+dado,function(data){
-    $("#conteudo").html(data);
-  });
-});
-$('.btnExcluirProj').click(function(){
-    var dado = $(this).attr("data");
-    $.post("excluirproj.php", "data="+dado,function(data){
-      $.get("listarproj.php", function(data){
+    event.preventDefault();
+    $.get("enviarObjeto.php", function(data){
       $("#conteudo").html(data);
     });
   });
-});
-$('#btnListarProj').click(function(event){
+
+  $('#bntEnviarProj').click(function(event){
+    event.preventDefault();
+    $.get("enviarproj.php", function(data){
+      $("#conteudo").html(data);
+    });
+  });
+
+  $('.btnEditarProj').click(function(){
+    event.preventDefault();
+    var dado = $(this).attr("data");
+    $.post("editarproj.php", "data="+dado,function(data){
+      $("#conteudo").html(data);
+    });
+  });
+
+  $('.btnEditarObje').click(function(){
+    event.preventDefault();
+    var dado = $(this).attr("data");
+    $.post("editarobje.php", "data="+dado,function(data){
+      $("#conteudo").html(data);
+    });
+  });
+
+  $('.btnExcluirProj').click(function(){
+    var dado = $(this).attr("data");
+    $.post("excluirproj.php", "data="+dado,function(data){
+      $.get("listarproj.php", function(data){
+        $("#conteudo").html(data);
+      });
+    });
+  });
+
+  $('.btnExcluirObje').click(function(){
+    var dado = $(this).attr("data");
+    $.post("excluirobje.php", "data="+dado,function(data){
+      $.get("gerenciarobjetos.php", function(data){
+        $("#conteudo").html(data);
+      });
+    });
+  });
+
+  $('#btnListarProj').click(function(event){
     event.preventDefault();
     $.get("listarproj.php", function(data){
-    $("#conteudo").html(data);
+      $("#conteudo").html(data);
+    });
   });
-});
-
 
   $('#btncads').click(function(event){
     event.preventDefault();
     $.get("alterarsenha.php", function(data){
-    $("#conteudo").html(data);
-  })
+      $("#conteudo").html(data);
+    })
   });
 
-
-
+  $('#gerenciarobjetos').click(function(event){
+    event.preventDefault();
+    $.get("gerenciarobjetos.php", function(data){
+      $("#conteudo").html(data);
+    })
+  })
 
   $('#btncad').click(function(){
     $(this).hide();
@@ -63,16 +85,13 @@ $('#btnListarProj').click(function(event){
     $('#email').removeAttr("disabled");
   });
 
-
-
-
   $('#alterar').submit(function(){
     var dados = $(this).serialize();
     $.ajax({
       url: "altera.php",
       type: "post",
       data: dados,
-      beforeSend: function(){ $('#preloader').css('display','inline'); $('#btnsalvar').addClass('disabled');} //bagulho de carregamento
+      beforeSend: function(){ $('#preloader').css('display','inline'); $('#btnsalvar').addClass('disabled');}
     })
     .done(function(data){
       $('#preloader').hide();
@@ -91,11 +110,6 @@ $('#btnListarProj').click(function(event){
     return false;
   });
 
-
-
-
-
-
   $('#alterarSenha').submit(function(){
     var dados = $(this).serialize();
     $('#erroSenhaC').html("");
@@ -104,7 +118,7 @@ $('#btnListarProj').click(function(event){
       url: "altera.php",
       type: "post",
       data: dados,
-      beforeSend: function(){$('#preloader').css('display','inline'); $('#alteraSenha').addClass('disabled'); } //bagulho de carregamento
+      beforeSend: function(){$('#preloader').css('display','inline'); $('#alteraSenha').addClass('disabled'); }
     })
     .done(function(data){
       $('#preloader').hide();
@@ -125,10 +139,6 @@ $('#btnListarProj').click(function(event){
     });
     return false;
   });
-
-
-
-
 
 $('.modal').modal();
 

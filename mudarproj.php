@@ -29,8 +29,10 @@
       $prepare->bind_param("sssssi", $titulo, $descricao, $status, $materiais, $video, $id_proj);
     }
     $prepare->execute();
+    $banco->close();
     echo "<script>alert('Projeto atualizado com sucesso!'); window.location.href = 'acesse-conta.php';</script>";
   }else{
+    $banco->close();
     header("Location: acesse-conta.php");
   }
 ?>

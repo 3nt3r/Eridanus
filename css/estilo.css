@@ -191,6 +191,11 @@ td button{
 	background-color: inherit;
 	border: none;
 }
+
+.distancia-topo-usuario{
+	margin-top: 3vw;
+}
+
 /* ============================================================ */
 
 

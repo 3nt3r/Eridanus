@@ -62,14 +62,13 @@
 				<td> <a href="#EnviarObjeto" id="bntEnviarObjeto"> <span> <i class="material-icons">near_me</i> Enviar Objeto </span> </a> </td>
 			</tr>
 			<tr>
-				<td> <a href="#"> <span> <i class="material-icons">edit</i> Gerenciar Objeto </span> </a> </td>
+				<td> <a href="#" id="gerenciarobjetos"> <span> <i class="material-icons">edit</i> Gerenciar Objeto </span> </a> </td>
 			</tr>
 			<tr>
 				<td> <a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> </td>
 			</tr>
 		</table>
 	</div>
-
 
 	<div class="col s9">
  		<div id="conteudo" class="col s9 l10 m9" style="margin-left: 30px; height: auto;">

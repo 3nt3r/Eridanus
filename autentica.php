@@ -18,11 +18,14 @@ if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
 		$_SESSION['senha'] = $senhaB;
 		$_SESSION['nome'] = $nomeB;
 		$_SESSION['id'] = $idB;
+		$banco->close();
 		header("Location: acesse-conta.php");
 	}else{
+		$banco->close();
 		header("Location: login.php?erro=1&email=$email");
 	}
 }else{
+	$banco->close();
   header("Location: login.php?erro=2");
 }
 

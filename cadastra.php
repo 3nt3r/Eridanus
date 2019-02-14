@@ -25,6 +25,7 @@
 				$prepare->fetch();
 				if($emailB == $email){
 					echo "email";
+					$banco->close();
 					exit;
 				}else{
 				$inserir = "INSERT INTO usuario (nome, sobrenome, email, senha) VALUES (?, ?, ?, ?)";
@@ -35,17 +36,21 @@
 				mkdir("imagens-objetos/".$nome, 0777);
 				echo "<h3 class=\"teat-text titulo-pagina\">Cadastro efetuado com sucesso!</h3>
 				<i class=\"material-icons large\" style=\"color: rgb(100,221,23);\">check_circle_outline</i>";
+				$banco->close();
 			}
 			}else{
 				echo "senha1";
+				$banco->close();
 				exit;
 			}
 		}else{
 			echo "form";
+			$banco->close();
 			exit;
 		}
 	}else{
 		echo "form";
+		$banco->close();
 		exit;
 	}
 ?>

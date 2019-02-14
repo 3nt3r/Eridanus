@@ -3,7 +3,7 @@
 <script type="text/javascript" src="js/painel-usuario.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-<div class="row" style="margin-top: 10vw;">
+<div class="row distancia-topo-usuario">
 
 <h5 class="titulo-pagina flow-text"> Alterar Senha </h5>
 

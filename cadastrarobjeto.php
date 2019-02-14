@@ -12,7 +12,7 @@
   $id = (int) $_SESSION['id'];
   $nomeObj = $_POST["nome"];
   $descricao = $_POST["descricao"];
-  $status = 'Em avaliação';
+  $status = 'em avaliacao';
   $arquivo = $_FILES["imagem"];
   $nome = $arquivo["name"];
   $tmp = $arquivo["tmp_name"];
@@ -27,6 +27,7 @@
   $prepare = $banco->prepare($sql);
   $prepare->bind_param("ssssis", $nomeObj, $descricao, $data_atual, $status, $id, $novoNome);
   $prepare->execute();
+  $banco->close();
   echo "<script>alert('Objeto cadastrado com sucesso!'); window.location.href = 'acesse-conta.php';</script>"
 
 ?>

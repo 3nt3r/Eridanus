@@ -15,14 +15,13 @@ $prepare->bind_result($nome, $sobrenome, $email, $senha);
 $prepare->execute();
 $prepare->store_result();
 $prepare->fetch();
-
 ?>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/materialize.js"></script>
 <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 
-<div class="row" style="margin-top: 10vw;">
+<div class="row distancia-topo-usuario">
 <form id="alterar">
 
   <div class="row">

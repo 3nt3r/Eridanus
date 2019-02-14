@@ -35,11 +35,14 @@
           session_destroy();
       }else{
         echo "As senhas não coincidem!";
+        $banco->close();
       }
     }else{
       echo "Senha incorreta!";
+      $banco->close();
     }
   }else{
       header("Location: login.php");
+      $banco->close();
   }
 ?>
