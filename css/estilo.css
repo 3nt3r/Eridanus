@@ -282,4 +282,14 @@ td button{
 	text-align: center;
 }
 
+/* ====================== VER PROJETOS =========================== */
+
+.descricao-ver-mais{
+	text-indent: 50px;
+}
+
+.imagem-ver-projeto{
+	height: 500px;
+	width: 500px;
+}
 /* ============================================================ */
