@@ -135,6 +135,22 @@ body{
 	padding-right: 25px;
 }
 
+.corFundoMenu{
+	background-color: white;
+}
+
+.menu{
+	text-align: center;
+}
+
+.login-cadastro{
+	position: absolute;
+	width: 10%;
+	height: 12%;
+	left: 77%;
+	top: 10%;
+}
+
 /* ====================== PAGINA LOGIN USUARIO ============================ */
 
 .div-principal-login{
@@ -144,6 +160,20 @@ body{
 .div-principal-login h3{
 	margin-left: 18%;
 	text-align: left;
+}
+
+#login-cadastro tr td{
+	border: 1px solid #D3D3D3;
+	box-shadow: -1px -1px 2px #D3D3D3;
+	font-size: 1em;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.tela-login{
+	left: 50%;
+	margin-right: 20%;
+	position: relative;
 }
 
 /* ====================== PAGINA CADASTRE-SE ============================ */
@@ -196,106 +226,21 @@ td button{
 	margin-top: 3vw;
 }
 
-/* ============================================================ */
+/* ====================== PAGINA TROCAS ============================ */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.erro{
-	color: red;
-	display: inline;
-	font-size: 10pt;
-}
-
-.esconde{
-	display: none;
-}
-
-#preloader{
-	margin-left: 10px;
-	display: none;
-}
-
-.card{
-	text-align: center;
-}
-
-.corFundoMenu{
-	background-color: white;
-}
-
-
-
-#login-cadastro tr td{
-	border: 1px solid #D3D3D3;
-	box-shadow: -1px -1px 2px #D3D3D3;
-	font-size: 1em;
-	text-align: center;
+.titulo-objeto{
 	font-weight: bolder;
 }
 
-
-
-.tela-login{
-	left: 50%;
-	margin-right: 20%;
-	position: relative;
+.distancia-topo{
+	margin-top: 1.5em;
 }
 
-.menu{
-	text-align: center;
+.botao-objeto{
+	background-color: #64dd17 !important; 
+	margin-bottom: 100px !important;
+	margin-top: 20px !important;
 }
-
-
-
-
-
-
-
-
 
 /* ====================== PAGINA CONTATO ============================ */
 
@@ -316,14 +261,25 @@ td button{
 	text-shadow: 1px .5px #64DD17;
 }
 
+/* ====================== AJAX =========================== */
 
-
-/* ====================== LINKS USUARIO MENU ============================ */
-
-.login-cadastro{
-	position: absolute;
-	width: 10%;
-	height: 12%;
-	left: 77%;
-	top: 10%;
+.erro{
+	color: red;
+	display: inline;
+	font-size: 10pt;
 }
+
+.esconde{
+	display: none;
+}
+
+#preloader{
+	margin-left: 10px;
+	display: none;
+}
+
+.card{
+	text-align: center;
+}
+
+/* ============================================================ */

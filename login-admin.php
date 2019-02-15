@@ -1,4 +1,11 @@
-<?php session_start();  ?>
+<?php session_start();  
+
+  if (isset($_SESSION['email_admin']) && isset($_SESSION['senha_admin'])){
+    header("Location: painel-admin.php");
+  }
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
