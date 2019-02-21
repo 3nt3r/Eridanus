@@ -12,14 +12,14 @@
 		$imagem = $_GET['imagem'];
 		$materiais = $_GET['materiais'];
 		$video = $_GET['video'];
+		$data = $_GET['data'];
 	}else{
 		header("Location: index.php");
 	}
 
-
 	?>
 
-	<title><?php echo $titulo; ?> - Eridanus</title>
+	<title> <?php echo $titulo; ?> - Eridanus </title>
 
 	<?php
 
@@ -36,41 +36,118 @@
 
  ?>
 
-
-	<h5 class="titulo-pagina flow-text"> <?php echo $titulo; ?> </h5>
-
-	<h5 class="titulo-pagina flow-text"> Descrição do Projeto: </h5>
+<div class="container">
 
 	<div class="row">
-		<div class="col s2 m2 l2"></div>
-		<p class="descricao-ver-mais flow-text col s8 m8 l8"> <?php echo $descricao; ?> </p>
-		<div class="col s2 m2 l2"></div>
+		<div class="col s3"></div>
+    		<div class="col s6">
+      			<div class="card-panel teal light-green accent-4">
+        			<center> 
+        				<span class="white-text titulo-partes-projeto"> Título: <?php echo $titulo; ?> </span> 
+        			</center> 
+        			<br>
+        			<hr>
+        			<center> 
+        				<span class="white-text textos-projeto-ver-projeto"> Enviado por: <?php echo $autor; ?> </span> 
+        			</center> 
+        			<br>
+        			<center> 
+        				<span class="white-text textos-projeto-ver-projeto"> Data de Envio: <?php echo $data; ?> </span> 
+        			</center>
+      			</div>
+    		</div>
+		<div class="col s3"></div>
 	</div>
 
-	<h5 class="titulo-pagina flow-text"> Imagem Referente ao Projeto: </h5>
 
 	<div class="row">
-		<div class="col s2 m2 l2"></div>
-		<img <?php echo "src=\"imagens-projetos/$autor/$imagem\""; ?> class="responsive-img imagem-ver-projeto">
-		<div class="col s2 m2 l2"></div>
+		<div class="col s3"></div>
+    		<div class="col s6">
+      			<div class="card-panel teal light-green accent-4">
+        			<center> <span class="white-text titulo-partes-projeto"> Descrição do Projeto: </span> </center>
+      			</div>
+    		</div>
+		<div class="col s3"></div>
 	</div>
 
-	<h5 class="titulo-pagina flow-text"> Materiais Necessários: </h5>
 
 	<div class="row">
-		<div class="col s2 m2 l2"></div>
-		<p class="descricao-ver-mais flow-text col s8 m8 l8"> <?php echo $materiais; ?> </p>
-		<div class="col s2 m2 l2"></div>
+		<div class="col s2"></div>
+    		<div class="col s8">
+        		<center> <span class="titulo-partes-projeto descricao-ver-mais"> <?php echo $descricao; ?> </span> </center>
+    		</div>
+		<div class="col s2"></div>
 	</div>
 
-	<h5 class="titulo-pagina flow-text"> Assista ao Vídeo do Projeto: </h5>
 
 	<div class="row">
-		<div class="col s2 m2 l2"></div>
-		<iframe width='476' height='267' <?php echo "src=\"$video\""; ?> ></iframe>
-		<div class="col s2 m2 l2"></div>
+		<div class="col s3"></div>
+    		<div class="col s6">
+      			<div class="card-panel teal light-green accent-4">
+        			<center> <span class="white-text titulo-partes-projeto"> Imagem do Projeto: </span> </center>
+      			</div>
+    		</div>
+		<div class="col s3"></div>
 	</div>
 
+
+  	<div class="row">
+  		<div class="col s3"></div>
+    		<div class="col s6">
+      			<div class="card">
+        			<div class="card-image">
+          				<img <?php echo "src=\"imagens-projetos/$autor/$imagem\""; ?> class="imagem-ver-projeto responsive-img materialboxed" >
+          				<span class="card-title frase-card-ver-projetos"> Título do Projeto: <?php echo $titulo; ?> </span>
+        			</div>
+      			</div>
+    		</div>
+    	<div class="col s3"></div>
+  	</div>
+
+
+	<div class="row">
+		<div class="col s3"></div>
+    		<div class="col s6">
+      			<div class="card-panel teal light-green accent-4">
+        			<center> <span class="white-text titulo-partes-projeto"> Materiais Necessários: </span> </center>
+      			</div>
+    		</div>
+		<div class="col s3"></div>
+	</div>
+
+
+	<div class="row">
+		<div class="col s2"></div>
+    		<div class="col s8">
+        		<center> <span class="titulo-partes-projeto descricao-ver-mais"> <?php echo $materiais; ?> </span> </center>
+    		</div>
+		<div class="col s2"></div>
+	</div>
+
+
+	<div class="row">
+		<div class="col s3"></div>
+    		<div class="col s6">
+      			<div class="card-panel teal light-green accent-4">
+        			<center> <span class="white-text titulo-partes-projeto"> Assista ao Vídeo do Projeto: </span> </center>
+      			</div>
+    		</div>
+		<div class="col s3"></div>
+	</div>
+
+
+	<div class="row">
+		<div class="col s3"></div>
+			<div class="col s6">
+				<center>
+					<iframe width='476' height='267' <?php echo "src=\"$video\""; ?>> </iframe>
+				</center>
+			</div>
+		<div class="col s3"></div>
+	</div>
+
+
+</div>
 
 <?php
 

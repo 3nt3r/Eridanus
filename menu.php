@@ -73,21 +73,21 @@
 
       <ul id="menu-mobile" class="side-nav">
 
-        <img src="imagens/eridanus-menu.png" id="foto-menu-mobile" class="responsive-img">
-
 				<?php
 
           if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){
         ?>
 
+        <div id="distancia-topo-mobile">
 				  <li><a href="login.php" class="login-dispositivo-movel">Entre</a></li>
 				  <li><a href="cadastre-se.php" class="cadastre-se-dispositivo-m">Cadastre-se</a></li>
+        </div>
 
 				<?php
 
 			}else{
 
-						?>
+					?>
 
 					<center>
 						<a class='dropdown-button btn menu-login' href='#' data-activates='dropdown2'>Olá, <?php echo $_SESSION['nome']; ?>!</a>

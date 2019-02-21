@@ -20,7 +20,13 @@
 
  ?>
 
- <h5 class="titulo-pagina flow-text"> Aqui você encontra algo que podem ser útil para você! </h5>
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel teal light-green accent-4">
+        <center> <span class="white-text"> Aqui você encontra algum objeto que pode ser útil para você! </span> </center>
+      </div>
+    </div>
+  </div>
 
 <?php 
 

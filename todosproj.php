@@ -33,7 +33,7 @@
      echo "
        <tr>
           <td>$cont</td>
-          <td><a style='background-color: #64dd17;' class='cor-menu-usuario waves-effect waves-light btn modal-trigger' href='#modala$cont'><span style='color: white;'>Ver<span></a></td>
+          <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modala$cont'><span style='color: white;'>Ver<span></a></td>
             <div id='modala$cont' class='modal'>
               <div class='modal-content'>
                 <h4>$titulo</h4>
@@ -42,17 +42,17 @@
                 <p>Materiais: <br>$materiais</p>
               </div>
               <div class='modal-footer'>
-                <a href='#!' class='modal-close waves-effect waves-green btn-flat'>OK</a>
+                <a href='#!' class='modal-close btn-flat'>OK</a>
               </div>
             </div>
-          <td><a style='background-color: #64dd17;' class='cor-menu-usuario waves-effect waves-light btn modal-trigger' href='#modalb$cont'><span style='color: white;'>Ver<span></a></td>
+          <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modalb$cont'><span style='color: white;'>Ver<span></a></td>
             <div id='modalb$cont' class='modal'>
               <div class='modal-content'>
                 Imagem: <br><img src='imagens-projetos/$autor/$imagem' width='476' height='267'>
                 <br><br>Video: <br><iframe width='476' height='267' src='$video'></iframe>
               </div>
               <div class='modal-footer'>
-                <a href='#!' class='modal-close waves-effect waves-green btn-flat'>OK</a>
+                <a href='#!' class='modal-close btn-flat'>OK</a>
               </div>
             </div>
           <td><button class='btnMudarStatus' type='button' status='aprovado' data='".md5($num)."'><i class='material-icons'>check</i></button></td>

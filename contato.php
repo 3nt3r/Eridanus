@@ -47,12 +47,12 @@
     </div>
 
   <center>
-    <button class="btn waves-effect waves-light cor-btn" type="submit" name="btn-enviar">Enviar
+    <button class="btn cor-btn" type="submit" name="btn-enviar">Enviar
       <i class="material-icons right">send</i>
     </button>
 
-    <button class="btn waves-effect waves-light cor-btn" type="reset" name="action">Limpar
-      <i class="material-icons right">cached</i>
+    <button class="btn cor-btn" type="reset" name="action">Limpar
+      <i class="material-icons right">restore_from_trash</i>
     </button>
   </center> <br>
 	</form>

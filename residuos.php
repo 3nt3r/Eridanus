@@ -5,6 +5,8 @@
 
 	<title>Resíduos - Eridanus</title>
 
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+
 	<?php
 
 		include "cabecalho.php";
@@ -20,22 +22,45 @@
 
  ?>
 
- <h5 class="titulo-pagina flow-text"> Quase todo lixo eletrônico do Brasil é descartado de maneira errada! </h5>
-
- <div class="carousel carousel-slider center carousel-pgindex">
-	<div class="carousel-item red white-text" style="background-image: url('imagens/residuos-03.png');"></div>
-
-	<div class="carousel-item amber white-text" style="background-image: url('imagens/residuos-02.png');"></div>
-
-	<div class="carousel-item amber white-text" style="background-image: url('imagens/residuos-01.png');"></div>
+<div class="container">
+  <div class="row">
+    <div class="col s2"></div>
+        <div class="col s8">
+            <div class="card-panel teal light-green accent-4">
+              <center> <span class="white-text titulo-partes-projeto"> Quase todo lixo eletrônico do Brasil é descartado de maneira errada! </span> </center>
+            </div>
+        </div>
+    <div class="col s2"></div>
+  </div>
 </div>
 
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="imagens/residuos-03.png">
+        <div class="caption center-align">
+        </div>
+      </li>
+      <li>
+        <img src="imagens/residuos-02.png">
+        <div class="caption center-align">
+        </div>
+      </li>
+      <li>
+        <img src="imagens/residuos-01.png">
+        <div class="caption center-align">
+        </div>
+      </li>      
+    </ul>
+  </div>
+
 <script type="text/javascript">
-  $('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
+  $(document).ready(function(){
+    $('.slider').slider();
   });
 </script>
+
+<div class="container">
 
 <div class="toggle flow-text">
 	<p id="texto-residuos">
@@ -58,8 +83,17 @@
 	</p>
 </div>  
 
-    <h5 class="titulo-pagina flow-text"> Veja na tabela abaixo, o tempo de decomposição dos principais componentes e elementos que estão presentes nos smartphones e eletrônicos em geral. </h5>
+  <div class="row">
+    <div class="col s2"></div>
+        <div class="col s8">
+            <div class="card-panel teal light-green accent-4">
+              <center> <span class="white-text titulo-partes-projeto"> Veja na tabela abaixo, o tempo de decomposição dos principais componentes e elementos que estão presentes nos smartphones e eletrônicos em geral. </span> </center>
+            </div>
+        </div>
+    <div class="col s2"></div>
+  </div>
 
+    <div class="row">
       <table class="striped tabela-residuos centered">
         <thead>
           <tr>
@@ -103,7 +137,11 @@
         </tbody>
       </table>
 
-<center class="fonte-fim"><span id="fonte-residuos"><b>Fonte:</b> Delta Saneamento e Setor Reciclagem</span></center>
+      <center class="fonte-fim"><span id="fonte-residuos"><b>Fonte:</b> Delta Saneamento e Setor Reciclagem</span></center>
+      
+  </div>
+
+</div>
 
 <?php
 

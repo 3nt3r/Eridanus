@@ -15,25 +15,18 @@ body{
 
 /* ====================== PAGINA INDEX ============================ */
 
-.carousel-pgindex{
-	margin-top: 1em;
-}
-
-.carousel-pgindex p{
-	font-size: 1.1em;
-	margin-top: 20%;
-	text-shadow: 0.1em 0.1em #333;
-	background-color: rgba(100, 221, 23, .7);
-}
-
-.carousel-pgindex div{
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-}
-
 .btn-centro{
 	color: #64DD17 !important;
 	font-weight: bolder;
+}
+
+.conteudo-carousel{
+	background-color: rgba(100, 221, 23, .3) !important;
+}
+
+.conteudo-carousel-titulo{
+	background-color: rgba(100, 221, 23, .3) !important;
+	margin: 0 3em;
 }
 
 /* ====================== PAGINA RESIDUOS ============================ */
@@ -149,6 +142,10 @@ body{
 	height: 12%;
 	left: 77%;
 	top: 10%;
+}
+
+#distancia-topo-mobile{
+	margin-top: 2em;
 }
 
 /* ====================== PAGINA LOGIN USUARIO ============================ */
@@ -288,8 +285,22 @@ td button{
 	text-indent: 50px;
 }
 
-.imagem-ver-projeto{
-	height: 500px;
-	width: 500px;
+.textos-projeto-ver-projeto{
+	font-size: .8em;
 }
+
+.titulo-partes-projeto{
+	font-size: 1.3em;
+}
+
+.frase-card-ver-projetos{
+	font-size: .7em !important;
+}
+
+/* ====================== PAGINA DO USUARIO ============================ */
+
+.botao-ver-projeto{
+	background-color: #64DD17 !important;
+}
+
 /* ============================================================ */

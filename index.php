@@ -5,6 +5,8 @@
 
 	<title>Eridanus</title>
 
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+
 	<?php
 
 		include "cabecalho.php";
@@ -20,25 +22,38 @@
 
  ?>
 
-
-  <div class="carousel carousel-slider center carousel-pgindex">
-    <div class="carousel-item red white-text" style="background-image: url('imagens/inicio-1.jpg');">
-      <p class="white-text">Lixo eletrônico é tudo aquilo e você vê, lê e acha que não serve para nada, então outros reciclam, selecionam e constroi o seu pensamento. - João de Paula</p>
-    </div>
-    <div class="carousel-item amber white-text" style="background-image: url('imagens/inicio-1.jpg');">
-      <p class="white-text">Se o descarte do lixo eletrônico for feito de modo incorreto, pode liberar resíduos tóxicos que contaminam o solo e os lençóis freáticos, colocando em risco a saúde pública.</p>
-    </div>
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="imagens/inicio-1.jpg">
+        <div class="caption center-align">
+          <h3 class="conteudo-carousel-titulo flow-text">João de Paula</h3>
+          <h5 class="light grey-text text-lighten-3 carousel-pgindex conteudo-carousel flow-text">"Lixo eletrônico é tudo aquilo e você vê, lê e acha que não serve para nada, então outros reciclam, selecionam e constroi o seu pensamento."</h5>
+        </div>
+      </li>
+      <li>
+        <img src="imagens/inicio-1.jpg">
+        <div class="caption center-align">
+          <h3 class="conteudo-carousel-titulo flow-text">Dijalma A. Moura</h3>
+          <h5 class="light grey-text text-lighten-3 conteudo-carousel flow-text">"O luxo vem do lixo. A lixeira está cheia de luxo."</h5>
+        </div>
+      </li>
+      <li>
+        <img src="imagens/inicio-1.jpg">
+        <div class="caption center-align">
+          <h3 class="conteudo-carousel-titulo flow-text">Daniel Carvalho</h3>
+          <h5 class="light grey-text text-lighten-3 conteudo-carousel flow-text">"Mudanças são necessárias. Reciclagem não é só no meio ambiente, mas também no ambiente do nosso ser."</h5>
+        </div>
+      </li>      
+    </ul>
   </div>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.slider').slider();
+  });
+</script>
 
-  <script type="text/javascript">
-    $('.carousel.carousel-slider').carousel({
-      fullWidth: true,
-      indicators: true,
-    });
-  </script>
-
-<br>
 <br>
 
   <div class="row">
@@ -102,13 +117,11 @@
      </div>
    </div>
    
-
 <?php
 
 	include "rodape.php";
 
 ?>
-
 
 </body>
 </html>
