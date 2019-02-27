@@ -22,7 +22,7 @@
 
  ?>
 
-<div class="container">
+<div class="container distancia-slider">
   <div class="row">
     <div class="col s2"></div>
         <div class="col s8">

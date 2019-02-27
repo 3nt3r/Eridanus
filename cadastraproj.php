@@ -8,7 +8,6 @@
 
   include "conexao.php";
 
-
   $id = (int) $_SESSION['id'];
   $titulo = $_POST["titulo"];
   $autor = $_SESSION['nome'];

@@ -44,8 +44,7 @@
 			<tr>
 				<th>
 					<center>
-						<span class="ola-usuario"> <i class="material-icons">pan_tool</i> Olá, <?php echo $_SESSION['nome']; ?>!
-						</span>
+						<span class="ola-usuario"> Menu Principal </span>
 					</center>
 				</th>
 			</tr>
@@ -73,7 +72,7 @@
 	<div class="col s9">
  		<div id="conteudo" class="col s9 l10 m9" style="margin-left: 30px; height: auto;">
 
- 			<h5 class="titulo-pagina flow-text"> Painel de Controle do Usuário </h5>
+ 			<h5 class="titulo-pagina flow-text"> Bem-Vindo <?php echo $_SESSION['nome']; ?>! </h5>
 
  		</div>
 	</div>

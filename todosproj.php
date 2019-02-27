@@ -34,6 +34,7 @@
        <tr>
           <td>$cont</td>
           <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modala$cont'><span style='color: white;'>Ver<span></a></td>
+
             <div id='modala$cont' class='modal'>
               <div class='modal-content'>
                 <h4>$titulo</h4>
@@ -45,7 +46,9 @@
                 <a href='#!' class='modal-close btn-flat'>OK</a>
               </div>
             </div>
+
           <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modalb$cont'><span style='color: white;'>Ver<span></a></td>
+
             <div id='modalb$cont' class='modal'>
               <div class='modal-content'>
                 Imagem: <br><img src='imagens-projetos/$autor/$imagem' width='476' height='267'>
@@ -55,6 +58,7 @@
                 <a href='#!' class='modal-close btn-flat'>OK</a>
               </div>
             </div>
+
           <td><button class='btnMudarStatus' type='button' status='aprovado' data='".md5($num)."'><i class='material-icons'>check</i></button></td>
           <td><button class='btnMudarStatus' type='button' status='reprovado' data='".md5($num)."'><i class='material-icons'>close</i></button></td>
        </tr>

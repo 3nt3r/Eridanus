@@ -8,7 +8,6 @@
 
   include "conexao.php";
 
-
   $id = (int) $_SESSION['id'];
   $nomeObj = $_POST["nome"];
   $descricao = $_POST["descricao"];

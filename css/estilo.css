@@ -13,6 +13,10 @@ body{
 	font-size: 2.2em;
 }
 
+.distancia-slider{
+	margin-bottom: -1.5em !important;
+}
+
 /* ====================== PAGINA INDEX ============================ */
 
 .btn-centro{
@@ -27,6 +31,10 @@ body{
 .conteudo-carousel-titulo{
 	background-color: rgba(100, 221, 23, .3) !important;
 	margin: 0 3em;
+}
+
+.conteudo-slide-index{
+	margin-top: 13em !important;
 }
 
 /* ====================== PAGINA RESIDUOS ============================ */
@@ -297,10 +305,20 @@ td button{
 	font-size: .7em !important;
 }
 
-/* ====================== PAGINA DO USUARIO ============================ */
+/* ====================== PAGINA PROJETOS USUARIOS ============================ */
 
 .botao-ver-projeto{
 	background-color: #64DD17 !important;
+}
+
+.titulo-enviar-projeto{
+	background-color: rgba(0, 0, 0, .5);
+	font-size: .9em !important;
+}
+
+.imagem-pagina-projetos{
+	height: 306px;
+	width: 408px;
 }
 
 /* ============================================================ */

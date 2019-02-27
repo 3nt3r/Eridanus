@@ -26,21 +26,21 @@
     <ul class="slides">
       <li>
         <img src="imagens/inicio-1.jpg">
-        <div class="caption center-align">
+        <div class="caption center-align conteudo-slide-index">
           <h3 class="conteudo-carousel-titulo flow-text">João de Paula</h3>
           <h5 class="light grey-text text-lighten-3 carousel-pgindex conteudo-carousel flow-text">"Lixo eletrônico é tudo aquilo e você vê, lê e acha que não serve para nada, então outros reciclam, selecionam e constroi o seu pensamento."</h5>
         </div>
       </li>
       <li>
         <img src="imagens/inicio-1.jpg">
-        <div class="caption center-align">
+        <div class="caption center-align conteudo-slide-index">
           <h3 class="conteudo-carousel-titulo flow-text">Dijalma A. Moura</h3>
           <h5 class="light grey-text text-lighten-3 conteudo-carousel flow-text">"O luxo vem do lixo. A lixeira está cheia de luxo."</h5>
         </div>
       </li>
       <li>
         <img src="imagens/inicio-1.jpg">
-        <div class="caption center-align">
+        <div class="caption center-align conteudo-slide-index">
           <h3 class="conteudo-carousel-titulo flow-text">Daniel Carvalho</h3>
           <h5 class="light grey-text text-lighten-3 conteudo-carousel flow-text">"Mudanças são necessárias. Reciclagem não é só no meio ambiente, mas também no ambiente do nosso ser."</h5>
         </div>

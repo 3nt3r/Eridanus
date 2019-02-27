@@ -5,22 +5,20 @@
 
 <?php
 
-	if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['nome']) && !isset($_SESSION['id'])){
+	if(!isset($_SESSION['email']) && !isset($_SESSION['senha']) && !isset($_SESSION['email_admin'])){
     ?>
 
     <table id="login-cadastro" class="hide-on-med-and-down">
       <tr>
-        <td><a href="login.php" class="tabela-login"> Entre </a></td>
+        <td> <a href="login.php" class="tabela-login"> Entre </a> </td>
       </tr>
       <tr>
-        <td><a href="cadastre-se.php" class="tabela-login"> Cadastre-se </a></td>
+        <td> <a href="cadastre-se.php" class="tabela-login"> Cadastre-se </a> </td>
       </tr>
     </table>
 
   <?php
-
-	}else{
-
+	}else if(isset($_SESSION['email']) && !isset($_SESSION['email_admin'])){
 	?>
 
   <div class="login-cadastro hide-on-med-and-down">
@@ -53,7 +51,40 @@
   </div>
 
 		<?php
-	}
+	}else if(!isset($_SESSION['email']) && isset($_SESSION['email_admin'])){
+    ?>
+
+  <div class="login-cadastro hide-on-med-and-down">
+
+    <a class='dropdown-button btn menu-login' id="1" style="width: 200px;" href='#' data-activates='dropdown1'> Olá, <?php echo $_SESSION['nome_admin']; ?>! </a>
+
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="painel-admin.php" class="cor-menu-usuario"> Meu Painel </a></li>
+      <li><a href="sair.php" class="cor-menu-usuario"> Sair </a></li>
+    </ul>
+
+    <ul id='dropdown2' class='dropdown-content'>
+      <li><a href="painel-admin.php.php" class="cor-menu-usuario">Painel</a></li>
+      <li><a href="sair.php" class="cor-menu-usuario">Sair</a></li>
+    </ul>
+
+    <script type="text/javascript">
+      $('#1').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: false,
+        hover: true,
+        gutter: 0,
+        belowOrigin: false,
+        alignment: 'left',
+        stopPropagation: false
+      });
+    </script>
+
+  </div>
+
+    <?php
+  }
 
  ?>
 

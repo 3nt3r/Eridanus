@@ -4,7 +4,6 @@
     header("Location: painel-admin.php");
   }
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,7 +62,6 @@
 	include "rodape.php";
 
 ?>
-
 
 </body>
 </html>

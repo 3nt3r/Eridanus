@@ -1,4 +1,13 @@
-<?php session_start(); ?>
+<?php 
+
+  session_start(); 
+
+  if (isset($_SESSION['email'])) {
+    header("Location: acesse-conta.php");
+  }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,7 +79,6 @@
   <div class="col m1 l2"></div>
 
 </div>
-
 
 <?php
 

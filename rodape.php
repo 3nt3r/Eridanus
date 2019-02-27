@@ -14,7 +14,12 @@
           <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
           <li><a class="grey-text text-lighten-3" href="#">Youtube</a></li>
           <li><a class="grey-text text-lighten-3" href="contato.php">Fale Conosco</a></li>
-          <li><a class="grey-text text-lighten-3" href="login-admin.php">Administrador</a></li>
+          <?php 
+            if (!isset($_SESSION['email'])) {
+              echo "<li><a class=\"grey-text text-lighten-3\" href=\"login-admin.php\">Administrador</a></li>";
+            }
+          ?>
+          
         </ul>
       </div>
     </div>
@@ -22,7 +27,7 @@
   <div class="footer-copyright">
     <div class="container">
       © 2019 Copyright Eridanus
-      <a class="grey-text text-lighten-4 right" href="https://softwarescalisto.000webhostapp.com">Desenvolvido por Calisto Software</a>
+      <a class="grey-text text-lighten-4 right" href="https://softwarecalisto.000webhostapp.com">Desenvolvido por Calisto Software</a>
     </div>
   </div>
 </footer>

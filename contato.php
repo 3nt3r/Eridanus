@@ -21,7 +21,17 @@
 
 ?>
 
-<p class="titulo-pagina flow-text">Preencha as informações corretamente!</p>
+<div class="container distancia-slider">
+  <div class="row">
+    <div class="col s2"></div>
+        <div class="col s8">
+            <div class="card-panel teal light-green accent-4">
+              <center> <span class="white-text titulo-partes-projeto"> Preencha as informações corretamente! </span> </center>
+            </div>
+        </div>
+    <div class="col s2"></div>
+  </div>
+</div>
 
 <div>
 
@@ -65,7 +75,6 @@
 	include "rodape.php";
 
 ?>
-
 
 </body>
 </html>

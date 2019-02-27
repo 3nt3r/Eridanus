@@ -117,7 +117,8 @@
   </div>
  </div>
 
-	  </form>
+</form>
+
 <div class="col m1 l2"></div>
 
 </div>
