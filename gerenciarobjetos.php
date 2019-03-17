@@ -66,8 +66,17 @@ $prepare->store_result();
 
         <td style='color: $cor;'>$status_certo</td>
 
-        <td><button class='btnEditarObje' type='button' data='".md5($num)."'><i class='material-icons'>edit</i></button></td>
-
+        <div id='modale$cont' class='modal'>
+          <div class='modal-content'>
+            <p style='font-size: 15pt;'>Deseja realmente editar?</p>
+            <p>Após o objeto ser editado seu status será alterado para <span style='color: rgb(255, 163, 41)'>'Em avaliação'</span>, e será analisado novamente.</p>
+          </div>
+          <div class='modal-footer'>
+      			<a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+            <a href='#!' class='btnEditarObje modal-close waves-effect waves-red btn-flat' data='".md5($num)."'>Editar</a>
+          </div>
+        </div>
+        <td><a class='modal-trigger' href='#modale$cont'><i class='material-icons' style='color: black;'>edit</i></a></td>
         <div id='modal$cont' class='modal'>
           <div class='modal-content'>
             <p style='font-size: 15pt;'>Deseja realmente excluir?</p>
