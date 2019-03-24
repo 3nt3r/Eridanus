@@ -9,8 +9,8 @@ $(window).resize(function(){
 		$("#foto-menu").css('height', '');
 	}
 });
-
 $(document).ready(function(){
+		// pagina de cadastro
 		$('#form').submit(function(){
 			var dados = $( this ).serialize();
 			$.ajax({
@@ -62,5 +62,30 @@ $(document).ready(function(){
           alert("Não foi possivel enviar os dados!");
         });
 			return false;
+		});
+		// _____________________
+		var re = new RegExp("^[0-9]{3}-[0-9]{3}$", "g");
+		$("#codigo").keyup(function(){
+			var verif = re.exec($(this).val());
+			if(verif != null){
+				$("#enviarCod").removeClass("disabled");
+				$(this).removeClass("invalid");
+			}else{
+				$("#enviarCod").addClass("disabled");
+				$(this).addClass("invalid");
+			}
+
+		});
+		$('#senhaConf').keyup(function(){
+			if($(this).val() == $("#senhaNova").val()){
+				$("#bntRedefinirSenha").removeClass("disabled");
+				$(this).removeClass("invalid");
+				$(this).addClass("valid");
+				$("#erroSenha").html("");
+			}else{
+				$("#bntRedefinirSenha").addClass("disabled");
+				$(this).addClass("invalid");
+				$("#erroSenha").html("As senhas não são iguais!");
+			}
 		});
 	});
