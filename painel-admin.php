@@ -43,8 +43,29 @@
 
  			<h5 class="titulo-pagina flow-text"> Bem-Vindo <?php echo $_SESSION['nome_admin']; ?>! </h5>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
  		</div>
 	</div>
+
   <div class="col s3 l2 m3 menu-usuario z-depth-5">
     <table>
       <tr>

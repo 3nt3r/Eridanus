@@ -71,7 +71,11 @@
             </p>
         </div>
     </div>
-  <div style="margin: 10px;"><span><a href="esqueci-senha.php">Esqueci a senha</a></span>  </div>
+  <div class="margem-esqueci-senha">
+    <span>
+      <a href="esqueci-senha.php" class="estilo-texto-esqueci-senha"> Esqueci minha senha </a>
+    </span>  
+  </div>
 	<button class="btn light-green accent-4" type="submit" name="action">Entrar <i class="material-icons right">chevron_right</i> </button>
 
   </form>

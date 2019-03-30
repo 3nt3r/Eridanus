@@ -26,10 +26,10 @@
 
  ?>
 
-
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/painel-usuario.js"></script>
 <script type="text/javascript" src="js/materialize.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		if($('#linha').height() < $('#conteudo').height())
@@ -72,8 +72,40 @@
 	<div class="col s9">
  		<div id="conteudo" class="col s9 l10 m9" style="margin-left: 30px; height: auto;">
 
- 			<h5 class="titulo-pagina flow-text"> Bem-Vindo <?php echo $_SESSION['nome']; ?>! </h5>
+ 			<h5 class="titulo-pagina flow-text"> Bem-Vindo, <?php echo $_SESSION['nome']; ?>! </h5>
 
+			<div class="container distancia-slider">
+			  <div class="row">
+			    <div class="col s1"></div>
+			        <div class="col s10">           
+			        	<center>
+				 			<table class="striped distancia-lados-tabela centered">
+								<tr>
+									<th>Informações do Usuário</th>
+									<td>Alterar dados e senha</td>
+								</tr>
+								<tr>
+									<th>Enviar projeto</th>
+									<td>Envio de Projetos para análise</td>
+								</tr>
+								<tr>
+									<th>Gerenciar Projetos</th>
+									<td>Editar, Excluir e acompanhar Status dos projetos enviados</td>
+								</tr>
+								<tr>
+									<th>Enviar Objeto</th>
+									<td>Envio de Objetos para análise</td>
+								</tr>
+								<tr>
+									<th>Gerenciar Objetos</th>
+									<td>Editar, Excluir e acompanhar Status dos objetos enviados</td>
+								</tr>
+							</table>
+			            </center>
+			        </div>
+			    <div class="col s1"></div>
+			  </div>
+			</div>            
  		</div>
 	</div>
 

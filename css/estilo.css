@@ -181,6 +181,17 @@ body{
 	position: relative;
 }
 
+.margem-esqueci-senha{
+	padding-top: .3em;
+	padding-bottom: 1em;
+}
+
+.estilo-texto-esqueci-senha{
+	text-decoration: none;
+	color: gray;
+	font-weight: bolder;
+}
+
 /* ====================== PAGINA CADASTRE-SE ============================ */
 
 .titulo-pagina-cadastre-se{
@@ -231,6 +242,10 @@ td button{
 	margin-top: 3vw;
 }
 
+.distancia-lados-tabela{
+	margin-left: 2em;
+}
+
 /* ====================== PAGINA TROCAS ============================ */
 
 .titulo-objeto{
@@ -245,6 +260,14 @@ td button{
 	background-color: #64dd17 !important; 
 	margin-bottom: 100px !important;
 	margin-top: 20px !important;
+}
+
+.titulo-partes-objeto{
+	font-size: .8em;
+}
+
+.distancia-div-acima{
+	margin-top: -20px;
 }
 
 /* ====================== PAGINA CONTATO ============================ */

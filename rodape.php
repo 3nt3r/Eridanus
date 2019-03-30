@@ -27,7 +27,7 @@
   <div class="footer-copyright">
     <div class="container">
       © 2019 Copyright Eridanus
-      <a class="grey-text text-lighten-4 right" href="https://softwarecalisto.000webhostapp.com">Desenvolvido por Calisto Software</a>
+      <a class="grey-text text-lighten-4 right" href="https://softwarecalisto.000webhostapp.com" target="_blank">Desenvolvido por Calisto Software</a>
     </div>
   </div>
 </footer>
