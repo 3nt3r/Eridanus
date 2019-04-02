@@ -44,7 +44,8 @@
               </div>
             </div>
           <td><a style='background-color: #64dd17;' class='cor-menu-usuario waves-effect waves-light btn modal-trigger' href='#modalb$cont'><span style='color: white;'>Ver<span></a></td>
-            <div id='modalb$cont' class='modal'>
+
+						<div id='modalb$cont' class='modal'>
               <div class='modal-content'>
                 Imagem: <br><img src='imagens-objetos/$nome_cliente/$imagem' width='476' height='267'>
               </div>
@@ -52,8 +53,30 @@
                 <a href='#!' class='modal-close waves-effect waves-green btn-flat'>OK</a>
               </div>
             </div>
-          <td><button class='btnMudarStatusObje' type='button' status='aprovado' data='".md5($num)."'><i class='material-icons'>check</i></button></td>
-          <td><button class='btnMudarStatusObje' type='button' status='reprovado' data='".md5($num)."'><i class='material-icons'>close</i></button></td>
+
+          <td><a style='background-color: #64dd17;' class='cor-menu-usuario waves-effect waves-light btn modal-trigger' href='#modalc$cont'><span style='color: white;'><i class='material-icons'>check</i></span></a>
+
+					<div id='modalc$cont' class='modal'>
+						<div class='modal-content'>
+							<h4>Deseja realmente aprovar o objeto?</h4>
+							<p>Ao aprovar o objeto seu status mudará para aprovado e será apresentado na pagina de Trocas.</p>
+						</div>
+						<div class='modal-footer'>
+							<a href='#!' class='btnMudarStatusObje modal-close waves-effect waves-red btn-flat' status='aprovado' data='".md5($num)."'>Aprovar</a><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+						</div>
+
+
+					<td><a style='background-color: #64dd17;' class='cor-menu-usuario waves-effect waves-light btn modal-trigger' href='#modald$cont'><span style='color: white;'><i class='material-icons'>close</i></span></a>
+
+					<div id='modald$cont' class='modal'>
+						<div class='modal-content'>
+							<h4>Deseja realmente reprovar o objeto?</h4>
+						</div>
+						<div class='modal-footer'>
+							<a href='#!' class='btnMudarStatusObje modal-close waves-effect waves-red btn-flat' status='reprovado' data='".md5($num)."'>Reprovar</a><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+						</div>
+
+
        </tr>
      ";
      $cont++;
