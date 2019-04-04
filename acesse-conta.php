@@ -48,6 +48,9 @@
 					</center>
 				</th>
 			</tr>
+	      	<tr>
+	        	<td> <a href="acesse-conta.php"> <span> <i class="material-icons">home</i> Início </span> </a> </td>
+	      	</tr>				
 			<tr>
 				<td> <a href="informacoes-usuario.php" id="btnAlt"> <span> <i class="material-icons">person</i> Informações do Usuário </span> </a> </td>
 			</tr>

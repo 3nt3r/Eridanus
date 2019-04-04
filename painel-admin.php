@@ -1,15 +1,27 @@
 <?php
+
 	session_start();
+
 	if(!isset($_SESSION['email_admin']) && !isset($_SESSION['senha_admin'])){
 		header("Location: login.php");
 	}
- ?>
+
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
 
 	<title>Painel de Controle - Eridanus</title>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/painel-usuario.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      if($('#linha').height() < $('#conteudo').height())
+        $('#linha').height($('#conteudo').height());
+    });
+  </script>
 
 	<?php
 
@@ -26,16 +38,6 @@
 
  ?>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/painel-usuario.js"></script>
-<script type="text/javascript" src="js/materialize.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		if($('#linha').height() < $('#conteudo').height())
-			$('#linha').height($('#conteudo').height());
-	});
-</script>
-
 <div class="row" id="linha">
 
 	<div class="col s9 l10 m9">
@@ -43,25 +45,21 @@
 
  			<h5 class="titulo-pagina flow-text"> Bem-Vindo <?php echo $_SESSION['nome_admin']; ?>! </h5>
 
+      <div class="container distancia-slider distancia-texto-cima">
+        <div class="row">
+          <div class="col s3"></div>
+              <div class="col s6">
+                  <div class="card-panel teal light-green accent-4">
+                    <center> 
+                      <span class="white-text titulo-partes-projeto"> Projetos Aguardando Aprovação </span>
+                    </center>
+                  </div>
+              </div>
+          <div class="col s3"></div>
+        </div>
+      </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
+      <?php include_once "projetos-painel-admin.php" ?>
 
  		</div>
 	</div>
@@ -75,15 +73,27 @@
           </center>
         </th>
       </tr>
+
       <tr>
-        <td> <a href="todosproj.php" id="bntTodosProj"> <span> <i class="material-icons">near_me</i> Aprovar Projetos </span> </a> </td>
+        <td> <a href="painel-admin.php"> <span> <i class="material-icons">home</i> Início </span> </a> </td>
       </tr>
+
       <tr>
-        <td> <a href="todosobje.php" id="bntTodosObje"> <span> <i class="material-icons">near_me</i> Aprovar Objetos </span> </a> </td>
-      </tr>
+        <td> <a href="#" id="btnverobjetos"> <span> <i class="material-icons">check</i> Aprovar Objetos </span> </a> </td>
+      </tr>  
+
+      <tr>
+        <td> <a href="#" id="btnProjetosExcluidos"> <span> <i class="material-icons">close</i> Projetos Excluídos </span> </a> </td>
+      </tr> 
+
+      <tr>
+        <td> <a href="#" id="btnObjetosExcluidos"> <span> <i class="material-icons">close</i> Objetos Excluídos </span> </a> </td>
+      </tr> 
+
       <tr>
         <td> <a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> </td>
-      </tr>
+      </tr>     
+      
     </table>
   </div>
 

@@ -5,9 +5,10 @@ if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
 }
 include "conexao.php";
 $id =(int) $_SESSION["id"];
-$consulta = "select codigo, titulo, descricao, status_atual, materiais, video from projeto where id_usuario = ?";
+$consulta = "select codigo, titulo, descricao, status_atual, materiais, video from projeto where id_usuario = ? and status_atual != ?";
 $prepare = $banco->prepare($consulta);
-$prepare->bind_param("i",$id);
+$excluido = "excluido";
+$prepare->bind_param("is", $id, $excluido);
 $prepare->bind_result($id_proj, $titulo, $descricao, $status_atual, $materiais, $video);
 $prepare->execute();
 $prepare->store_result();

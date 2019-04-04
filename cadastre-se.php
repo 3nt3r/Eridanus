@@ -69,10 +69,16 @@
 				</div>
       </div>
 
-			<button class="btn light-green accent-4" id="btncad" type="submit" name="action">Criar Conta
-	 <i class="material-icons right">assignment_ind</i>
+      <button class="btn light-green accent-4" id="btncad" type="submit" name="action">
+        Criar Conta
+        <i class="material-icons right">assignment_ind</i>
+      </button>
 
- </button>
+      <a class="btn light-green accent-4" href="login.php">
+        Fazer Login
+        <i class="material-icons right">keyboard_arrow_right</i>
+      </a>
+
  <div id="preloader">
   <div class="preloader-wrapper small active">
  	 <div class="spinner-layer spinner-blue">

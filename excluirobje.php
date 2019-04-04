@@ -12,9 +12,10 @@
 
     include "conexao.php";
 
-    $excluir = "delete from objeto where id = ?";
+    $excluir = "update objeto set status_atual = ? where id = ?";
     $prepare = $banco->prepare($excluir);
-    $prepare->bind_param("i", $id_obje);
+    $status = "excluido";
+    $prepare->bind_param("si", $status, $id_obje);
     $prepare->execute();
     $banco->close();
 

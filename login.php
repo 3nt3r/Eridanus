@@ -76,7 +76,9 @@
       <a href="esqueci-senha.php" class="estilo-texto-esqueci-senha"> Esqueci minha senha </a>
     </span>  
   </div>
-	<button class="btn light-green accent-4" type="submit" name="action">Entrar <i class="material-icons right">chevron_right</i> </button>
+	<button class="btn light-green accent-4" type="submit" name="action"> Entrar <i class="material-icons right">chevron_right</i> </button>
+
+  <a class="btn light-green accent-4" href="cadastre-se.php"> Fazer Cadastro <i class="material-icons right">assignment_ind</i> </a>
 
   </form>
 

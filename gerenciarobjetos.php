@@ -1,21 +1,22 @@
 <?php
 
-session_start();
+  session_start();
 
-if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
-  header("Location: login.php");
-}
+  if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
+    header("Location: login.php");
+  }
 
-include "conexao.php";
+  include "conexao.php";
 
-$id =(int) $_SESSION["id"];
+  $id =(int) $_SESSION["id"];
 
-$consulta = "select id, nome, descricao, data_publicacao, status_atual from objeto where id_usuario = ?";
-$prepare = $banco->prepare($consulta);
-$prepare->bind_param("i",$id);
-$prepare->bind_result($id_obje, $nome, $descricao, $data_publicacao, $status_atual);
-$prepare->execute();
-$prepare->store_result();
+  $consulta = "select id, nome, descricao, data_publicacao, status_atual from objeto where id_usuario = ? and status_atual != ?";
+  $prepare = $banco->prepare($consulta);
+  $excluido = "excluido";
+  $prepare->bind_param("is", $id, $excluido);
+  $prepare->bind_result($id_obje, $nome, $descricao, $data_publicacao, $status_atual);
+  $prepare->execute();
+  $prepare->store_result();
 ?>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>

@@ -11,3 +11,7 @@
   $prepare->bind_param("si", $status, $id_proj);
   $prepare->execute();
 ?>
+
+<script type="text/javascript">
+  window.open(document.referrer,'_self');
+</script>

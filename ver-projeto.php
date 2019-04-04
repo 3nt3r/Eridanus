@@ -5,17 +5,17 @@
 
 	<?php 
 
-	if (isset($_GET['titulo'])) {
-		$titulo = $_GET['titulo'];
-		$autor = $_GET['autor'];
-		$descricao = $_GET['descricao'];
-		$imagem = $_GET['imagem'];
-		$materiais = $_GET['materiais'];
-		$video = $_GET['video'];
-		$data = $_GET['data'];
-	}else{
-		header("Location: index.php");
-	}
+		if (isset($_GET['titulo'])) {
+			$titulo = $_GET['titulo'];
+			$autor = $_GET['autor'];
+			$descricao = $_GET['descricao'];
+			$imagem = $_GET['imagem'];
+			$materiais = $_GET['materiais'];
+			$video = $_GET['video'];
+			$data = $_GET['data'];
+		}else{
+			header("Location: index.php");
+		}
 
 	?>
 
@@ -43,12 +43,12 @@
     		<div class="col s6">
       			<div class="card-panel teal light-green accent-4">
         			<center> 
-        				<span class="white-text titulo-partes-projeto"> Título: <?php echo $titulo; ?> </span> 
+        				<span class="white-text titulo-partes-projeto"> <?php echo $titulo; ?> </span> 
         			</center> 
         			<br>
         			<hr>
         			<center> 
-        				<span class="white-text textos-projeto-ver-projeto"> Enviado por: <?php echo $autor; ?> </span> 
+        				<span class="white-text textos-projeto-ver-projeto"> Usuário Responsável: <?php echo $autor; ?> </span> 
         			</center> 
         			<br>
         			<center> 
@@ -59,17 +59,15 @@
 		<div class="col s3"></div>
 	</div>
 
-
 	<div class="row">
 		<div class="col s3"></div>
     		<div class="col s6">
       			<div class="card-panel teal light-green accent-4">
-        			<center> <span class="white-text titulo-partes-projeto"> Descrição do Projeto: </span> </center>
+        			<center> <span class="white-text titulo-partes-projeto"> Descrição </span> </center>
       			</div>
     		</div>
 		<div class="col s3"></div>
 	</div>
-
 
 	<div class="row">
 		<div class="col s2"></div>
@@ -79,42 +77,28 @@
 		<div class="col s2"></div>
 	</div>
 
-
-	<div class="row">
-		<div class="col s3"></div>
-    		<div class="col s6">
-      			<div class="card-panel teal light-green accent-4">
-        			<center> <span class="white-text titulo-partes-projeto"> Imagem do Projeto: </span> </center>
-      			</div>
-    		</div>
-		<div class="col s3"></div>
-	</div>
-
-
   	<div class="row">
   		<div class="col s3"></div>
     		<div class="col s6">
       			<div class="card">
         			<div class="card-image">
           				<img <?php echo "src=\"imagens-projetos/$autor/$imagem\""; ?> class="imagem-ver-projeto responsive-img materialboxed" >
-          				<span class="card-title frase-card-ver-projetos"> Título do Projeto: <?php echo $titulo; ?> </span>
+          				<span class="card-title frase-card-ver-projetos"> Projeto: <?php echo $titulo; ?> </span>
         			</div>
       			</div>
     		</div>
     	<div class="col s3"></div>
   	</div>
 
-
 	<div class="row">
 		<div class="col s3"></div>
     		<div class="col s6">
       			<div class="card-panel teal light-green accent-4">
-        			<center> <span class="white-text titulo-partes-projeto"> Materiais Necessários: </span> </center>
+        			<center> <span class="white-text titulo-partes-projeto"> Materiais Necessários </span> </center>
       			</div>
     		</div>
 		<div class="col s3"></div>
 	</div>
-
 
 	<div class="row">
 		<div class="col s2"></div>
@@ -124,17 +108,15 @@
 		<div class="col s2"></div>
 	</div>
 
-
 	<div class="row">
 		<div class="col s3"></div>
     		<div class="col s6">
       			<div class="card-panel teal light-green accent-4">
-        			<center> <span class="white-text titulo-partes-projeto"> Assista ao Vídeo do Projeto: </span> </center>
+        			<center> <span class="white-text titulo-partes-projeto"> Assista ao Vídeo do Projeto </span> </center>
       			</div>
     		</div>
 		<div class="col s3"></div>
 	</div>
-
 
 	<div class="row">
 		<div class="col s3"></div>
@@ -145,7 +127,6 @@
 			</div>
 		<div class="col s3"></div>
 	</div>
-
 
 </div>
 
