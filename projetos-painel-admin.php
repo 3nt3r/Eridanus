@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-	include "conexao.php"; 
+	include "conexao.php";
 
 	$consulta = "select codigo, titulo, descricao, materiais, imagem, video, autor from projeto where status_atual = 'em avaliacao'";
 	$prepare = $banco->prepare($consulta);
@@ -73,7 +73,13 @@
 
                   <div id='modald$cont' class='modal'>
                     <div class='modal-content'>
-                      <h4>Deseja realmente reprovar o projeto?</h4>
+                      <h4>Motivo da Reprovação</h4>
+											<form>
+											<div class='input-field col s6'>
+												<input id='motivo' type='text' class='validate' name='motivo' required>
+												<label for='motivo'>Motivo:</label>
+											</div>
+											</form>
                     </div>
                     <div class='modal-footer'>
                       <a href='#!' class='btnMudarStatus modal-close btn-flat' status='reprovado' data='".md5($num)."'>Reprovar</a><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
@@ -86,5 +92,4 @@
          $banco->close();
 
        ?>
-
        </table>

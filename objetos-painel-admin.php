@@ -76,7 +76,13 @@
           <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modald$cont'><span style='color: white;'><i class='material-icons'>close</i></span></a>
           <div id='modald$cont' class='modal'>
             <div class='modal-content'>
-              <h4>Deseja realmente reprovar o objeto?</h4>
+              <h4>Motivo da Reprovação</h4>
+              <form>
+              <div class='input-field col s6'>
+                <input id='motivo' type='text' class='validate' name='motivo' required>
+                <label for='motivo'>Motivo:</label>
+              </div>
+              </form>
             </div>
             <div class='modal-footer'>
               <a href='#!' class='btnMudarStatusObje modal-close waves-red btn-flat' status='reprovado' data='".md5($num)."'>Reprovar</a><a href='#!' class='modal-close waves-green btn-flat'>Cancelar</a>
@@ -88,4 +94,3 @@
    $banco->close();
  ?>
  </table>
- 

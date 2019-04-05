@@ -6,9 +6,10 @@
   include "conexao.php";
   $id_proj = $_SESSION[$_POST["data"]];
   $status = $_POST["status"];
-  $consulta = "update projeto set status_atual = ? where codigo = ?";
+  $motivo = $_POST["motivo"];
+  $consulta = "update projeto set status_atual = ?, observacoes = ? where codigo = ?";
   $prepare = $banco->prepare($consulta);
-  $prepare->bind_param("si", $status, $id_proj);
+  $prepare->bind_param("ssi", $status, $motivo, $id_proj);
   $prepare->execute();
 ?>
 

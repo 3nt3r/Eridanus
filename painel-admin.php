@@ -13,9 +13,7 @@
 <head>
 
 	<title>Painel de Controle - Eridanus</title>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/painel-usuario.js"></script>
-  <script type="text/javascript" src="js/materialize.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       if($('#linha').height() < $('#conteudo').height())
@@ -50,7 +48,7 @@
           <div class="col s3"></div>
               <div class="col s6">
                   <div class="card-panel teal light-green accent-4">
-                    <center> 
+                    <center>
                       <span class="white-text titulo-partes-projeto"> Projetos Aguardando Aprovação </span>
                     </center>
                   </div>
@@ -80,20 +78,20 @@
 
       <tr>
         <td> <a href="#" id="btnverobjetos"> <span> <i class="material-icons">check</i> Aprovar Objetos </span> </a> </td>
-      </tr>  
+      </tr>
 
       <tr>
         <td> <a href="#" id="btnProjetosExcluidos"> <span> <i class="material-icons">close</i> Projetos Excluídos </span> </a> </td>
-      </tr> 
+      </tr>
 
       <tr>
         <td> <a href="#" id="btnObjetosExcluidos"> <span> <i class="material-icons">close</i> Objetos Excluídos </span> </a> </td>
-      </tr> 
+      </tr>
 
       <tr>
         <td> <a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> </td>
-      </tr>     
-      
+      </tr>
+
     </table>
   </div>
 

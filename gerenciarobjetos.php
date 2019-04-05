@@ -1,22 +1,21 @@
 <?php
 
-  session_start();
+session_start();
 
-  if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
-    header("Location: login.php");
-  }
+if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
+  header("Location: login.php");
+}
 
-  include "conexao.php";
+include "conexao.php";
 
-  $id =(int) $_SESSION["id"];
+$id =(int) $_SESSION["id"];
 
-  $consulta = "select id, nome, descricao, data_publicacao, status_atual from objeto where id_usuario = ? and status_atual != ?";
-  $prepare = $banco->prepare($consulta);
-  $excluido = "excluido";
-  $prepare->bind_param("is", $id, $excluido);
-  $prepare->bind_result($id_obje, $nome, $descricao, $data_publicacao, $status_atual);
-  $prepare->execute();
-  $prepare->store_result();
+$consulta = "select id, nome, descricao, observacoes, data_publicacao, status_atual from objeto where id_usuario = ?";
+$prepare = $banco->prepare($consulta);
+$prepare->bind_param("i",$id);
+$prepare->bind_result($id_obje, $nome, $descricao, $observacoes, $data_publicacao, $status_atual);
+$prepare->execute();
+$prepare->store_result();
 ?>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -32,6 +31,7 @@
     <th>#</th>
     <th>Nome</th>
     <th>Descrição</th>
+    <th>Observações</th>
     <th>Status</th>
     <th>Editar</th>
     <th>Excluir</th>
@@ -64,7 +64,26 @@
         <td>$nome</td>
 
         <td>$descricao</td>
+        ";
+    if($status_atual == "reprovado"){
+      echo "
+        <td><a style='background-color: #64dd17;' class='cor-menu-usuario waves-effect waves-light btn modal-trigger' href='#modald$cont'><span style='color: white;'>Ver</span></a>
 
+        <div id='modald$cont' class='modal'>
+          <div class='modal-content'>
+            <h4>Causa da reprovação</h4>
+            <p>$observacoes</p>
+          </div>
+          <div class='modal-footer'>
+            <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Ok</a>
+          </div>
+        </div>
+          ";
+        }else{
+          echo "<td></td>";
+        }
+        echo
+          "
         <td style='color: $cor;'>$status_certo</td>
 
         <div id='modale$cont' class='modal'>

@@ -26,14 +26,14 @@ $(document).ready(function(){
     $.get("projetosExcluidos.php", function(data){
       $("#conteudo").html(data);
     });
-  });  
+  });
 
   $('#btnObjetosExcluidos').click(function(event){
     event.preventDefault();
     $.get("objetosExcluidos.php", function(data){
       $("#conteudo").html(data);
     });
-  });  
+  });
 
   $('#bntEnviarProj').click(function(event){
     event.preventDefault();
@@ -101,25 +101,28 @@ $(document).ready(function(){
     event.preventDefault();
     var dado = $(this).attr("data");
     var status = $(this).attr("status");
-    $.post("mudarstatusproj.php", "data="+dado+"&status="+status,function(data){
+    var motivo = $("#motivo").val();
+    $.post("mudarstatusproj.php", "data="+dado+"&status="+status+"&motivo="+motivo,function(data){
       $.get("todosproj.php", function(data){
          $("#conteudo").html(data);
        });
     });
+    window.location.href = "painel-admin.php";
   });
 
   $('.btnMudarStatusObje').click(function(){
     event.preventDefault();
     var dado = $(this).attr("data");
     var status = $(this).attr("status");
-    $.post("mudarstatusobje.php", "data="+dado+"&status="+status,function(data){
-      $("#conteudo").html(data);
+    var motivo = $("#motivo").val();
+    $.post("mudarstatusobje.php", "data="+dado+"&status="+status+"&motivo="+motivo,function(data){
       $.get("todosobje.php", function(data){
          $("#conteudo").html(data);
        });
     });
+    window.location.href = "painel-admin.php";
   });
-  
+
   $('#btncad').click(function(){
     $(this).hide();
     $('#btncads').hide();

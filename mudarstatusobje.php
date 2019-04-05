@@ -7,9 +7,10 @@
   include "conexao.php";
   $id_obje = $_SESSION[$_POST["data"]];
   $status = $_POST["status"];
-  $consulta = "update objeto set status_atual = ? where id = ?";
+  $motivo = $_POST["motivo"];
+  $consulta = "update objeto set status_atual = ?, observacoes = ? where id = ?";
   $prepare = $banco->prepare($consulta);
-  $prepare->bind_param("si", $status, $id_obje);
+  $prepare->bind_param("ssi", $status, $motivo, $id_obje);
   $prepare->execute();
 
 ?>
