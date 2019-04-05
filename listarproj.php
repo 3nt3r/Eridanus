@@ -5,11 +5,11 @@ if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
 }
 include "conexao.php";
 $id =(int) $_SESSION["id"];
-$consulta = "select codigo, titulo, descricao, status_atual, materiais, video from projeto where id_usuario = ? and status_atual != ?";
+$consulta = "select codigo, titulo, descricao, status_atual, observacoes, materiais, video from projeto where id_usuario = ? and status_atual != ?";
 $prepare = $banco->prepare($consulta);
 $excluido = "excluido";
 $prepare->bind_param("is", $id, $excluido);
-$prepare->bind_result($id_proj, $titulo, $descricao, $status_atual, $materiais, $video);
+$prepare->bind_result($id_proj, $titulo, $descricao, $status_atual, $observacoes, $materiais, $video);
 $prepare->execute();
 $prepare->store_result();
 ?>
@@ -23,6 +23,7 @@ $prepare->store_result();
     <th>#</th>
     <th>Titulo</th>
     <th>Descrição</th>
+    <th>Observações</th>
     <th>Status</th>
     <th>Editar</th>
     <th>Excluir</th>
@@ -48,6 +49,26 @@ $prepare->store_result();
         <td>$cont</td>
         <td>$titulo</td>
         <td>$descricao</td>
+        ";
+    if($status_atual == "reprovado"){
+      echo "
+        <td><a style='background-color: #64dd17;' class='cor-menu-usuario waves-effect waves-light btn modal-trigger' href='#modald$cont'><span style='color: white;'>Ver</span></a>
+
+        <div id='modald$cont' class='modal'>
+          <div class='modal-content'>
+            <h4>Causa da reprovação</h4>
+            <p>$observacoes</p>
+          </div>
+          <div class='modal-footer'>
+            <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Ok</a>
+          </div>
+        </div>
+          ";
+        }else{
+          echo "<td></td>";
+        }
+        echo
+          "
         <td style='color: $cor;'>$status_certo</td>
         <div id='modale$cont' class='modal'>
           <div class='modal-content'>
