@@ -42,7 +42,7 @@ $(document).ready(function(){
     });
   });
 
-  $('.btnEditarProj').click(function(){
+  $('.btnEditarProj').click(function(event){
     event.preventDefault();
     var dado = $(this).attr("data");
     $.post("editarproj.php", "data="+dado,function(data){
@@ -50,7 +50,7 @@ $(document).ready(function(){
     });
   });
 
-  $('.btnEditarObje').click(function(){
+  $('.btnEditarObje').click(function(event){
     event.preventDefault();
     var dado = $(this).attr("data");
     $.post("editarobje.php", "data="+dado,function(data){
@@ -97,30 +97,28 @@ $(document).ready(function(){
     })
   });
 
-  $('.btnMudarStatus').click(function(){
+  $('.btnMudarStatus').click(function(event){
     event.preventDefault();
     var dado = $(this).attr("data");
     var status = $(this).attr("status");
     var motivo = $("#motivo").val();
     $.post("mudarstatusproj.php", "data="+dado+"&status="+status+"&motivo="+motivo,function(data){
-      $.get("todosproj.php", function(data){
+      $.get("projetos-painel-admin.php", function(data){
          $("#conteudo").html(data);
        });
     });
-    window.location.href = "painel-admin.php";
   });
 
-  $('.btnMudarStatusObje').click(function(){
+  $('.btnMudarStatusObje').click(function(event){
     event.preventDefault();
     var dado = $(this).attr("data");
     var status = $(this).attr("status");
     var motivo = $("#motivo").val();
     $.post("mudarstatusobje.php", "data="+dado+"&status="+status+"&motivo="+motivo,function(data){
-      $.get("todosobje.php", function(data){
+      $.get("objetos-painel-admin.php", function(data){
          $("#conteudo").html(data);
        });
     });
-    window.location.href = "painel-admin.php";
   });
 
   $('#btncad').click(function(){

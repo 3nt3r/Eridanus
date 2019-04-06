@@ -13,7 +13,9 @@
 <head>
 
 	<title>Painel de Controle - Eridanus</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/painel-usuario.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       if($('#linha').height() < $('#conteudo').height())
