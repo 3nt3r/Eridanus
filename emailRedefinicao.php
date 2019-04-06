@@ -16,7 +16,7 @@
       $prepare = $banco->prepare($insert);
       $prepare->bind_param("iss", $idi, $cod,$verif);
       $prepare->execute();
-      mail("rubenjosma11@gmail.com", "Redefinição de senha", "Para redefir sua senha acesse o seguinte link: http://projetoeridanus.000webhostapp.com/inserircodigo.php?verif=$verif", "sdf");
+      mail($email, "Redefinição de senha", "Para redefir sua senha acesse o seguinte link: http://projetoeridanus.000webhostapp.com/inserircodigo.php?verif=$verif", "sdf");
       ?>
       <?php session_start(); ?>
       <!DOCTYPE html>
