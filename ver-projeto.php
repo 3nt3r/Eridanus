@@ -3,7 +3,7 @@
 <html>
 <head>
 
-	<?php 
+	<?php
 
 		if (isset($_GET['titulo'])) {
 			$titulo = $_GET['titulo'];
@@ -42,17 +42,17 @@
 		<div class="col s3"></div>
     		<div class="col s6">
       			<div class="card-panel teal light-green accent-4">
-        			<center> 
-        				<span class="white-text titulo-partes-projeto"> <?php echo $titulo; ?> </span> 
-        			</center> 
+        			<center>
+        				<span class="white-text titulo-partes-projeto"> <?php echo $titulo; ?> </span>
+        			</center>
         			<br>
         			<hr>
-        			<center> 
-        				<span class="white-text textos-projeto-ver-projeto"> Usuário Responsável: <?php echo $autor; ?> </span> 
-        			</center> 
+        			<center>
+        				<span class="white-text textos-projeto-ver-projeto"> Usuário Responsável: <?php echo $autor; ?> </span>
+        			</center>
         			<br>
-        			<center> 
-        				<span class="white-text textos-projeto-ver-projeto"> Data de Envio: <?php echo $data; ?> </span> 
+        			<center>
+        				<span class="white-text textos-projeto-ver-projeto"> Data de Envio: <?php echo $data; ?> </span>
         			</center>
       			</div>
     		</div>
@@ -82,7 +82,7 @@
     		<div class="col s6">
       			<div class="card">
         			<div class="card-image">
-          				<img <?php echo "src=\"imagens-projetos/$autor/$imagem\""; ?> class="imagem-ver-projeto responsive-img materialboxed" >
+          				<img <?php echo "src=\"imagens-projetos/".md5($_GET['email'])."/$imagem\""; ?> class="imagem-ver-projeto responsive-img materialboxed" >
           				<span class="card-title frase-card-ver-projetos"> Projeto: <?php echo $titulo; ?> </span>
         			</div>
       			</div>

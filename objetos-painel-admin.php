@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['email_admin']) && !isset($_SESSION['senha_admin'])){
+    header("Location: login.php");
+  }
+?>
 <div class="container distancia-slider distancia-texto-baixo">
   <div class="row">
     <div class="col s3"></div>
@@ -9,16 +15,11 @@
     <div class="col s3"></div>
   </div>
 </div>
-
 <?php
-  session_start();
-  if(!isset($_SESSION['email_admin']) && !isset($_SESSION['senha_admin'])){
-    header("Location: login.php");
-  }
  include "conexao.php";
- $consulta = "select o.id, o.nome, o.descricao, o.status_atual, o.imagem, u.nome from objeto o join usuario u on o.id_usuario = u.id where status_atual = 'em avaliacao'";
+ $consulta = "select o.id, o.nome, o.descricao, o.status_atual, o.imagem, u.nome, u.email from objeto o join usuario u on o.id_usuario = u.id where status_atual = 'em avaliacao'";
  $prepare = $banco->prepare($consulta);
- $prepare->bind_result($id_obje, $nome, $descricao, $status_atual, $imagem, $nome_cliente);
+ $prepare->bind_result($id_obje, $nome, $descricao, $status_atual, $imagem, $nome_cliente, $email);
  $prepare->execute();
  $prepare->store_result();
  ?>
@@ -58,7 +59,7 @@
           <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modalb$cont'><span style='color: white;'>Ver<span></a></td>
             <div id='modalb$cont' class='modal'>
               <div class='modal-content'>
-                Imagem: <br><img src='imagens-objetos/$nome_cliente/$imagem' width='476' height='267'>
+                Imagem: <br><img src='imagens-objetos/".md5($email)."/$imagem' width='476' height='267'>
               </div>
               <div class='modal-footer'>
                 <a href='#!' class='modal-close waves-green btn-flat'>OK</a>

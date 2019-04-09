@@ -2,9 +2,9 @@
 
 	include "conexao.php";
 
-	$consulta = "select codigo, titulo, descricao, materiais, imagem, video, autor from projeto where status_atual = 'em avaliacao'";
+	$consulta = "select o.codigo, o.titulo, o.descricao, o.materiais ,o.imagem, o.video, u.nome, u.email from projeto o join usuario u on o.id_usuario = u.id where status_atual = 'em avaliacao'";
 	$prepare = $banco->prepare($consulta);
-	$prepare->bind_result($id_proj, $titulo, $descricao, $materiais, $imagem, $video, $autor);
+	$prepare->bind_result($id_proj, $titulo, $descricao, $materiais, $imagem, $video, $autor, $email);
 	$prepare->execute();
 	$prepare->store_result();
 
@@ -49,7 +49,7 @@
 
                   <div id='modalb$cont' class='modal'>
                     <div class='modal-content'>
-                      Imagem: <br><img src='imagens-projetos/$autor/$imagem' width='476' height='267'>
+                      Imagem: <br><img src='imagens-projetos/".md5($email)."/$imagem' width='476' height='267'>
                       <br><br>Video: <br><iframe width='476' height='267' src='$video'></iframe>
                     </div>
                     <div class='modal-footer'>

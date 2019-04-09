@@ -34,25 +34,25 @@
     <div class="col s3"></div>
       <div class="col s6">
         <div class="card-panel teal light-green accent-4">
-          <center> 
-            <span class="white-text titulo-partes-objeto">  
+          <center>
+            <span class="white-text titulo-partes-objeto">
               Aqui estão disponíveis todos os projetos feitos pela nossa equipe e pelos usuários do projeto, e também, projetos recomendados. Ao selecionar o projeto, você será redirecionado ao bate-papo diretamente com o anunciante. Os acordos serão feitos diretamente entre usuário e anunciante. <br>
               Observação: Todos os anúncios passaram por aprovação.
-            </span> 
+            </span>
           </center>
         </div>
       </div>
     <div class="col s3"></div>
-  </div>  
+  </div>
 
-<?php 
+<?php
 
 	include "conexao.php";
 
-	$consulta = "SELECT titulo, autor, descricao, data_publicacao, imagem, materiais, video FROM projeto WHERE status_atual = 'aprovado'";
+	$consulta = "SELECT projeto.titulo, projeto.descricao, projeto.data_publicacao, projeto.imagem, projeto.materiais, projeto.video, usuario.nome, usuario.email FROM projeto INNER JOIN usuario ON  status_atual = 'aprovado' and projeto.id_usuario = usuario.id";
 	$prepare = $banco->prepare($consulta);
 	$prepare->execute();
-	$prepare->bind_result($titulo, $autor, $descricao, $data, $imagem, $materiais, $video);
+	$prepare->bind_result($titulo, $descricao, $data, $imagem, $materiais, $video, $autor, $email);
 
 	echo "<div class=\"row distancia-topo\">";
 
@@ -80,17 +80,17 @@
       <div class=\"col s12 m6 l3\">
       	<div class=\"card\">
         	<div class=\"card-image\">
-          	<img src=\"imagens-projetos/$autor/$imagem\" class=\"imagem-pagina-projetos materialboxed\">
+          	<img src=\"imagens-projetos/".md5($email)."/$imagem\" class=\"imagem-pagina-projetos materialboxed\">
           	<span class=\"card-title titulo-enviar-projeto\"> $titulo </span>
         	</div>
         	<div class=\"card-content\">
           	<p class=\"truncate\"> $descricao </p>
         	</div>
         	<div class=\"card-action\">
-          	<a href=\"ver-projeto.php?titulo=$titulo&autor=$autor&descricao=$descricao&imagem=$imagem&materiais=$materiais&video=$video&data=$data\" class=\"botao-ver-projeto btn\"> Ver Mais </a>
+          	<a href=\"ver-projeto.php?titulo=$titulo&autor=$autor&descricao=$descricao&imagem=$imagem&materiais=$materiais&video=$video&data=$data&email=$email\" class=\"botao-ver-projeto btn\"> Ver Mais </a>
         	</div>
       	</div>
-   	  </div> 
+   	  </div>
     ";
 	}
 

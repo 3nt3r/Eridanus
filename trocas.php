@@ -34,11 +34,11 @@
     <div class="col s3"></div>
       <div class="col s6">
         <div class="card-panel teal light-green accent-4">
-          <center> 
-            <span class="white-text titulo-partes-objeto">  
+          <center>
+            <span class="white-text titulo-partes-objeto">
                 Aqui estão disponíveis todos os anúncios de resíduos dos nossos usuários. Ao clicar no anúncio, você será redirecionado ao bate-papo diretamente com o anunciante. Os acordos serão feitos diretamente entre usuário e anunciante. <br>
                 Observação: Todos os anúncios passaram por aprovação.
-            </span> 
+            </span>
           </center>
         </div>
       </div>
@@ -49,10 +49,10 @@
 
 	include "conexao.php";
 
-	$consulta = "SELECT objeto.nome, objeto.descricao, objeto.data_publicacao, objeto.imagem, usuario.nome FROM objeto INNER JOIN usuario ON  status_atual = 'aprovado' and objeto.id_usuario = usuario.id";
+	$consulta = "SELECT objeto.nome, objeto.descricao, objeto.data_publicacao, objeto.imagem, usuario.nome, usuario.email FROM objeto INNER JOIN usuario ON  status_atual = 'aprovado' and objeto.id_usuario = usuario.id";
 	$prepare = $banco->prepare($consulta);
 	$prepare->execute();
-	$prepare->bind_result($nome, $descricao, $data, $imagem, $usuario);
+	$prepare->bind_result($nome, $descricao, $data, $imagem, $usuario, $email);
 
 	echo "<div class=\"row distancia-topo\">";
   	echo "
@@ -81,7 +81,7 @@
     			<div class=\"col s12 m6 l3\">
       				<div class=\"card\">
         				<div class=\"card-image\">
-          					<img src=\"imagens-objetos/$usuario/$imagem\" class=\"materialboxed imagem-pagina-projetos\">
+          					<img src=\"imagens-objetos/".md5($email)."/$imagem\" class=\"materialboxed imagem-pagina-projetos\">
           					<span class=\"card-title titulo-enviar-projeto\"> Enviado por: $usuario </span>
         				</div>
         				<div class=\"card-content\">
@@ -100,7 +100,7 @@
     			<div class=\"col s12 m6 l3\">
       				<div class=\"card\">
         				<div class=\"card-image\">
-          					<img src=\"imagens-objetos/$usuario/$imagem\" class=\"materialboxed imagem-pagina-projetos\">
+          					<img src=\"imagens-objetos/".md5($email)."/$imagem\" class=\"materialboxed imagem-pagina-projetos\">
           					<span class=\"card-title titulo-enviar-projeto\"> Enviado por: $usuario </span>
         				</div>
         				<div class=\"card-content\">

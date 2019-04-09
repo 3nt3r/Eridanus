@@ -24,7 +24,7 @@
   $extensao = explode(".", $nome);
   $ext = end($extensao);
   $novoNome = rand(12233, 999999).".$ext";
-  move_uploaded_file($tmp, "imagens-projetos/".$_SESSION['nome']."/".$novoNome);
+  move_uploaded_file($tmp, "imagens-projetos/".md5($_SESSION['email'])."/".$novoNome);
 
   $sql = "insert into projeto(titulo, autor, descricao, data_publicacao, status_atual, id_usuario, imagem, materiais, video) value(?, ?, ?, ?, ?, ?,?,?,?)";
   $prepare = $banco->prepare($sql);

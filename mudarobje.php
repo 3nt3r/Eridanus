@@ -23,7 +23,7 @@
       $extensao = explode(".", $nome);
       $ext = end($extensao);
       $novoNome = md5($nome).".$ext";
-      move_uploaded_file($tmp, "imagens-projetos/".$_SESSION['nome']."/".$novoNome);
+      move_uploaded_file($tmp, "imagens-projetos/".md5($_SESSION['email'])."/".$novoNome);
 
       $sql = "update objeto set nome = ?, descricao = ?, status_atual = ?, imagem = ? where id = ?";
       $prepare = $banco->prepare($sql);
@@ -33,7 +33,7 @@
       $sql = "update objeto set nome = ?, descricao = ?, status_atual = ? where id = ?";
       $prepare = $banco->prepare($sql);
       $prepare->bind_param("sssi", $nome, $descricao, $status, $id_obje);
-    
+
     }
     $prepare->execute();
     $banco->close();
@@ -42,5 +42,5 @@
     $banco->close();
     header("Location: acesse-conta.php");
   }
-  
+
 ?>
