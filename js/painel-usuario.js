@@ -185,6 +185,40 @@ $(document).ready(function(){
     return false;
   });
 
-$('.modal').modal();
+
+  $('#btnEnviarMensagem').click(function(event){
+    event.preventDefault();
+    var mensagem = $("#mensagem").val();
+    var verif1 = $(this).attr("verif1");
+    var verif2 = $(this).attr("verif2");
+    $.ajax({
+      url: "enviarmensagem.php",
+      type: "post",
+      data: "mensagem="+mensagem+"&verif1="+verif1+"&verif2="+verif2,
+      beforeSend: function(){$('#btnEnviarMensagem').addClass("disabled"); $("#preEnvio").addClass("active")}
+    })
+    .done(function(data){
+      $('#btnEnviarMensagem').removeClass("disabled");
+      $("#preEnvio").removeClass("active")
+      if(data.indexOf("sucesso") > -1){
+        alert("Mensagem enviada com sucesso!");
+        window.location.href = "trocas.php";
+      }else{
+        alert("Erro ao enviar mensagem por favor tente mais tarde!");
+      }
+      console.log(data);
+    })
+    .fail(function(){
+      alert('Erro ao enviar mensagem!');
+    });
+  });
+
+
+  $("#mensagens").click(function(event){
+    event.preventDefault();
+    alert("Teste");
+  });
+
+  $('.modal').modal();
 
 });
