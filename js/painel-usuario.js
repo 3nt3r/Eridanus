@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  $('.modal').modal();
+
   $('#btnAlt').click(function(event){
     event.preventDefault();
     $.get("alterarinfo.php", function(data){
@@ -95,6 +97,13 @@ $(document).ready(function(){
     $.get("gerenciarobjetos.php", function(data){
       $("#conteudo").html(data);
     })
+  });
+
+  $("#mensagens").click(function(event){
+    event.preventDefault();
+    $.get("mensagensObjetos.php", function(data){
+      $("#conteudo").html(data);
+    });
   });
 
   $('.btnMudarStatus').click(function(event){
@@ -214,11 +223,46 @@ $(document).ready(function(){
   });
 
 
-  $("#mensagens").click(function(event){
+
+
+
+
+
+
+
+  $('#btnResponderMensagem').click(function(event){
     event.preventDefault();
-    alert("Teste");
+    var mensagem = $("#responderMensagem").val();
+    var remetente = $(this).attr("remetente");
+    var destinatario = $(this).attr("destinatario");
+    var objeto = $(this).attr("objeto");
+
+    $.ajax({
+      url: "responderMensagem.php",
+      type: "post",
+      data: "mensagem="+mensagem+"&remetenteMensagem="+remetente+"&destinatarioMensagem="+destinatario+"&objetoMensagem="+objeto,
+      beforeSend: function(){
+        $('#btnResponderMensagem').addClass("disabled"); 
+      }
+    })
+    .done(function(data){
+      $('#btnResponderMensagem').removeClass("disabled");
+      if(data.indexOf("sucesso") > -1){
+        alert("Mensagem enviada com sucesso!");
+        window.location.href = "acesse-conta.php";
+      }else{
+        alert("Erro ao enviar mensagem, por favor tente mais tarde!");
+      }
+    })
+    .fail(function(){
+      alert('Erro ao enviar mensagem!');
+    });
   });
 
-  $('.modal').modal();
+
+
+
+
+
 
 });

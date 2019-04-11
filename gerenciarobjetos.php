@@ -12,7 +12,7 @@ $id =(int) $_SESSION["id"];
 
 $consulta = "select id, nome, descricao, observacoes, data_publicacao, status_atual from objeto where id_usuario = ?";
 $prepare = $banco->prepare($consulta);
-$prepare->bind_param("i",$id);
+$prepare->bind_param('i', $id);
 $prepare->bind_result($id_obje, $nome, $descricao, $observacoes, $data_publicacao, $status_atual);
 $prepare->execute();
 $prepare->store_result();

@@ -67,11 +67,16 @@
 			</tr>
 
 			<tr>
-        <td> <a href="#" id="mensagens"> <span> <i class="material-icons">chat</i>Mensagens</span> </a> </td>
-      </tr>
+        		<td> 
+        			<a href="#" id="mensagens"> <span> <i class="material-icons">chat</i> Mensagens Recebidas </span> </a> </td>
+      		</tr>
+
 			<tr>
-				<td> <a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> </td>
+				<td> 
+					<a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> 
+				</td>
 			</tr>
+
 		</table>
 	</div>
 
