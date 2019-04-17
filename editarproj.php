@@ -1,8 +1,12 @@
 <script type="text/javascript" src="js/painel-usuario.js"></script>
+
 <?php
+
   session_start();
-  $id_proj = $_SESSION[$_POST["data"]];
+
   include "conexao.php";
+
+  $id_proj = $_SESSION[$_POST["data"]];
   $consulta = "select titulo, descricao, imagem, materiais, video from projeto where codigo = ?";
   $prepare = $banco->prepare($consulta);
   $prepare->bind_param("i",$id_proj);
@@ -10,7 +14,9 @@
   $prepare->execute();
   $prepare->store_result();
   $prepare->fetch();
+
 ?>
+
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/materialize.js"></script>
 <link rel="stylesheet" type="text/css" href="css/materialize.min.css">

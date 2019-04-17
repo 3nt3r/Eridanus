@@ -1,8 +1,11 @@
 <?php
+
 	session_start();
+
 	if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
 		header("Location: login.php");
 	}
+
  ?>
 
 <!DOCTYPE html>
@@ -65,12 +68,10 @@
 			<tr>
 				<td> <a href="#" id="gerenciarobjetos"> <span> <i class="material-icons">edit</i> Gerenciar Objeto </span> </a> </td>
 			</tr>
-
 			<tr>
         		<td> 
         			<a href="#" id="mensagens"> <span> <i class="material-icons">chat</i> Mensagens Recebidas </span> </a> </td>
       		</tr>
-
 			<tr>
 				<td> 
 					<a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> 

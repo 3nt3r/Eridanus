@@ -1,4 +1,3 @@
-
 $(window).resize(function(){
 	var largura = $(this).width();
 	if(largura < 700){
@@ -9,8 +8,8 @@ $(window).resize(function(){
 		$("#foto-menu").css('height', '');
 	}
 });
+
 $(document).ready(function(){
-		// pagina de cadastro
 		$('#form').submit(function(){
 			var dados = $( this ).serialize();
 			$.ajax({
@@ -53,17 +52,16 @@ $(document).ready(function(){
               $("#aviso").show();
               $("#aviso").html(data);
           }else{
-						$("#cadastro").hide();
-						$("#aviso").show();
-						$("#aviso").html(data);
+			$("#cadastro").hide();
+			$("#aviso").show();
+			$("#aviso").html(data);
           }
-        })
-			  .fail(function(){
+        }).fail(function(){
           alert("Não foi possivel enviar os dados!");
         });
 			return false;
 		});
-		// _____________________
+		
 		var re = new RegExp("^[0-9]{3}-[0-9]{3}$", "g");
 		$("#codigo").keyup(function(){
 			var verif = re.exec($(this).val());

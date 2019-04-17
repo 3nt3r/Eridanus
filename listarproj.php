@@ -1,23 +1,28 @@
 <?php
-session_start();
-if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
-  header("Location: login.php");
-}
-include "conexao.php";
-$id =(int) $_SESSION["id"];
-$consulta = "select codigo, titulo, descricao, status_atual, observacoes, materiais, video from projeto where id_usuario = ? and status_atual != ?";
-$prepare = $banco->prepare($consulta);
-$excluido = "excluido";
-$prepare->bind_param("is", $id, $excluido);
-$prepare->bind_result($id_proj, $titulo, $descricao, $status_atual, $observacoes, $materiais, $video);
-$prepare->execute();
-$prepare->store_result();
+
+  session_start();
+
+  if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
+    header("Location: login.php");
+  }
+  include "conexao.php";
+  $id =(int) $_SESSION["id"];
+  $consulta = "select codigo, titulo, descricao, status_atual, observacoes, materiais, video from projeto where id_usuario = ? and status_atual != ?";
+  $prepare = $banco->prepare($consulta);
+  $excluido = "excluido";
+  $prepare->bind_param("is", $id, $excluido);
+  $prepare->bind_result($id_proj, $titulo, $descricao, $status_atual, $observacoes, $materiais, $video);
+  $prepare->execute();
+  $prepare->store_result();
+
 ?>
+
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/materialize.js"></script>
 <script type="text/javascript" src="js/painel-usuario.js"></script>
 <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 <h5 class="titulo-pagina flow-text"> Gerenciar Meus Projetos </h5>
+
 <table class="striped">
   <tr>
     <th>#</th>
@@ -28,7 +33,9 @@ $prepare->store_result();
     <th>Editar</th>
     <th>Excluir</th>
   </tr>
+
 <?php
+
   $cont = 1;
   $num = 2000;
   while ($prepare->fetch()) {
@@ -95,6 +102,9 @@ $prepare->store_result();
     ";
     $cont++;
   }
+
   $banco->close();
+
 ?>
+
 </table>

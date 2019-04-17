@@ -1,9 +1,11 @@
 <?php
+
   session_start();
-  if(isset($_SESSION['id']) && isset($_POST['remetente']) && isset($_POST['destinatario']) && isset($_POST['mensagem'])){
-    $remetente = $_SESSION[$_POST["remetenteMensagem"]];
-    $destinatario = $_SESSION[$_POST["destinatarioMensagem"]];
-    $objeto = $_SESSION[$_POST["objetoMensagem"]];
+
+  if(isset($_SESSION['email']) && isset($_POST['remetente']) && isset($_POST['destinatario']) && isset($_POST['mensagem'])){
+    $remetente = $_POST["remetente"];
+    $destinatario = $_POST["destinatario"];
+    $objeto = $_POST["objeto"];
     $mensagem = $_POST["mensagem"]; 
 
     include "conexao.php";
@@ -12,8 +14,10 @@
     $prepare = $banco->prepare($insert);
     $prepare->bind_param("siii", $mensagem, $remetente, $destinatario, $objeto);
     $prepare->execute();
+    $banco->close();
     echo "sucesso";
   }else{
     header("Location: trocas.php");
   }
+  
 ?>

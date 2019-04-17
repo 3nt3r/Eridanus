@@ -1,5 +1,7 @@
 <?php
+
   session_start();
+
   if(!isset($_SESSION['email_admin']) && !isset($_SESSION['senha_admin'])){
     header("Location: login.php");
   }
@@ -11,6 +13,7 @@
   $prepare = $banco->prepare($consulta);
   $prepare->bind_param("ssi", $status, $motivo, $id_proj);
   $prepare->execute();
+  
 ?>
 
 <script type="text/javascript">

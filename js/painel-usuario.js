@@ -222,17 +222,9 @@ $(document).ready(function(){
     });
   });
 
-
-
-
-
-
-
-
-
   $('#btnResponderMensagem').click(function(event){
     event.preventDefault();
-    var mensagem = $("#responderMensagem").val();
+    var mensagem = $("#responderMsg").val();
     var remetente = $(this).attr("remetente");
     var destinatario = $(this).attr("destinatario");
     var objeto = $(this).attr("objeto");
@@ -240,7 +232,7 @@ $(document).ready(function(){
     $.ajax({
       url: "responderMensagem.php",
       type: "post",
-      data: "mensagem="+mensagem+"&remetenteMensagem="+remetente+"&destinatarioMensagem="+destinatario+"&objetoMensagem="+objeto,
+      data: {'mensagem': mensagem, 'remetente': remetente, 'destinatario': destinatario, 'objeto': objeto},
       beforeSend: function(){
         $('#btnResponderMensagem').addClass("disabled"); 
       }
@@ -258,11 +250,5 @@ $(document).ready(function(){
       alert('Erro ao enviar mensagem!');
     });
   });
-
-
-
-
-
-
 
 });

@@ -1,6 +1,7 @@
 <?php
 
   session_start();
+  
   if(!isset($_SESSION['email_admin']) && !isset($_SESSION['senha_admin'])){
     header("Location: login.php");
   }

@@ -1,20 +1,24 @@
-<?php  session_start(); ?>
+<?php  
+
+	session_start(); 
+
+?>
 
 <script type="text/javascript" src="js/painel-usuario.js"></script>
 
 <?php
 
-include "cabecalho.php";
+	include "cabecalho.php";
 
-include "conexao.php";
+	include "conexao.php";
 
-$consulta = "select nome, sobrenome,email,senha from usuario where id=?";
-$prepare = $banco->prepare($consulta);
-$prepare->bind_param("i", $_SESSION['id']);
-$prepare->bind_result($nome, $sobrenome, $email, $senha);
-$prepare->execute();
-$prepare->store_result();
-$prepare->fetch();
+	$consulta = "select nome, sobrenome,email,senha from usuario where id=?";
+	$prepare = $banco->prepare($consulta);
+	$prepare->bind_param("i", $_SESSION['id']);
+	$prepare->bind_result($nome, $sobrenome, $email, $senha);
+	$prepare->execute();
+	$prepare->store_result();
+	$prepare->fetch();
 ?>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>

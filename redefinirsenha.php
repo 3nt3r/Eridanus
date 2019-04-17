@@ -1,4 +1,5 @@
 <?php
+
   if(isset($_POST["verificador"]) && isset($_POST["codigo"]) && isset($_POST["senhaNova"]) && isset($_POST["senhaConf"])){
     $verificador = $_POST["verificador"];
     $codigo = $_POST["codigo"];
@@ -28,8 +29,8 @@
     header("Location: esqueci-senha.php");
   }
 
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,10 +53,12 @@
   include "menu.php";
 
  ?>
+
  <div style="margin-top: 90px;text-align: center;margin-bottom: 90px;">
  <h3 class="teat-text titulo-pagina">Senha redefida com sucesso!</h3>
  <i class="material-icons large" style="color: rgb(100,221,23);">check_circle_outline</i>
 </div>
+
 <?php
 
   include "rodape.php";

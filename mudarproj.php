@@ -1,6 +1,7 @@
 <?php
 
   session_start();
+
   $id_proj = $_SESSION[$_POST["data"]];
   if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
     header("Location: login.php");
@@ -35,4 +36,5 @@
     $banco->close();
     header("Location: acesse-conta.php");
   }
+  
 ?>

@@ -8,11 +8,10 @@
 
   include "conexao.php";
 
-  $consulta = "SELECT mensagem.conteudo, mensagem.id_emi, mensagem.id_rec, mensagem.id_objeto, usuario.id, objeto.nome FROM mensagem, usuario, objeto WHERE mensagem.id_rec = ? GROUP BY mensagem.conteudo";
-
+  $consulta = "SELECT mensagem.conteudo, mensagem.id_emi, mensagem.id_rec, mensagem.id_objeto, objeto.nome FROM mensagem, objeto WHERE id_rec = ? GROUP BY conteudo";
   $prepare = $banco->prepare($consulta);
   $prepare->bind_param("i", $_SESSION['id']);
-  $prepare->bind_result($mensagem, $remetente, $destinatario, $objeto, $usuario, $nomeObjeto);
+  $prepare->bind_result($mensagem, $remetente, $destinatario, $idObjeto, $nomeObjeto);
   $prepare->execute();
   $prepare->store_result();
 
@@ -45,13 +44,6 @@
 
         <td> 
 
-
-
-
-
-
-
-
           <a class='light-green accent-4 btn modal-trigger' href='#modal$contadorModal'> Ver </a>
 
             <div id='modal$contadorModal' class='modal'>
@@ -63,36 +55,20 @@
 
               <form>
                 <div class='input-field col s6'>
-                  <textarea id='responderMsg' class='materialize-textarea' name='responder' required> </textarea>
-                  <label for='responder'> Responder: </label>
+                  <textarea id='responderMsg' class='materialize-textarea' required> </textarea>
+                  <label> Responder: </label>
                 </div>
               </form>
 
-
               <div class='modal-footer'>
 
-
-                <a id='btnResponderMensagem' style='background-color: #64dd17; margin-right: 20px' class='btn' destinatario='".$remetente."' remetente='".$destinatario."'> Enviar </a>
-
+                <a id='btnResponderMensagem' style='background-color: #64dd17; margin-right: 20px' class='btn' destinatario='".$remetente."' remetente='".$destinatario."' objeto='".$idObjeto."'> Enviar </a>
 
                 <a href='#!' class='modal-close btn' style='background-color: #64dd17;'> Fechar </a>
 
               </div>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
          </td>
 
@@ -106,9 +82,9 @@
   }
 
   $prepare-> free_result();
+
   $banco->close();
 
-  
 ?>
 
 </table>

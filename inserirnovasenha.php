@@ -1,4 +1,5 @@
 <?php
+
   if(isset($_POST["verificador"]) && isset($_POST["codigo"])){
     $verificador = $_POST["verificador"];
     $codigo = $_POST["codigo"];
@@ -17,8 +18,8 @@
     header("Location: esqueci-senha.php");
   }
 
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,8 +64,6 @@
   </div>
     <div class="col s1 m1 l4"></div>
   </div>
-
-
 
 </form>
 <?php

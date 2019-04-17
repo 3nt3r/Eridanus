@@ -27,6 +27,11 @@
   $prepare->bind_param("ssssis", $nomeObj, $descricao, $data_atual, $status, $id, $novoNome);
   $prepare->execute();
   $banco->close();
-  echo "<script>alert('Objeto cadastrado com sucesso!'); window.location.href = 'acesse-conta.php';</script>"
+  echo "
+    <script>
+      alert('Objeto cadastrado com sucesso!'); 
+      window.location.href = 'acesse-conta.php';
+    </script>
+  ";
 
 ?>

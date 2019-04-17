@@ -1,5 +1,7 @@
 <?php
+
   session_start();
+
   if(isset($_SESSION['id']) && isset($_POST['verif1']) && isset($_POST['verif2']) && isset($_POST['mensagem'])){
     $id_rec = $_SESSION[$_POST["verif1"]];
     $id_objeto = $_SESSION[$_POST["verif2"]];
@@ -14,4 +16,5 @@
   }else{
     header("Location: trocas.php");
   }
+  
 ?>

@@ -80,8 +80,7 @@
 				</a>
 			</center>
 
-			<br>
-			<br>
+			<br><br>
 
 			<?php
 		}

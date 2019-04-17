@@ -115,6 +115,8 @@ $prepare->store_result();
     $cont++;
   }
 
+  $banco->close();
+
 ?>
 
 </table>

@@ -1,4 +1,3 @@
-
 <center>
 <a href="index.php"> <img src="imagens/eridanus-menu.png" id="foto-menu"> </a>
 </center>
@@ -18,7 +17,9 @@
     </table>
 
   <?php
-	}else if(isset($_SESSION['email']) && !isset($_SESSION['email_admin'])){
+
+	 }else if(isset($_SESSION['email']) && !isset($_SESSION['email_admin'])){
+
 	?>
 
   <div class="login-cadastro hide-on-med-and-down">
@@ -51,7 +52,9 @@
   </div>
 
 		<?php
-	}else if(!isset($_SESSION['email']) && isset($_SESSION['email_admin'])){
+
+	     }else if(!isset($_SESSION['email']) && isset($_SESSION['email_admin'])){
+
     ?>
 
   <div class="login-cadastro hide-on-med-and-down">

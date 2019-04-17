@@ -1,4 +1,5 @@
 <?php
+
   if(isset($_GET["verif"])){
     $verificador = $_GET["verif"];
     include "conexao.php";
@@ -16,8 +17,8 @@
     header("Location: esqueci-senha.php");
   }
 
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

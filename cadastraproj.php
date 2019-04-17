@@ -31,6 +31,11 @@
   $prepare->bind_param("sssssisss", $titulo, $autor, $descricao, $data_atual, $status, $id, $novoNome, $materiais, $video_certo);
   $prepare->execute();
   $banco->close();
-  echo "<script>alert('Projeto cadastrado com sucesso!'); window.location.href = 'acesse-conta.php';</script>"
+  echo "
+    <script> 
+      alert('Projeto cadastrado com sucesso!'); 
+      window.location.href = 'acesse-conta.php';
+    </script>
+  ";
 
 ?>
