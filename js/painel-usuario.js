@@ -1,8 +1,11 @@
 $(document).ready(function(){
 
+  var preloader = '<div class="col s1 l3 m3"></div><div class="preloader-wrapper big active" style = "margin-top: 30%">  <div class="spinner-layer spinner-blue">    <div class="circle-clipper left">      <div class="circle"></div>    </div><div class="gap-patch">      <div class="circle"></div>    </div><div class="circle-clipper right">      <div class="circle"></div>    </div>  </div>  <div class="spinner-layer spinner-red">    <div class="circle-clipper left">      <div class="circle"></div>    </div><div class="gap-patch">      <div class="circle"></div>    </div><div class="circle-clipper right">      <div class="circle"></div>    </div>  </div>  <div class="spinner-layer spinner-yellow">    <div class="circle-clipper left">      <div class="circle"></div>    </div><div class="gap-patch">      <div class="circle"></div>    </div><div class="circle-clipper right">      <div class="circle"></div>    </div>  </div>  <div class="spinner-layer spinner-green">    <div class="circle-clipper left">      <div class="circle"></div>    </div><div class="gap-patch">      <div class="circle"></div>    </div><div class="circle-clipper right">      <div class="circle"></div>    </div>  </div></div><div class="col s1 l4 m2"></div>';
+
   $('.modal').modal();
 
   $('#btnAlt').click(function(event){
+    $("#conteudo").html(preloader);
     event.preventDefault();
     $.get("alterarinfo.php", function(data){
       $("#conteudo").html(data);
@@ -10,6 +13,7 @@ $(document).ready(function(){
   });
 
   $('#bntEnviarObjeto').click(function(event){
+    $("#conteudo").html(preloader);
     event.preventDefault();
     $.get("enviarObjeto.php", function(data){
       $("#conteudo").html(data);
@@ -17,6 +21,7 @@ $(document).ready(function(){
   });
 
   $('#btnverobjetos').click(function(event){
+    $("#conteudo").html(preloader);
     event.preventDefault();
     $.get("objetos-painel-admin.php", function(data){
       $("#conteudo").html(data);
@@ -24,6 +29,7 @@ $(document).ready(function(){
   });
 
   $('#btnProjetosExcluidos').click(function(event){
+    $("#conteudo").html(preloader);
     event.preventDefault();
     $.get("projetosExcluidos.php", function(data){
       $("#conteudo").html(data);
@@ -31,6 +37,7 @@ $(document).ready(function(){
   });
 
   $('#btnObjetosExcluidos').click(function(event){
+    $("#conteudo").html(preloader);
     event.preventDefault();
     $.get("objetosExcluidos.php", function(data){
       $("#conteudo").html(data);
@@ -38,6 +45,7 @@ $(document).ready(function(){
   });
 
   $('#bntEnviarProj').click(function(event){
+    $("#conteudo").html(preloader);
     event.preventDefault();
     $.get("enviarproj.php", function(data){
       $("#conteudo").html(data);
@@ -45,6 +53,7 @@ $(document).ready(function(){
   });
 
   $('.btnEditarProj').click(function(event){
+    $("#conteudo").html(preloader);
     event.preventDefault();
     var dado = $(this).attr("data");
     $.post("editarproj.php", "data="+dado,function(data){
@@ -53,6 +62,7 @@ $(document).ready(function(){
   });
 
   $('.btnEditarObje').click(function(event){
+    $("#conteudo").html(preloader);
     event.preventDefault();
     var dado = $(this).attr("data");
     $.post("editarobje.php", "data="+dado,function(data){
@@ -100,6 +110,7 @@ $(document).ready(function(){
   });
 
   $("#mensagens").click(function(event){
+    $("#conteudo").html(preloader);
     event.preventDefault();
     $.get("mensagensObjetos.php", function(data){
       $("#conteudo").html(data);
@@ -234,7 +245,7 @@ $(document).ready(function(){
       type: "post",
       data: {'mensagem': mensagem, 'remetente': remetente, 'destinatario': destinatario, 'objeto': objeto},
       beforeSend: function(){
-        $('#btnResponderMensagem').addClass("disabled"); 
+        $('#btnResponderMensagem').addClass("disabled");
       }
     })
     .done(function(data){
