@@ -24,7 +24,7 @@
     </div>
 
     <div class="input-field col s12">
-      <textarea id="descricao" class="materialize-textarea validate" name="descricao" required></textarea>
+      <textarea id="descricao" class="materialize-textarea validate" name="descricao" required maxlength="500"></textarea>
       <label for="descricao"><span style="color: red">* </span> Descrição do Objeto:</label>
     </div>
 

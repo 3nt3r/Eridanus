@@ -73,7 +73,7 @@
     </div>
   <div class="margem-esqueci-senha">
     <span>
-      <a href="esqueci-senha.php" class="estilo-texto-esqueci-senha"> Esqueci minha senha </a>
+      <a href="esqueci-senha.php" class="estilo-texto-esqueci-senha"> Esqueci Minha Senha! </a>
     </span>  
   </div>
 	<button class="btn light-green accent-4" type="submit" name="action"> Entrar <i class="material-icons right">chevron_right</i> </button>

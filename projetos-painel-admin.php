@@ -65,7 +65,7 @@
                       <p>Ao aprovar o projeto seu status mudará para aprovado e será apresentado na pagina de Trocas.</p>
                     </div>
                     <div class='modal-footer'>
-                      <a href='#!' class='btnMudarStatus modal-close btn-flat' status='aprovado' data='".md5($num)."'>Aprovar</a><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+                      <a href='#!' class='btnMudarStatus modal-close btn-flat aprovar' status='aprovado' data='".md5($num)."'>Aprovar</a><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
                     </div>
 
 
@@ -82,7 +82,7 @@
 											</form>
                     </div>
                     <div class='modal-footer'>
-                      <a href='#!' class='btnMudarStatus modal-close btn-flat' status='reprovado' data='".md5($num)."'>Reprovar</a><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+                      <a href='#!' class='btnMudarStatus modal-close btn-flat reprovar' status='reprovado' data='".md5($num)."'>Reprovar</a><a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
                     </div>
                </tr>
            ";

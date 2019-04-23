@@ -164,7 +164,6 @@ $(document).ready(function(){
       $('#btnsalvar').hide();
       $('#first_name').attr("disabled", true);
       $('#last_name').attr("disabled", true);
-      $('#email').attr("disabled", true);
       $('#btncad').show();
       $('#btncads').show();
       alert('Dados alterados com sucesso!');

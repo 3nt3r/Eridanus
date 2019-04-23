@@ -12,10 +12,10 @@
 
 	include "conexao.php";
 
-	$consulta = "select nome, sobrenome,email,senha from usuario where id=?";
+	$consulta = "select nome, sobrenome, senha from usuario where id=?";
 	$prepare = $banco->prepare($consulta);
 	$prepare->bind_param("i", $_SESSION['id']);
-	$prepare->bind_result($nome, $sobrenome, $email, $senha);
+	$prepare->bind_result($nome, $sobrenome, $senha);
 	$prepare->execute();
 	$prepare->store_result();
 	$prepare->fetch();
@@ -39,14 +39,6 @@
     <div class="input-field col s6">
       <input id="last_name" type="text" class="validate" disabled value="<?php echo $sobrenome; ?>" name="sobrenome_cad">
       <label for="last_name">Sobrenome:</label>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="input-field col s8">
-      <input id="email" type="email" class="validate" disabled value="<?php echo $email;  ?>" name="email_cad">
-      <label for="email">Email:</label>
-      <span class="erro" id="erroE"></span>
     </div>
   </div>
 

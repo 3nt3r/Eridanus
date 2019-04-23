@@ -5,11 +5,13 @@
 <head>
 
 	<title>Trocas - Eridanus</title>
+
 	<?php
 
 		include "cabecalho.php";
 
 	?>
+
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/painel-usuario.js"></script>
 
@@ -57,6 +59,7 @@
 	$prepare->bind_result($idObjeto, $nome, $descricao, $idUsuario, $data, $imagem, $usuario, $email);
 	$cont = 1;
 	$num = 1;
+
 	echo "<div class='row distancia-topo'>";
   	echo "
     	<div class='col s12 m6 l3'>
@@ -94,6 +97,7 @@
         				<div class='card-content'>
           					<p class='truncate'> $descricao </p>
         				</div>
+
         				<div class='card-action'>
           					<a href='#modal".$cont."' class='botao-ver-projeto btn modal-trigger'> Negociar </a>
 										<div id='modal".$cont."' class='modal'>
@@ -126,27 +130,26 @@
       				</div>
     			</div>
   			";
-
 		}else{
-
-  			echo "
-    			<div class='col s12 m6 l3'>
-      				<div class='card'>
-        				<div class='card-image'>
-          					<img src='imagens-objetos/".md5($email)."/$imagem' class='materialboxed imagem-pagina-projetos'>
-          					<span class='card-title titulo-enviar-projeto'> Enviado por: $usuario </span>
-        				</div>
-        				<div class='card-content'>
-          					<p class='truncate'> $descricao </p>
-        				</div>
-        				<div class='card-action'>
-          					<a href='#' class='botao-ver-projeto btn disabled'> Negociar </a>
-        				</div>
-      				</div>
-    			</div>
-  			";
+  		echo "
+    		<div class='col s12 m6 l3'>
+      			<div class='card'>
+        			<div class='card-image'>
+          				<img src='imagens-objetos/".md5($email)."/$imagem' class='materialboxed imagem-pagina-projetos'>
+          				<span class='card-title titulo-enviar-projeto'> Enviado por: $usuario </span>
+        			</div>
+        			<div class='card-content'>
+          				<p class='truncate'> $descricao </p>
+        			</div>
+        			<div class='card-action'>
+          				<a href='#' class='botao-ver-projeto btn disabled'> Negociar </a>
+        			</div>
+      			</div>
+    		</div>
+  		";
 		}
 	}
+  
 	echo "</div>";
 
 	$prepare-> free_result();

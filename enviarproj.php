@@ -23,7 +23,7 @@
     </div>
 
     <div class="input-field col s12">
-      <textarea id="descricao" class="materialize-textarea validate" name="descricao" required></textarea>
+      <textarea id="descricao" class="materialize-textarea validate" name="descricao" required maxlength="500"></textarea>
       <label for="descricao"><span style="color: red">* </span> Descrição do Projeto:</label>
     </div>
 
@@ -39,7 +39,7 @@
     </div>
 
     <div class="input-field col s12">
-      <textarea id="materiais" class="materialize-textarea validate" name="materiais" required></textarea>
+      <textarea id="materiais" class="materialize-textarea validate" name="materiais" required maxlength="500"></textarea>
       <label for="materiais"><span style="color: red">* </span> Materiais Necessários:</label>
     </div>
 

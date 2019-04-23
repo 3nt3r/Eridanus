@@ -14,6 +14,7 @@
 			$materiais = $_GET['materiais'];
 			$video = $_GET['video'];
 			$data = $_GET['data'];
+			$sobrenome = $_GET['sobrenome'];
 		}else{
 			header("Location: index.php");
 		}
@@ -49,7 +50,7 @@
         			<br>
         			<hr>
         			<center>
-        				<span class="white-text textos-projeto-ver-projeto"> Usuário Responsável: <?php echo $autor; ?> </span>
+        				<span class="white-text textos-projeto-ver-projeto"> Usuário Responsável: <?php echo "$autor $sobrenome"; ?> </span>
         			</center>
         			<br>
         			<center>

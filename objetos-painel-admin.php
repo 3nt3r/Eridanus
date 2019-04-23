@@ -82,7 +82,7 @@
               <p>Ao aprovar o objeto seu status mudará para aprovado e será apresentado na pagina de Trocas.</p>
             </div>
             <div class='modal-footer'>
-              <a href='#!' class='btnMudarStatusObje modal-close waves-red btn-flat' status='aprovado' data='".md5($num)."'>Aprovar</a><a href='#!' class='modal-close waves-green btn-flat'>Cancelar</a>
+              <a href='#!' class='btnMudarStatusObje modal-close waves-red btn-flat aprovar' status='aprovado' data='".md5($num)."'>Aprovar</a><a href='#!' class='modal-close waves-green btn-flat'>Cancelar</a>
             </div>
           <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modald$cont'><span style='color: white;'><i class='material-icons'>close</i></span></a>
           <div id='modald$cont' class='modal'>
@@ -96,7 +96,7 @@
               </form>
             </div>
             <div class='modal-footer'>
-              <a href='#!' class='btnMudarStatusObje modal-close waves-red btn-flat' status='reprovado' data='".md5($num)."'>Reprovar</a><a href='#!' class='modal-close waves-green btn-flat'>Cancelar</a>
+              <a href='#!' class='btnMudarStatusObje modal-close waves-red btn-flat reprovar' status='reprovado' data='".md5($num)."'>Reprovar</a><a href='#!' class='modal-close waves-green btn-flat'>Cancelar</a>
             </div>
        </tr>
      ";

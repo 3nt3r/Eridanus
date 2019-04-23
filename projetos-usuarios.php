@@ -46,14 +46,20 @@
     <div class="col s3"></div>
   </div>
 
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
+  </script>
+
 <?php
 
 	include "conexao.php";
 
-	$consulta = "SELECT projeto.titulo, projeto.descricao, projeto.data_publicacao, projeto.imagem, projeto.materiais, projeto.video, usuario.nome, usuario.email FROM projeto INNER JOIN usuario ON  status_atual = 'aprovado' and projeto.id_usuario = usuario.id";
+	$consulta = "SELECT projeto.titulo, projeto.descricao, projeto.data_publicacao, projeto.imagem, projeto.materiais, projeto.video, usuario.nome, usuario.email, usuario.sobrenome FROM projeto INNER JOIN usuario ON  status_atual = 'aprovado' and projeto.id_usuario = usuario.id";
 	$prepare = $banco->prepare($consulta);
 	$prepare->execute();
-	$prepare->bind_result($titulo, $descricao, $data, $imagem, $materiais, $video, $autor, $email);
+	$prepare->bind_result($titulo, $descricao, $data, $imagem, $materiais, $video, $autor, $email, $sobrenome);
 
 	echo "<div class=\"row distancia-topo\">";
 
@@ -85,10 +91,10 @@
           	<span class=\"card-title titulo-enviar-projeto\"> $titulo </span>
         	</div>
         	<div class=\"card-content\">
-          	<p class=\"truncate\"> $descricao </p>
+            <p class=\"truncate\"> $descricao </p>
         	</div>
         	<div class=\"card-action\">
-          	<a href=\"ver-projeto.php?titulo=$titulo&autor=$autor&descricao=$descricao&imagem=$imagem&materiais=$materiais&video=$video&data=$data&email=$email\" class=\"botao-ver-projeto btn\"> Ver Mais </a>
+          	<a href=\"ver-projeto.php?titulo=$titulo&autor=$autor&descricao=$descricao&imagem=$imagem&materiais=$materiais&video=$video&data=$data&email=$email&sobrenome=$sobrenome\" class=\"botao-ver-projeto btn\"> Ver Mais </a>
         	</div>
       	</div>
    	  </div>
@@ -96,6 +102,7 @@
 	}
 
 	echo "</div>";
+  
 	$prepare-> free_result();
 	$banco->close();
 

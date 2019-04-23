@@ -90,7 +90,7 @@ body{
 	width: 10%;
 	height: 12%;
 	left: 77%;
-	top: 10%;
+	top: 7%;
 }
 
 .menu-login{
@@ -188,8 +188,8 @@ body{
 
 .estilo-texto-esqueci-senha{
 	text-decoration: none;
-	color: gray;
-	font-weight: bolder;
+	color: #696969;
+	font-weight: bold;
 }
 
 /* ====================== PAGINA CADASTRE-SE ============================ */
@@ -275,7 +275,7 @@ td button{
 #form-contato{
 	width: 350px;
 	margin: 0 auto;
-	margin-bottom: 35px;
+	margin-bottom: 1%;
 	margin-top: 35px;
 }
 
@@ -348,6 +348,14 @@ td button{
 
 .estiloProjetosExcluidos{
 	margin-top: 2em;
+}
+
+.reprovar{
+	color: red !important;
+}
+
+.aprovar{
+	color: #64DD17 !important;
 }
 
 /* ============================================================ */
