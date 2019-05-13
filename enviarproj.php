@@ -44,8 +44,8 @@
     </div>
 
     <div class="input-field col s6">
-      <input id="video" type="text" class="validate" name="video" required>
-      <label for="video"> <span style="color: red">* </span> Link do Vídeo (Youtube):</label>
+      <input id="video" type="text" class="validate" name="video">
+      <label for="video">Link do Vídeo (Youtube):</label>
       <span style="color: red; font-size: 9pt; margin-top: 10px;">(*) Campos obrigatórios. </span>
     </div>
 

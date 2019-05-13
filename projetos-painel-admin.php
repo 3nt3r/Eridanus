@@ -14,7 +14,8 @@
 
          <tr>
            <th>#</th>
-           <th>Titulo/Descrição/Materiais</th>
+					 <th>Titulo</th>
+           <th>Descrição/Materiais</th>
            <th>Video/Foto</th>
            <th>Aprovar</th>
            <th>Reprovar</th>
@@ -31,11 +32,12 @@
           echo "
              <tr>
                 <td>$cont</td>
+								<td>$titulo</td>
                 <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modala$cont'><span style='color: white;'>Ver<span></a></td>
 
                   <div id='modala$cont' class='modal'>
                     <div class='modal-content'>
-                      <h4>$titulo</h4>
+
                       <p>Descrição: <br>$descricao</p>
                       <br>
                       <p>Materiais: <br>$materiais</p>
@@ -69,7 +71,7 @@
                     </div>
 
 
-                  <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modald$cont'><span style='color: white;'><i class='material-icons'>close</i></span></a>
+                  <td><a style='background-color: red;' class='cor-menu-usuario btn modal-trigger' href='#modald$cont'><span style='color: white;'><i class='material-icons'>close</i></span></a>
 
                   <div id='modald$cont' class='modal'>
                     <div class='modal-content'>

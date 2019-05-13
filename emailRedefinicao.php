@@ -63,6 +63,7 @@
   <div style="margin-top: 90px;text-align: center;margin-bottom: 90px;">
     <h3 class="teat-text titulo-pagina">Código para redefinição enviado para seu email!</h3>
     <i class="material-icons large" style="color: rgb(100,221,23);">check_circle_outline</i>
+    <br><p class='erro'>Se não encontrar o email, verfique sua caixa de Spam!</p>
   </div>
 
   <?php

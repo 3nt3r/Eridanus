@@ -40,7 +40,8 @@
  <table class="striped">
    <tr>
      <th>#</th>
-     <th>Nome/Descrição</th>
+     <th>Nome</th>
+     <th>Descrição</th>
      <th>Foto</th>
      <th>Aprovar</th>
      <th>Reprovar</th>
@@ -56,10 +57,10 @@
      echo "
        <tr>
           <td>$cont</td>
+          <td>$nome</td>
           <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modala$cont'><span style='color: white;'>Ver<span></a></td>
             <div id='modala$cont' class='modal'>
               <div class='modal-content'>
-                <h4>$nome</h4>
                 <p>Descrição: <br>$descricao</p>
               </div>
               <div class='modal-footer'>
@@ -84,7 +85,7 @@
             <div class='modal-footer'>
               <a href='#!' class='btnMudarStatusObje modal-close waves-red btn-flat aprovar' status='aprovado' data='".md5($num)."'>Aprovar</a><a href='#!' class='modal-close waves-green btn-flat'>Cancelar</a>
             </div>
-          <td><a style='background-color: #64dd17;' class='cor-menu-usuario btn modal-trigger' href='#modald$cont'><span style='color: white;'><i class='material-icons'>close</i></span></a>
+          <td><a style='background-color: red;' class='cor-menu-usuario btn modal-trigger' href='#modald$cont'><span style='color: white;'><i class='material-icons'>close</i></span></a>
           <div id='modald$cont' class='modal'>
             <div class='modal-content'>
               <h4>Motivo da Reprovação</h4>
@@ -105,7 +106,7 @@
    }
 
    $banco->close();
-   
+
  ?>
 
  </table>
