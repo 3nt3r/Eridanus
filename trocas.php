@@ -88,47 +88,57 @@
 				$_SESSION[$verif2] = $idObjeto;
 				$num += 2000;
 				echo "
-    			<div class='col s12 m6 l3'>
-      				<div class='card'>
-        				<div class='card-image'>
-          					<img src='imagens-objetos/".md5($email)."/$imagem' class='materialboxed imagem-pagina-projetos'>
-          					<span class='card-title titulo-enviar-projeto'> Enviado por: $usuario </span>
-        				</div>
-        				<div class='card-content'>
-          					<p class='truncate'> $descricao </p>
-        				</div>
 
-        				<div class='card-action'>
-          					<a href='#modal".$cont."' class='botao-ver-projeto btn modal-trigger'> Negociar </a>
-										<div id='modal".$cont."' class='modal'>
-										  <div class='modal-content'>
-												<h4>Negociar objeto</h4>
-										    <form>
-										      <div class='input-field col s6'>
-										        <textarea id='mensagem' class='materialize-textarea validate' name='motivo' required></textarea>
-										        <label for='motivo'>Mensagem:</label>
-										      </div>
-										    </form>
-										  </div>
-										  <div class='modal-footer'>
-											  <a id='btnEnviarMensagem' href='#!' style='background-color: #64dd17; margin-right: 20px' class='btn' verif1='".$verif1."' verif2='".$verif2."'>Enviar</a>
-												<div id='preEnvio' class='preloader-wrapper small'>
-													 <div class='spinner-layer spinner-blue-only'>
-														 <div class='circle-clipper left'>
-															 <div class='circle'></div>
-														 </div><div class='gap-patch'>
-															 <div class='circle'></div>
-														 </div><div class='circle-clipper right'>
-															 <div class='circle'></div>
-														 </div>
-													 </div>
-												 </div>
-												<a style='background-color: #64dd17;' href='#!' class='modal-close btn'>Cancelar</a>
-										  </div>
-										</div>
-        				</div>
-      				</div>
-    			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class='col s12 m6 l3'>
+            <div class='card'>
+              <div class='card-image'>
+                  <img src='imagens-objetos/".md5($email)."/$imagem' class='materialboxed imagem-pagina-projetos'>
+                  <span class='card-title titulo-enviar-projeto'> Enviado por: $usuario </span>
+              </div>
+              <div class='card-content'>
+                  <p class='truncate'> $descricao </p>
+              </div>
+              <div class='card-action'>
+                  <a href='#' class='botao-ver-projeto btn disabled'> Negociar </a>
+              </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   			";
 		}else{
   		echo "
