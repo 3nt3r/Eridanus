@@ -1,8 +1,11 @@
 $(document).ready(function(){
 
+
   var preloader = '<div class="col s1 l3 m3"></div><div class="preloader-wrapper big active" style = "margin-top: 30%">  <div class="spinner-layer spinner-blue">    <div class="circle-clipper left">      <div class="circle"></div>    </div><div class="gap-patch">      <div class="circle"></div>    </div><div class="circle-clipper right">      <div class="circle"></div>    </div>  </div>  <div class="spinner-layer spinner-red">    <div class="circle-clipper left">      <div class="circle"></div>    </div><div class="gap-patch">      <div class="circle"></div>    </div><div class="circle-clipper right">      <div class="circle"></div>    </div>  </div>  <div class="spinner-layer spinner-yellow">    <div class="circle-clipper left">      <div class="circle"></div>    </div><div class="gap-patch">      <div class="circle"></div>    </div><div class="circle-clipper right">      <div class="circle"></div>    </div>  </div>  <div class="spinner-layer spinner-green">    <div class="circle-clipper left">      <div class="circle"></div>    </div><div class="gap-patch">      <div class="circle"></div>    </div><div class="circle-clipper right">      <div class="circle"></div>    </div>  </div></div><div class="col s1 l4 m2"></div>';
 
+
   $('.modal').modal();
+
 
   $('#btnAlt').click(function(event){
     $("#conteudo").html(preloader);
@@ -12,6 +15,7 @@ $(document).ready(function(){
     })
   });
 
+
   $('#bntEnviarObjeto').click(function(event){
     $("#conteudo").html(preloader);
     event.preventDefault();
@@ -19,6 +23,7 @@ $(document).ready(function(){
       $("#conteudo").html(data);
     });
   });
+
 
   $('#btnverobjetos').click(function(event){
     $("#conteudo").html(preloader);
@@ -28,6 +33,7 @@ $(document).ready(function(){
     });
   });
 
+
   $('#btnProjetosExcluidos').click(function(event){
     $("#conteudo").html(preloader);
     event.preventDefault();
@@ -35,6 +41,7 @@ $(document).ready(function(){
       $("#conteudo").html(data);
     });
   });
+
 
   $('#btnObjetosExcluidos').click(function(event){
     $("#conteudo").html(preloader);
@@ -44,6 +51,7 @@ $(document).ready(function(){
     });
   });
 
+
   $('#bntEnviarProj').click(function(event){
     $("#conteudo").html(preloader);
     event.preventDefault();
@@ -51,6 +59,7 @@ $(document).ready(function(){
       $("#conteudo").html(data);
     });
   });
+
 
   $('.btnEditarProj').click(function(event){
     $("#conteudo").html(preloader);
@@ -61,6 +70,7 @@ $(document).ready(function(){
     });
   });
 
+
   $('.btnEditarObje').click(function(event){
     $("#conteudo").html(preloader);
     event.preventDefault();
@@ -69,6 +79,7 @@ $(document).ready(function(){
       $("#conteudo").html(data);
     });
   });
+
 
   $('.btnExcluirProj').click(function(){
     var dado = $(this).attr("data");
@@ -79,6 +90,7 @@ $(document).ready(function(){
     });
   });
 
+
   $('.btnExcluirObje').click(function(){
     var dado = $(this).attr("data");
     $.post("excluirobje.php", "data="+dado,function(data){
@@ -88,12 +100,14 @@ $(document).ready(function(){
     });
   });
 
+
   $('#btnListarProj').click(function(event){
     event.preventDefault();
     $.get("listarproj.php", function(data){
       $("#conteudo").html(data);
     });
   });
+
 
   $('#btncads').click(function(event){
     event.preventDefault();
@@ -102,12 +116,14 @@ $(document).ready(function(){
     })
   });
 
+
   $('#gerenciarobjetos').click(function(event){
     event.preventDefault();
     $.get("gerenciarobjetos.php", function(data){
       $("#conteudo").html(data);
     })
   });
+
 
   $('.btnMudarStatus').click(function(event){
     event.preventDefault();
@@ -121,6 +137,7 @@ $(document).ready(function(){
     });
   });
 
+
   $('.btnMudarStatusObje').click(function(event){
     event.preventDefault();
     var dado = $(this).attr("data");
@@ -133,6 +150,7 @@ $(document).ready(function(){
     });
   });
 
+
   $('#btncad').click(function(){
     $(this).hide();
     $('#btncads').hide();
@@ -141,6 +159,7 @@ $(document).ready(function(){
     $('#last_name').removeAttr("disabled");
     $('#email').removeAttr("disabled");
   });
+
 
   $('#alterar').submit(function(){
     var dados = $(this).serialize();
@@ -165,6 +184,7 @@ $(document).ready(function(){
     });
     return false;
   });
+
 
   $('#alterarSenha').submit(function(){
     var dados = $(this).serialize();
@@ -195,5 +215,59 @@ $(document).ready(function(){
     });
     return false;
   });
+
+
+  $("#enviarMensagemObjeto").hide();
+  $("#mostrarMensagensRecebidas").show();
+
+
+  $("#mostrarEnviarMensagem").click(function(){
+    $("#enviarMensagemObjeto").show();
+    $("#mostrarMensagensRecebidas").hide();
+  });
+
+
+  $("#mostrarTodasMensagens").click(function(){
+    $("#enviarMensagemObjeto").hide();
+    $("#mostrarMensagensRecebidas").show();
+  });
+
+
+  $("#ver-mensagens-objetos").click(function(event){
+    $("#conteudo").html(preloader);
+    event.preventDefault();
+    $.get("mostrar-mensagens-objetos.php", function(data){
+      $("#conteudo").html(data);
+    });
+  });
+
+
+  $('#btnResponderMensagem').click(function(event){
+    event.preventDefault();
+    var mensagem = $("#responderMsg").val();
+    var idMensagem = $(this).attr("idMensagem");
+
+    $.ajax({
+      url: "responderMensagem.php",
+      type: "post",
+      data: {'mensagem': mensagem, 'idMensagem': idMensagem},
+      beforeSend: function(){
+        $('#btnResponderMensagem').addClass("disabled");
+      }
+    })
+    .done(function(data){
+      $('#btnResponderMensagem').removeClass("disabled");
+      if(data.indexOf("sucesso") > -1){
+        alert("Mensagem enviada com sucesso!");
+        window.location.href = "acesse-conta.php";
+      }else{
+        alert("Erro ao enviar mensagem, por favor tente mais tarde!");
+      }
+    })
+    .fail(function(){
+      alert('Erro ao enviar mensagem!');
+    });
+  });
+
 
 });

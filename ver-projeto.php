@@ -54,7 +54,7 @@
         			</center>
         			<br>
         			<center>
-        				<span class="white-text textos-projeto-ver-projeto"> Data de Envio: <?php echo $data; ?> </span>
+        				<span class="white-text textos-projeto-ver-projeto"> Data de Envio: <?php echo date("d/m/Y", strtotime($data)); ?> </span>
         			</center>
       			</div>
     		</div>

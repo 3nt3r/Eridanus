@@ -89,55 +89,24 @@
 				$num += 2000;
 				echo "
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class='col s12 m6 l3'>
             <div class='card'>
+
               <div class='card-image'>
                   <img src='imagens-objetos/".md5($email)."/$imagem' class='materialboxed imagem-pagina-projetos'>
                   <span class='card-title titulo-enviar-projeto'> Enviado por: $usuario </span>
               </div>
+
               <div class='card-content'>
                   <p class='truncate'> $descricao </p>
               </div>
+
               <div class='card-action'>
-                  <a href='#' class='botao-ver-projeto btn disabled'> Negociar </a>
+                  <a href='ver-objeto.php?email=$email&nomeObjeto=$nome&descricaoObjeto=$descricao&idUsuario=$idUsuario&data=$data&imagem=$imagem&nomeUsuario=$usuario&idObjeto=$idObjeto' class='botao-ver-projeto btn'> Negociar </a>
               </div>
+
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   			";
 		}else{

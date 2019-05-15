@@ -358,4 +358,24 @@ td button{
 	color: #64DD17 !important;
 }
 
+/* ==================== ENVIAR MENSAGEM ========================== */
+
+.distancia-aviso{
+	margin-top: 3em !important;
+}
+
+.distancia-abaixo-aviso{
+	margin-bottom: 3em !important;
+}
+
+.estilo-perguntas{
+	padding: 2em !important;
+}
+
+.titulo-mensagem{
+	font-weight: bolder;
+	font-size: 1.7em;
+	color: #64dd17;
+}
+
 /* ============================================================ */

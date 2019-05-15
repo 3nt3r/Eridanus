@@ -70,6 +70,12 @@
 			</tr>
 
 			<tr>
+        		<td> 
+        			<a href="#" id="ver-mensagens-objetos"> <span> <i class="material-icons">chat</i> Mensagens Objetos </span> </a> 
+        		</td>
+      		</tr>			
+
+			<tr>
 				<td> 
 					<a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> 
 				</td>
