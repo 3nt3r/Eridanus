@@ -157,6 +157,7 @@ $(document).ready(function(){
     $('#btnsalvar').show();
     $('#first_name').removeAttr("disabled");
     $('#last_name').removeAttr("disabled");
+    $('#cidade').removeAttr("disabled");
     $('#email').removeAttr("disabled");
   });
 
@@ -175,6 +176,7 @@ $(document).ready(function(){
       $('#btnsalvar').hide();
       $('#first_name').attr("disabled", true);
       $('#last_name').attr("disabled", true);
+      $('#cidade').attr("disabled", true);
       $('#btncad').show();
       $('#btncads').show();
       alert('Dados alterados com sucesso!');

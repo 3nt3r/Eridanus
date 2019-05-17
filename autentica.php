@@ -4,7 +4,7 @@
 
 	if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){
 		$email = trim(htmlspecialchars($_POST['email-entrar']));
-	  	$senha = md5(trim(htmlspecialchars($_POST['senha-entrar'])));
+	  $senha = md5(trim(htmlspecialchars($_POST['senha-entrar'])));
 		$verifica = 'select id, nome, email, senha from usuario where email = ? AND senha = ?';
 		$prepare = $banco->prepare($verifica);
 		$prepare->bind_param("ss", $email, $senha);

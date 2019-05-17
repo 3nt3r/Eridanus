@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-  session_start(); 
+  session_start();
 
 ?>
 
@@ -43,24 +43,27 @@
 	  <form class="col s12 m9 l8" id="form" action="cadastra.php" method="post">
 
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s12 m6 l6">
           <input id="first_name" type="text" class="validate" name="nome_cad" required>
           <label for="first_name">Primeiro Nome:</label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col s12 m6 l6">
           <input id="last_name" type="text" class="validate" name="sobrenome_cad" required>
           <label for="last_name">Sobrenome:</label>
         </div>
       </div>
 
       <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate" name="email_cad" required>
-          <label for="email">Email:</label>
-					<span class="erro" id="erroE"></span>
-        </div>
-      </div>
-
+          <div class="input-field col s12 m6 l6">
+            <input id="email" type="email" class="validate" name="email_cad" required>
+            <label for="email">Email:</label>
+  					<span class="erro" id="erroE"></span>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="cidade" type="text" class="validate" name="cidade_cad" required>
+            <label for="cidade">Cidade:</label>
+          </div>
+    </div>
       <div class="row">
         <div class="input-field col s12">
           <input id="password" type="password" class="validate" name="senha_cad" required>

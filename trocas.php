@@ -53,10 +53,10 @@
 
 	include "conexao.php";
 
-	$consulta = "SELECT objeto.id, objeto.nome, objeto.descricao, objeto.id_usuario, objeto.data_publicacao, objeto.imagem, usuario.nome, usuario.email FROM objeto INNER JOIN usuario ON  status_atual = 'aprovado' and objeto.id_usuario = usuario.id";
+	$consulta = "SELECT objeto.id, objeto.nome, objeto.descricao, objeto.id_usuario, objeto.data_publicacao, objeto.imagem, usuario.nome, usuario.email, usuario.cidade FROM objeto INNER JOIN usuario ON  status_atual = 'aprovado' and objeto.id_usuario = usuario.id";
 	$prepare = $banco->prepare($consulta);
 	$prepare->execute();
-	$prepare->bind_result($idObjeto, $nome, $descricao, $idUsuario, $data, $imagem, $usuario, $email);
+	$prepare->bind_result($idObjeto, $nome, $descricao, $idUsuario, $data, $imagem, $usuario, $email, $cidade);
 	$cont = 1;
 	$num = 1;
 
@@ -74,7 +74,7 @@
           			<p> Clique abaixo para enviar um objeto! </p>
         		</div>
         		<div class='card-action'>
-          			<a href='login.php' class='botao-ver-projeto btn'> Enviar Objeto </a>
+          			<a href='login.php' class='botao-ver-projeto btn' style='margin-bottom: 22px'> Enviar Objeto </a>
         		</div>
       		</div>
     	</div>
@@ -99,6 +99,7 @@
 
               <div class='card-content'>
                   <p class='truncate'> $descricao </p>
+									<p>Cidade: $cidade</p>
               </div>
 
               <div class='card-action'>
@@ -119,6 +120,7 @@
         			</div>
         			<div class='card-content'>
           				<p class='truncate'> $descricao </p>
+									<p>Cidade: $cidade</p>
         			</div>
         			<div class='card-action'>
           				<a href='#' class='botao-ver-projeto btn disabled'> Negociar </a>
@@ -128,7 +130,7 @@
   		";
 		}
 	}
-  
+
 	echo "</div>";
 
 	$prepare-> free_result();

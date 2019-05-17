@@ -25,9 +25,9 @@
       $para = $email;
       $assunto = "Redefinição de Senha";
       $mensagem = "Seu código é $cod, para redefir sua senha acesse o seguinte link: http://projetoeridanus.000webhostapp.com/inserircodigo.php?verif=$verif";
-      $cabessalho = "Eridanus";
+      $cabecalho = "Eridanus";
 
-      mail($to, $subject, $message, $headers);
+      mail($para,  $assunto, $mensagem, $cabecalho);
 
     }else{
       header("Location: esqueci-senha.php?erro=1&email=$email");

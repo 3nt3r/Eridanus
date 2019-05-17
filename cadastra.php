@@ -1,11 +1,11 @@
 <?php
-	if(isset($_POST['nome_cad']) && isset($_POST['sobrenome_cad']) && isset($_POST['email_cad']) && isset($_POST['senha_cad']) && isset($_POST['senhacomp_cad'])){
+	if(isset($_POST['nome_cad']) && isset($_POST['sobrenome_cad']) && isset($_POST['email_cad']) && isset($_POST['senha_cad']) && isset($_POST['senhacomp_cad']) && isset($_POST["cidade_cad"])){
 				$nome = trim(htmlspecialchars($_POST['nome_cad']));
 				$sobrenome = trim(htmlspecialchars($_POST['sobrenome_cad']));
 				$email = trim(htmlspecialchars($_POST['email_cad']));
 				$senha = trim(htmlspecialchars($_POST['senha_cad']));
 				$senhacomp = trim(htmlspecialchars($_POST['senhacomp_cad']));
-
+				$cidade = trim(strtolower(htmlspecialchars($_POST["cidade_cad"])));
 				if(!empty($nome) && !empty($sobrenome) && !empty($email) && !empty($senha) && !empty($senhacomp)){
 
 				include "conexao.php";
@@ -28,9 +28,9 @@
 					$banco->close();
 					exit;
 				}else{
-				$inserir = "INSERT INTO usuario (nome, sobrenome, email, senha) VALUES (?, ?, ?, ?)";
+				$inserir = "INSERT INTO usuario (nome, sobrenome, email, cidade, senha) VALUES (?, ?, ?, ?, ?)";
 				$prepare = $banco->prepare($inserir);
-				$prepare->bind_param("ssss", $nome, $sobrenome, $email, $senha);
+				$prepare->bind_param("sssss", $nome, $sobrenome, $email, $cidade, $senha);
 				$prepare->execute();
 				mkdir("imagens-projetos/".md5($email), 0777);
 				mkdir("imagens-objetos/".md5($email), 0777);

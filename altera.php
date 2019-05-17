@@ -3,13 +3,14 @@
 
   include "conexao.php";
 
-  if(isset($_POST['nome_cad']) && isset($_POST['sobrenome_cad']) &&  isset($_SESSION['id'])){
+  if(isset($_POST['nome_cad']) && isset($_POST['sobrenome_cad']) && isset($_POST['cidade_cad']) &&  isset($_SESSION['id'])){
     $nome = $_POST['nome_cad'];
     $sobrenome = $_POST['sobrenome_cad'];
+    $cidade = $_POST['cidade_cad'];
     $id = (int) $_SESSION['id'];
-    $update = "update usuario set nome = ?, sobrenome = ? where id = ?";
+    $update = "update usuario set nome = ?, sobrenome = ?, cidade = ? where id = ?";
     $prepare = $banco->prepare($update);
-    $prepare->bind_param("ssi", $nome, $sobrenome, $id);
+    $prepare->bind_param("sssi", $nome, $sobrenome, $cidade, $id);
     $prepare->execute();
   }else if(isset($_POST['senha']) && isset($_POST['senhaConf']) && isset($_POST['senhaNova']) && isset($_SESSION['id'])){
     $id = (int) $_SESSION['id'];

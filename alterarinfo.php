@@ -1,6 +1,6 @@
-<?php  
+<?php
 
-	session_start(); 
+	session_start();
 
 ?>
 
@@ -12,10 +12,10 @@
 
 	include "conexao.php";
 
-	$consulta = "select nome, sobrenome, senha from usuario where id=?";
+	$consulta = "select nome, sobrenome, senha, cidade from usuario where id=?";
 	$prepare = $banco->prepare($consulta);
 	$prepare->bind_param("i", $_SESSION['id']);
-	$prepare->bind_result($nome, $sobrenome, $senha);
+	$prepare->bind_result($nome, $sobrenome, $senha, $cidade);
 	$prepare->execute();
 	$prepare->store_result();
 	$prepare->fetch();
@@ -41,7 +41,12 @@
       <label for="last_name">Sobrenome:</label>
     </div>
   </div>
-
+	<div class="row">
+		<div class="input-field col s12 m6 l6">
+			<input id="cidade" type="text" name="cidade_cad" disabled value="<?php echo ucfirst($cidade);?>">
+			<label for="cidade">Cidade:</label>
+		</div>
+	</div>
   	<button class="btn light-green accent-4" id="btncad" type="button" style="margin-right: 15px;">Editar dados <i class="material-icons right">edit</i>
 
 	<button class="btn light-green accent-4" id="btncads" type="button"> Alterar senha <i class="material-icons right"> edit </i> </button>
