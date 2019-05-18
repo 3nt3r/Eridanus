@@ -12,8 +12,10 @@
 	$prepare = $banco->prepare($buscar);
 	$procura = $_SESSION['id'];
 	$prepare->bind_param("i", $procura);
-	$prepare->execute();
 	$prepare->bind_result($idMensagem, $mensagem, $remetente, $objeto, $statusResposta, $nomeUsuario, $nomeObjeto);
+  $prepare->execute();
+  $prepare->store_result();
+  $linhasRetornadas = $prepare->num_rows;
 
 ?>
 
@@ -26,64 +28,86 @@
 
 <table class="striped responsive-table">
 
-  <tr>
-    <th>#</th>
-    <th>Remetente</th>
-    <th>Mensagem</th>
-    <th>Objeto</th>
-    <th>Responder</th>
-  </tr>
-
 <?php
 
   $contador = 1;
 
-  while($prepare->fetch()){
+  if ($linhasRetornadas == 0) {
+
+    ?>
+
+    <div class="row">
+      <div class="col s3"></div>
+        <div class="col s6">
+          <div class="card-panel teal light-green accent-4">
+            <center> <span class="white-text titulo-partes-projeto"> Nenhuma mensagem encontrada... </span> </center>
+          </div>
+        </div>
+      <div class="col s3"></div>
+    </div>
+
+    <?php
+
+  }else{
+    ?>
+
+    <tr>
+      <th>#</th>
+      <th>Remetente</th>
+      <th>Mensagem</th>
+      <th>Objeto</th>
+      <th>Responder</th>
+    </tr>
+
+    <?php
+
+    while($prepare->fetch()){
 
 
-  	if ($statusResposta == "Sem resposta") {
+      if ($statusResposta == "Sem resposta") {
 
-  		echo "
+        echo "
 
-          <tr>
-          	<td>$contador</td>
-            <td>$nomeUsuario</td>
-            <td>$mensagem</td>
-            <td>$nomeObjeto</td>
-            <td>
+            <tr>
+              <td>$contador</td>
+              <td>$nomeUsuario</td>
+              <td>$mensagem</td>
+              <td>$nomeObjeto</td>
+              <td>
 
-			<a class='light-green accent-4 btn modal-trigger' href='#modal$contador'> Ver </a>
+              <a class='light-green accent-4 btn modal-trigger' href='#modal$contador'> Responder </a>
 
-            <div id='modal$contador' class='modal'>
-              <div class='modal-content'>
-                <h4> Mensagem: </h4>
-                <p> $mensagem </p>
-              </div>
-
-              <form>
-                <div class='input-field col s6'>
-                  <textarea id='responderMsg' class='materialize-textarea' required> </textarea>
-                  <label> Responder: </label>
+              <div id='modal$contador' class='modal'>
+                <div class='modal-content'>
+                  <h4> Mensagem: </h4>
+                  <p> $mensagem </p>
                 </div>
-              </form>
 
-              <div class='modal-footer'>
-                <a id='btnResponderMensagem' style='background-color: #64dd17; margin-right: 20px' class='btn' idMensagem='".$idMensagem."'> Enviar </a>
-                <a href='#!' class='modal-close btn' style='background-color: #64dd17;'> Fechar </a>
+                <form>
+                  <div class='input-field col s6'>
+                    <textarea id='responderMsg' class='materialize-textarea' required> </textarea>
+                    <label> Responder: </label>
+                  </div>
+                </form>
+
+                <div class='modal-footer'>
+                  <a id='btnResponderMensagem' style='background-color: #64dd17; margin-right: 20px' class='btn' idMensagem='".$idMensagem."'> Enviar </a>
+                  <a href='#!' class='modal-close btn' style='background-color: #64dd17;'> Fechar </a>
+                </div>
               </div>
-            </div>
 
+              </td>
+            </tr>
 
-            </td>
-          </tr>
+      ";
 
-		";
+      $contador++;
 
-		$contador++;
+      }
 
-  	}
+    }
 
-	}
+  }
 
   $banco->close();
 

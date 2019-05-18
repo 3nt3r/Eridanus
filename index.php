@@ -106,7 +106,7 @@
  		<div class="col s12 m6 l3">
        <div class="card write">
          <div class="card-content white-text">
-           <span class="card-title black-text">Trocas</span>
+           <span class="card-title black-text">Objetos</span>
 					 <hr>
            <p class="black-text">Nesta tela, ficará a amostra, todos os anúncios de resíduos dos usuários. Ao
  					clicar no botão, você será redirecionado a bate-papo diretamente com o anunciante.</p>

@@ -32,12 +32,10 @@
 	<div id="aviso" class="esconde"></div>
 </center>
 
-<div class="row">
+<div class="row div-principal-cadastre-se">
 <div id="cadastro">
 
 	 <h3 class=" teat-text titulo-pagina flow-text titulo-pagina-cadastre-se">Cadastre-se!</h3>
-
- <br>
 
 	 <div class="col m1 l2"></div>
 	  <form class="col s12 m9 l8" id="form" action="cadastra.php" method="post">
@@ -45,7 +43,7 @@
       <div class="row">
         <div class="input-field col s12 m6 l6">
           <input id="first_name" type="text" class="validate" name="nome_cad" required>
-          <label for="first_name">Primeiro Nome:</label>
+          <label for="first_name">Nome:</label>
         </div>
         <div class="input-field col s12 m6 l6">
           <input id="last_name" type="text" class="validate" name="sobrenome_cad" required>
@@ -56,14 +54,15 @@
       <div class="row">
           <div class="input-field col s12 m6 l6">
             <input id="email" type="email" class="validate" name="email_cad" required>
-            <label for="email">Email:</label>
+            <label for="email">E-mail:</label>
   					<span class="erro" id="erroE"></span>
           </div>
           <div class="input-field col s12 m6 l6">
             <input id="cidade" type="text" class="validate" name="cidade_cad" required>
-            <label for="cidade">Cidade:</label>
+            <label for="cidade">Cidade/Estado (Ex: Salgueiro-PE):</label>
           </div>
-    </div>
+      </div>
+
       <div class="row">
         <div class="input-field col s12">
           <input id="password" type="password" class="validate" name="senha_cad" required>

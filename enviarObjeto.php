@@ -20,7 +20,7 @@
 
     <div class="input-field col s6">
       <input id="nome" type="text" class="validate" name="nome" required>
-      <label for="nome"><span style="color: red">* </span> Nome:</label>
+      <label for="nome"><span style="color: red">* </span> Nome do Objeto:</label>
     </div>
 
     <div class="input-field col s12">

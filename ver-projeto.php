@@ -52,7 +52,6 @@
         			<center>
         				<span class="white-text textos-projeto-ver-projeto"> Usuário Responsável: <?php echo "$autor $sobrenome"; ?> </span>
         			</center>
-        			<br>
         			<center>
         				<span class="white-text textos-projeto-ver-projeto"> Data de Envio: <?php echo date("d/m/Y", strtotime($data)); ?> </span>
         			</center>
@@ -110,25 +109,33 @@
 		<div class="col s2"></div>
 	</div>
 
-	<div class="row">
-		<div class="col s3"></div>
-    		<div class="col s6">
-      			<div class="card-panel teal light-green accent-4">
-        			<center> <span class="white-text titulo-partes-projeto"> Assista ao Vídeo do Projeto </span> </center>
-      			</div>
-    		</div>
-		<div class="col s3"></div>
-	</div>
+	<?php 
 
-	<div class="row">
-		<div class="col s3"></div>
-			<div class="col s6">
-				<center>
-					<iframe width='476' height='267' <?php echo "src=\"$video\""; ?>> </iframe>
-				</center>
-			</div>
-		<div class="col s3"></div>
-	</div>
+		if ($video != "") {
+			?>
+				<div class="row">
+					<div class="col s3"></div>
+			    		<div class="col s6">
+			      			<div class="card-panel teal light-green accent-4">
+			        			<center> <span class="white-text titulo-partes-projeto"> Assista ao Vídeo do Projeto </span> </center>
+			      			</div>
+			    		</div>
+					<div class="col s3"></div>
+				</div>
+
+				<div class="row">
+					<div class="col s3"></div>
+						<div class="col s6">
+							<center>
+								<iframe width='476' height='267' <?php echo "src=\"$video\""; ?>> </iframe>
+							</center>
+						</div>
+					<div class="col s3"></div>
+				</div>
+			<?php
+		}
+
+	?>
 
 </div>
 

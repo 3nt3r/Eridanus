@@ -6,6 +6,7 @@
 	$prepare->bind_result($codigo, $nome, $descricao, $data, $imagem, $autor);
 	$prepare->execute();
 	$prepare->store_result();
+	$linhasRetornadas = $prepare->num_rows;
 
 ?>
 
@@ -15,82 +16,97 @@
   	});
 </script>
 
-      <div class="container distancia-slider distancia-texto-cima">
-        <div class="row">
-          <div class="col s3"></div>
-              <div class="col s6">
-                  <div class="card-panel teal light-green accent-4">
-                    <center> 
-                      <span class="white-text titulo-partes-projeto"> Objetos Excluídos </span>
-                    </center>
-                  </div>
-              </div>
-          <div class="col s3"></div>
-        </div>
+<h5 class="titulo-pagina flow-text"> Objetos Excluídos: </h5>
+
+<?php 
+
+	if ($linhasRetornadas == 0) {
+    ?>
+      <div class="row">
+        <div class="col s3"></div>
+          <div class="col s6">
+            <div class="card-panel teal light-green accent-4">
+              <center> <span class="white-text titulo-partes-projeto"> Nenhum resultado encontrado... </span> </center>
+            </div>
+          </div>
+        <div class="col s3"></div>
       </div>
+    <?php 
+	}else{
+		?>
+		<table class="striped estiloProjetosExcluidos centered responsive-table">
 
-<table class="striped estiloProjetosExcluidos centered responsive-table">
+		  <tr>
+		    <th>Código</th>
+		    <th>Título</th>
+		    <th>Descrição</th>
+		    <th>Data Publicação</th>
+		    <th>Imagem</th>
+		    <th>Autor</th>
+		  </tr>
 
-  <tr>
-    <th>Código</th>
-    <th>Título</th>
-    <th>Descrição</th>
-    <th>Data Publicação</th>
-    <th>Imagem</th>
-    <th>Autor</th>
-  </tr>
+			<?php 
 
-	<?php 
+				$cont = 1;
 
-		$cont = 1;
+				while ($prepare->fetch()) {
 
-		while ($prepare->fetch()) {
+				    echo "
+				      <tr>
 
-		    echo "
-		      <tr>
+				        <td>$codigo</td>
 
-		        <td>$codigo</td>
+				        <td> <span class=\"truncate\"> $nome </span> </td>
 
-		        <td> <span class=\"truncate\"> $nome </span> </td>
+				        <td> 
+						  <a class=\"btn modal-trigger light-green accent-4\" href=\"#modala$cont\"> Ver </a>
+						  <div id=\"modala$cont\" class=\"modal\">
+						    <div class=\"modal-content\">
+						      <h4>Descrição</h4>
+						      <p> $descricao </p>
+						    </div>
+						    <div class=\"modal-footer\">
+						      <a href=\"#!\" class=\"modal-close btn-flat\">Fechar</a>
+						    </div>
+						  </div>
+				        </td>
 
-		        <td> 
-				  <a class=\"btn modal-trigger light-green accent-4\" href=\"#modala$cont\"> Ver </a>
-				  <div id=\"modala$cont\" class=\"modal\">
-				    <div class=\"modal-content\">
-				      <h4>Descrição</h4>
-				      <p> $descricao </p>
-				    </div>
-				    <div class=\"modal-footer\">
-				      <a href=\"#!\" class=\"modal-close btn-flat\">Fechar</a>
-				    </div>
-				  </div>
-		        </td>
+				        <td>
 
-		        <td>$data</td>
+				        ";
 
-		        <td> 
-				  <a class=\"btn modal-trigger light-green accent-4\" href=\"#modalb$cont\"> Ver </a>
-				  <div id=\"modalb$cont\" class=\"modal\">
-				    <div class=\"modal-content\">
-				      <img src=\"imagens-objetos/$autor/$imagem\" height=\"240\" width=\"320\">
-				    </div>
-				    <div class=\"modal-footer\">
-				      <a href=\"#!\" class=\"modal-close btn-flat\">Fechar</a>
-				    </div>
-				  </div>
-		        </td>
+				        echo date("d/m/Y", strtotime($data));
 
-		        <td>$autor</td>
+				        echo "
+				        </td>
 
-		      </tr>
-		    ";
+				        <td> 
+						  <a class=\"btn modal-trigger light-green accent-4\" href=\"#modalb$cont\"> Ver </a>
+						  <div id=\"modalb$cont\" class=\"modal\">
+						    <div class=\"modal-content\">
+						      <img src=\"imagens-objetos/$autor/$imagem\" height=\"240\" width=\"320\">
+						    </div>
+						    <div class=\"modal-footer\">
+						      <a href=\"#!\" class=\"modal-close btn-flat\">Fechar</a>
+						    </div>
+						  </div>
+				        </td>
 
-		    $cont++;
+				        <td>$autor</td>
 
-		}
+				      </tr>
+				    ";
 
-		$banco->close();
+				    $cont++;
 
-	?>
+				}
 
-</table>
+				$banco->close();
+
+			?>
+
+		</table>
+		<?php
+	}
+
+?>

@@ -25,13 +25,23 @@
   $sql = "insert into objeto(nome, descricao, data_publicacao, status_atual, id_usuario, imagem) value(?, ?, ?, ?, ?, ?)";
   $prepare = $banco->prepare($sql);
   $prepare->bind_param("ssssis", $nomeObj, $descricao, $data_atual, $status, $id, $novoNome);
-  $prepare->execute();
+
+  if ($prepare->execute()){
+    echo "
+      <script>
+        alert('Objeto cadastrado com SUCESSO!'); 
+        window.location.href = 'acesse-conta.php';
+      </script>
+    ";
+  }else{
+    echo "
+      <script>
+        alert('Erro ao cadastrar o objeto! Tente novamente mais tarde!'); 
+        window.location.href = 'acesse-conta.php';
+      </script>
+    ";
+  }
+
   $banco->close();
-  echo "
-    <script>
-      alert('Objeto cadastrado com sucesso!'); 
-      window.location.href = 'acesse-conta.php';
-    </script>
-  ";
 
 ?>

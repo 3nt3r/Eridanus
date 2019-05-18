@@ -60,7 +60,7 @@ body{
 }
 
 .fonte-fim{
-	margin-bottom: 45px;
+	margin-bottom: .5em;
 }
 
 /* ====================== PAGINA CONTATO E EMAIL ============================ */
@@ -159,7 +159,7 @@ body{
 /* ====================== PAGINA LOGIN USUARIO ============================ */
 
 .div-principal-login{
-	padding-bottom: 1.5em;
+	padding-bottom: 1.5em !important;
 }
 
 .div-principal-login h3{
@@ -188,15 +188,19 @@ body{
 
 .estilo-texto-esqueci-senha{
 	text-decoration: none;
-	color: #696969;
+	color: #64dd17;
 	font-weight: bold;
 }
 
 /* ====================== PAGINA CADASTRE-SE ============================ */
 
 .titulo-pagina-cadastre-se{
-	margin-left: 17%;
+	margin-left: 18%;
 	text-align: left;
+}
+
+.div-principal-cadastre-se{
+	margin-top: -3em !important;
 }
 
 /* ====================== RODAPE ======================================= */
@@ -244,6 +248,11 @@ td button{
 
 .distancia-lados-tabela{
 	margin-left: 2em;
+	margin-top: 1.6em;
+}
+
+.distancia-lados-tabela th {
+	padding: 1em;
 }
 
 /* ====================== PAGINA TROCAS ============================ */

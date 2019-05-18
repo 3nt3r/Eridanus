@@ -5,7 +5,9 @@
   if(!isset($_SESSION['email_admin']) && !isset($_SESSION['senha_admin'])){
     header("Location: login.php");
   }
+
   include "conexao.php";
+
   $id_proj = $_SESSION[$_POST["data"]];
   $status = $_POST["status"];
   $motivo = $_POST["motivo"];
@@ -23,7 +25,6 @@
     ini_set('display_errors', 1);
 
     error_reporting(E_ALL);
-
 
     $para = $email;
     $assunto = "Mudança de status";

@@ -37,21 +37,49 @@
 
   <div class="slider">
     <ul class="slides">
+
       <li>
         <img src="imagens/residuos-03.png">
         <div class="caption center-align">
         </div>
       </li>
+
       <li>
         <img src="imagens/residuos-02.png">
         <div class="caption center-align">
         </div>
       </li>
+
       <li>
         <img src="imagens/residuos-01.png">
         <div class="caption center-align">
         </div>
-      </li>      
+      </li>  
+
+      <li>
+        <img src="imagens/residuos-04.jpg">
+        <div class="caption center-align">
+        </div>
+      </li> 
+
+      <li>
+        <img src="imagens/residuos-05.jpg">
+        <div class="caption center-align">
+        </div>
+      </li> 
+
+      <li>
+        <img src="imagens/residuos-06.jpg">
+        <div class="caption center-align">
+        </div>
+      </li> 
+
+      <li>
+        <img src="imagens/residuos-07.jpg">
+        <div class="caption center-align">
+        </div>
+      </li> 
+
     </ul>
   </div>
 
@@ -88,7 +116,7 @@
     <div class="col s2"></div>
         <div class="col s8">
             <div class="card-panel teal light-green accent-4">
-              <center> <span class="white-text titulo-partes-projeto"> Veja na tabela abaixo, o tempo de decomposição dos principais componentes e elementos que estão presentes nos smartphones e eletrônicos em geral. </span> </center>
+              <center> <span class="white-text titulo-partes-projeto"> Veja na tabela abaixo, o tempo de decomposição dos principais componentes e elementos que estão presentes em smartphones e eletrônicos em geral. </span> </center>
             </div>
         </div>
     <div class="col s2"></div>

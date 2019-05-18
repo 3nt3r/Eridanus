@@ -272,4 +272,13 @@ $(document).ready(function(){
   });
 
 
+  $('#btnAprovarProjetosAdmin').click(function(event){
+    $("#conteudo").html(preloader);
+    event.preventDefault();
+    $.get("projetos-painel-admin.php", function(data){
+      $("#conteudo").html(data);
+    });
+  });
+
+
 });

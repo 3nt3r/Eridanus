@@ -71,7 +71,7 @@
 
 			<tr>
         		<td> 
-        			<a href="#" id="ver-mensagens-objetos"> <span> <i class="material-icons">chat</i> Mensagens Objetos </span> </a> 
+        			<a href="#" id="ver-mensagens-objetos"> <span> <i class="material-icons">chat</i> Mensagens Recebidas </span> </a> 
         		</td>
       		</tr>			
 
@@ -97,24 +97,28 @@
 				 			<table class="striped distancia-lados-tabela centered">
 								<tr>
 									<th>Informações do Usuário</th>
-									<td>Alterar dados e senha</td>
+									<td>Altere suas informações pessoais e senha!</td>
 								</tr>
 								<tr>
 									<th>Enviar projeto</th>
-									<td>Envio de Projetos para análise</td>
+									<td>Envie projetos feitos por você!</td>
 								</tr>
 								<tr>
 									<th>Gerenciar Projetos</th>
-									<td>Editar, Excluir e acompanhar Status dos projetos enviados</td>
+									<td>Edite, exclua e acompanhe os projetos enviados por você!</td>
 								</tr>
 								<tr>
 									<th>Enviar Objeto</th>
-									<td>Envio de Objetos para análise</td>
+									<td>Anuncie objetos quebrados, feitos por você ou que não esteja mais em uso!</td>
 								</tr>
 								<tr>
 									<th>Gerenciar Objetos</th>
-									<td>Editar, Excluir e acompanhar Status dos objetos enviados</td>
+									<td>Edite, exclua e acompanhe os objetos enviados por você!</td>
 								</tr>
+								<tr>
+									<th>Mensagens Recebidas</th>
+									<td>Responda perguntas de interessados em objetos postados por você!</td>
+								</tr>								
 							</table>
 			            </center>
 			        </div>

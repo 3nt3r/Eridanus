@@ -42,24 +42,36 @@
 	<div class="col s9 l10 m9">
  		<div id="conteudo" class="col s9 l10 m9" style="margin-left: 30px; height: auto;">
 
- 			<h5 class="titulo-pagina flow-text"> Bem-Vindo <?php echo $_SESSION['nome_admin']; ?>! </h5>
+ 			<h5 class="titulo-pagina flow-text"> Bem-Vindo, <?php echo $_SESSION['nome_admin']; ?>! </h5>
 
-      <div class="container distancia-slider distancia-texto-cima">
+      <div class="container distancia-slider">
         <div class="row">
-          <div class="col s3"></div>
-              <div class="col s6">
-                  <div class="card-panel teal light-green accent-4">
-                    <center>
-                      <span class="white-text titulo-partes-projeto"> Projetos Aguardando Aprovação </span>
-                    </center>
-                  </div>
+          <div class="col s1"></div>
+              <div class="col s10">
+                <center>
+              <table class="striped distancia-lados-tabela centered">
+                <tr>
+                  <th>Aprovar Projetos</th>
+                  <td> De acordo com a análise de todos os parâmetros enviados, decida pela aprovação ou não de projetos enviados por nossos usuários. </td>
+                </tr>
+                <tr>
+                  <th>Aprovar Objetos</th>
+                  <td> De acordo com a análise de todos os parâmetros enviados, decida pela aprovação ou não de objetos enviados por nossos usuários. </td>
+                </tr>
+                <tr>
+                  <th>Projetos Excluídos</th>
+                  <td> Todos os projetos excluídos após a aprovação do administrador responsável, ficarão disponíveis aqui.</td>
+                </tr>
+                <tr>
+                  <th>Objetos Excluídos</th>
+                  <td> Todos os objetos excluídos após a aprovação do administrador responsável, ficarão disponíveis aqui. </td>
+                </tr>               
+              </table>
+                  </center>
               </div>
-          <div class="col s3"></div>
+          <div class="col s1"></div>
         </div>
       </div>
-
-      <?php include_once "projetos-painel-admin.php" ?>
-
  		</div>
 	</div>
 
@@ -75,6 +87,10 @@
 
       <tr>
         <td> <a href="painel-admin.php"> <span> <i class="material-icons">home</i> Início </span> </a> </td>
+      </tr>
+
+      <tr>
+        <td> <a href="#" id="btnAprovarProjetosAdmin"> <span> <i class="material-icons">check</i> Aprovar Projetos </span> </a> </td>
       </tr>
 
       <tr>

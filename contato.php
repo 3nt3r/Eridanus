@@ -26,7 +26,7 @@
     <div class="col s3"></div>
         <div class="col s6">
             <div class="card-panel teal light-green accent-4">
-              <center> <span class="white-text titulo-partes-projeto"> Preencha as informações corretamente! </span> </center>
+              <center> <span class="white-text titulo-partes-projeto"> Preencha todas as informações corretamente! </span> </center>
             </div>
         </div>
     <div class="col s3"></div>
@@ -38,22 +38,22 @@
 	<form action="email.php" method="post" id="form-contato">
 		<div class="input-field col s6">
       <input id="last_name" type="text" class="validate" name="nome" required>
-      <label for="last_name">Nome Completo</label>
+      <label for="last_name">Nome:</label>
     </div>
 				
     <div class="input-field col s6">
       <input id="last_name" type="text" class="validate" name="assunto" required>
-      <label for="last_name">Assunto do E-mail</label>
+      <label for="last_name">Assunto:</label>
     </div>
 
 		<div class="input-field col s6">
       <input id="last_name" type="email" class="validate" name="email" required>
-      <label for="last_name">Seu Email</label>
+      <label for="last_name">Digite seu E-mail:</label>
     </div>
 				
     <div class="input-field col s12">
       <textarea id="textarea1" class="materialize-textarea" name="mensagem" required></textarea>
-      <label for="textarea1">Deixe-nos uma Mensagem</label>
+      <label for="textarea1">Mensagem:</label>
     </div>
 
   <center>

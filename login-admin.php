@@ -28,7 +28,7 @@
  ?>
 
 <div class="row">
-	 <h3 class=" teat-text titulo-pagina" style="margin-left: 17%; text-align: left;">Área do Administrador</h3>
+	 <h3 class=" teat-text titulo-pagina" style="margin-left: 18%; text-align: left;">Área do Administrador</h3>
 <br>
 
 <div class="col m1 l2"></div>
@@ -39,7 +39,7 @@
     <div class="row">
     	<div class="input-field col s12">
           <input id="entrar_admin" name="email-entrar_admin" type="email" class="validate">
-          <label for="email">Email:</label>
+          <label for="email">E-mail:</label>
         </div>
     </div>
 

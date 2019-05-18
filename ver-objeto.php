@@ -15,6 +15,7 @@
 			$imagem = $_GET['imagem'];
 			$nomeUsuario = $_GET['nomeUsuario'];
 			$idObjeto = $_GET['idObjeto'];
+			$localidade = $_GET['localidade'];
 
 		}else{
 			header("Location: index.php");
@@ -56,7 +57,9 @@
         			<center>
         				<span class="white-text textos-projeto-ver-projeto"> Usuário Responsável: <?php echo $nomeUsuario; ?> </span>
         			</center>
-        			<br>
+        			<center>
+        				<span class="white-text textos-projeto-ver-projeto"> Localidade: <?php echo $localidade; ?> </span>
+        			</center>
         			<center>
         				<span class="white-text textos-projeto-ver-projeto"> Data de Envio: <?php echo date("d/m/Y", strtotime($data)); ?> </span>
         			</center>
@@ -162,8 +165,10 @@
 
 				$buscar = "SELECT mensagem.mensagem, mensagem.destinatario, mensagem.statusResposta, usuario.nome, resposta.mensagem FROM mensagem INNER JOIN usuario ON usuario.id = mensagem.remetente inner join resposta on resposta.idMensagem = mensagem.id WHERE idObjeto = $idObjeto ORDER BY mensagem.id DESC";
 				$prepare = $banco->prepare($buscar);
-				$prepare->execute();
 				$prepare->bind_result($mensagem, $destinatario, $statusResposta, $remetente, $resposta);
+				$prepare->execute();
+				$prepare->store_result();
+				$linhasRetornadas = $prepare->num_rows;
 
 			?>
 
@@ -173,32 +178,51 @@
 
 	    			<center> <span class="titulo-mensagem"> Perguntas e Respostas </span> </center>
 
-	      			<ul class="collection">
+	    			<?php 
 
-	      				<?php 
+	      				if ($linhasRetornadas == 0) {
+	      					?>
+								<div class="col s1"> </div>
+									<div class="col s10">
+									    <div class="card-panel red accent-4">
+									       <center> <span class="white-text"> Nenhuma mensagem encontrada... </span> </center>
+									    </div>
+									</div>
+								<div class="col s1"> </div>
+	      					<?php
+	      					}else{
+	      						?>
 
-		      				while($prepare->fetch()){
+					      			<ul class="collection">
 
-		      					if ($statusResposta == "Respondida") {
+					      				<?php 
 
-									echo "
-				      					<li class=\"collection-item estilo-perguntas\"> 
-				      						<i class=\"material-icons\">chat_bubble_outline</i> 
-				      							De <b> $remetente, </b> <br> 
-				      							Pergunta: <i> $mensagem </i> <br>
-				      							<hr>
-				      						<i class=\"material-icons\">chat_bubble</i>
-				      							<i> Resposta: $resposta </i>
-				      					</li>
-			      					";
+						      				while($prepare->fetch()){
 
-			      				}
+						      					if ($statusResposta == "Respondida") {
 
-		      				}
+													echo "
+								      					<li class=\"collection-item estilo-perguntas\"> 
+								      						<i class=\"material-icons\">chat_bubble_outline</i> 
+								      							De <b> $remetente, </b> <br> 
+								      							Pergunta: <i> $mensagem </i> <br>
+								      							<hr>
+								      						<i class=\"material-icons\">chat_bubble</i>
+								      							<i> Resposta: $resposta </i>
+								      					</li>
+							      					";
 
-	      				?>
+							      				}
 
-	      			</ul>
+						      				}
+
+					      				?>
+
+					      			</ul>
+	      						<?php
+	      					}
+	    			?>
+
 	    		</div>
 			<div class="col s3"></div>
 

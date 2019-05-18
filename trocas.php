@@ -40,7 +40,7 @@
         <div class="card-panel teal light-green accent-4">
           <center>
             <span class="white-text titulo-partes-objeto">
-                Aqui estão disponíveis todos os anúncios de resíduos dos nossos usuários. Ao clicar no anúncio, você será redirecionado ao bate-papo diretamente com o anunciante. Os acordos serão feitos diretamente entre usuário e anunciante. <br>
+                Aqui estão disponíveis todos os anúncios de objetos dos nossos usuários. Ao clicar no anúncio, você será redirecionado a uma página com informações sobre o objeto, bem como, um chat para fazer suas negociações com o anunciante. Os acordos serão feitos diretamente entre o usuário e o anunciante. <br>
                 Observação: Todos os anúncios passaram por aprovação.
             </span>
           </center>
@@ -55,30 +55,54 @@
 
 	$consulta = "SELECT objeto.id, objeto.nome, objeto.descricao, objeto.id_usuario, objeto.data_publicacao, objeto.imagem, usuario.nome, usuario.email, usuario.cidade FROM objeto INNER JOIN usuario ON  status_atual = 'aprovado' and objeto.id_usuario = usuario.id";
 	$prepare = $banco->prepare($consulta);
-	$prepare->execute();
 	$prepare->bind_result($idObjeto, $nome, $descricao, $idUsuario, $data, $imagem, $usuario, $email, $cidade);
+  $prepare->execute();
+  $prepare->store_result();
+  $linhasRetornadas = $prepare->num_rows;
 	$cont = 1;
 	$num = 1;
 
 	echo "<div class='row distancia-topo'>";
-  	echo "
-    	<div class='col s12 m6 l3'>
-      		<div class='card'>
-        		<div class='card-image'>
+
+  if ($linhasRetornadas == 0) {
+    echo "
+      <div class='col s12 m6 l3'>
+          <div class='card'>
+            <div class='card-image'>
               <a href='login.php'>
-          			<img src='imagens/projetos-usuarios-envie.png' class='imagem-pagina-projetos'>
-          			<span class='card-title titulo-enviar-projeto'> Envie seu Objeto! </span>
+                <img src='imagens/projetos-usuarios-envie.png' class='imagem-pagina-projetos'>
+                <span class='card-title titulo-enviar-projeto'> <b> Nenhum Objeto Encontrado... </b> </span>
               </a>
-        		</div>
-        		<div class='card-content'>
-          			<p> Clique abaixo para enviar um objeto! </p>
-        		</div>
-        		<div class='card-action'>
-          			<a href='login.php' class='botao-ver-projeto btn' style='margin-bottom: 22px'> Enviar Objeto </a>
-        		</div>
-      		</div>
-    	</div>
-  	";
+            </div>
+            <div class='card-content'>
+                <p> Clique abaixo para enviar um objeto! </p>
+            </div>
+            <div class='card-action'>
+                <a href='login.php' class='botao-ver-projeto btn' style='margin-bottom: 22px'> Enviar Objeto </a>
+            </div>
+          </div>
+      </div>
+    ";
+  }else{
+    echo "
+      <div class='col s12 m6 l3'>
+          <div class='card'>
+            <div class='card-image'>
+              <a href='login.php'>
+                <img src='imagens/projetos-usuarios-envie.png' class='imagem-pagina-projetos'>
+                <span class='card-title titulo-enviar-projeto'> Envie seu Objeto! </span>
+              </a>
+            </div>
+            <div class='card-content'>
+                <p> Clique abaixo para enviar um objeto! </p>
+            </div>
+            <div class='card-action'>
+                <a href='login.php' class='botao-ver-projeto btn' style='margin-bottom: 22px'> Enviar Objeto </a>
+            </div>
+          </div>
+      </div>
+    ";    
+  }
 
 	while($prepare->fetch()){
 		if (isset($_SESSION['email'])){
@@ -94,21 +118,19 @@
 
               <div class='card-image'>
                   <img src='imagens-objetos/".md5($email)."/$imagem' class='materialboxed imagem-pagina-projetos'>
-                  <span class='card-title titulo-enviar-projeto'> Enviado por: $usuario </span>
+                  <span class='card-title titulo-enviar-projeto'> Localidade: $cidade </span>
               </div>
 
               <div class='card-content'>
                   <p class='truncate'> $descricao </p>
-									<p>Cidade: $cidade</p>
               </div>
 
               <div class='card-action'>
-                  <a href='ver-objeto.php?email=$email&nomeObjeto=$nome&descricaoObjeto=$descricao&idUsuario=$idUsuario&data=$data&imagem=$imagem&nomeUsuario=$usuario&idObjeto=$idObjeto' class='botao-ver-projeto btn'> Negociar </a>
+                  <a href='ver-objeto.php?email=$email&nomeObjeto=$nome&descricaoObjeto=$descricao&idUsuario=$idUsuario&data=$data&imagem=$imagem&nomeUsuario=$usuario&idObjeto=$idObjeto&localidade=$cidade' class='botao-ver-projeto btn'> Negociar </a>
               </div>
 
             </div>
         </div>
-
   			";
 		}else{
   		echo "
@@ -116,11 +138,10 @@
       			<div class='card'>
         			<div class='card-image'>
           				<img src='imagens-objetos/".md5($email)."/$imagem' class='materialboxed imagem-pagina-projetos'>
-          				<span class='card-title titulo-enviar-projeto'> Enviado por: $usuario </span>
+          				<span class='card-title titulo-enviar-projeto'> Localidade: $cidade </span>
         			</div>
         			<div class='card-content'>
           				<p class='truncate'> $descricao </p>
-									<p>Cidade: $cidade</p>
         			</div>
         			<div class='card-action'>
           				<a href='#' class='botao-ver-projeto btn disabled'> Negociar </a>

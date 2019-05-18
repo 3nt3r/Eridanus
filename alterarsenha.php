@@ -24,7 +24,7 @@
 
     <div class="input-field col s7 m7 l7">
       <input id="senhaConf" type="password" class="validate"  name="senhaConf">
-      <label for="senhaConf">Confirme a senha:</label>
+      <label for="senhaConf">Confirme a Senha:</label>
       <p class="erro" id='erroSenhaC'></p>
     </div>
 

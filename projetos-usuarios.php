@@ -37,7 +37,7 @@
         <div class="card-panel teal light-green accent-4">
           <center>
             <span class="white-text titulo-partes-objeto">
-              Aqui estão disponíveis todos os projetos feitos pela nossa equipe e pelos usuários do projeto, e também, projetos recomendados. Ao selecionar o projeto, você será redirecionado ao bate-papo diretamente com o anunciante. Os acordos serão feitos diretamente entre usuário e anunciante. <br>
+              Aqui estão disponíveis todos os projetos feitos pela nossa equipe, por nossos usuários e também, projetos recomendados. Ao selecionar o projeto, você será redirecionado a uma página com todas as informações referentes ao mesmo. <br>
               Observação: Todos os anúncios passaram por aprovação.
             </span>
           </center>
@@ -58,11 +58,33 @@
 
 	$consulta = "SELECT projeto.titulo, projeto.descricao, projeto.data_publicacao, projeto.imagem, projeto.materiais, projeto.video, usuario.nome, usuario.email, usuario.sobrenome FROM projeto INNER JOIN usuario ON  status_atual = 'aprovado' and projeto.id_usuario = usuario.id";
 	$prepare = $banco->prepare($consulta);
-	$prepare->execute();
 	$prepare->bind_result($titulo, $descricao, $data, $imagem, $materiais, $video, $autor, $email, $sobrenome);
+  $prepare->execute();
+  $prepare->store_result();
+  $linhasRetornadas = $prepare->num_rows;
 
 	echo "<div class=\"row distancia-topo\">";
 
+  if ($linhasRetornadas == 0) {
+  echo "
+    <div class=\"col s12 m6 l3\">
+      <div class=\"card\">
+        <div class=\"card-image\">
+          <a href=\"login.php\">
+            <img src=\"imagens/projetos-usuarios-envie.png\" class=\"imagem-pagina-projetos\">
+            <span class=\"card-title titulo-enviar-projeto\"> <b> Nenhum Projeto Encontrado... </b> </span>
+          </a>
+        </div>
+        <div class=\"card-content\">
+          <p> Clique abaixo para enviar um projeto! </p>
+        </div>
+        <div class=\"card-action\">
+          <a href=\"login.php\" class=\"botao-ver-projeto btn\"> Enviar Projeto </a>
+        </div>
+      </div>
+    </div>
+  ";
+  }else{
   echo "
     <div class=\"col s12 m6 l3\">
       <div class=\"card\">
@@ -80,7 +102,8 @@
         </div>
       </div>
     </div>
-  ";
+  ";    
+  }
 
 	while($prepare->fetch()){
 		echo "
