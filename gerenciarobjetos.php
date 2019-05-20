@@ -8,9 +8,19 @@ if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
 
 include "conexao.php";
 
+	//Recebe o número da página Ex: Pagina1, Pagina2...
+	$pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
+	$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+	
+	//Quantidade de itens por página
+	$qtd_result_pg = 4;
+	
+	//Visualização de itens
+	$inicio = ($qtd_result_pg * $pagina) - $qtd_result_pg;
+
 $id =(int) $_SESSION["id"];
 
-$consulta = "select id, nome, descricao, observacoes, data_publicacao, status_atual from objeto where id_usuario = ?";
+$consulta = "select id, nome, descricao, observacoes, data_publicacao, status_atual from objeto where id_usuario = ? LIMIT $inicio, $qtd_result_pg";
 $prepare = $banco->prepare($consulta);
 $prepare->bind_param('i', $id);
 $prepare->bind_result($id_obje, $nome, $descricao, $observacoes, $data_publicacao, $status_atual);
@@ -148,6 +158,37 @@ $linhasRetornadas = $prepare->num_rows;
     }
 
   }
+  
+  //Quantidade de linhas no BD
+	$result_pg = "SELECT COUNT(id) AS num_result FROM objeto";
+	$resultado_pg = mysqli_query($banco, $result_pg);
+	$row_pg = mysqli_fetch_assoc($resultado_pg);
+	
+	
+	//Quantidade de páginas
+	$quantidade_pg = ceil($row_pg['num_result'] / $qtd_result_pg);
+	
+	//Limitar links antes e depois
+	$max_links = 5;
+	
+    //Paginação
+	echo "<center><ul class='pagination'>
+	<li class='waves-effect'><a href='gerenciarobjetos.php?pagina=1'><i class='material-icons'>chevron_left</i></a></li>"; //primeira página
+		
+	for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
+		if($pag_ant >= 1){
+			echo "<li class='waves-effect'><a href='gerenciarobjetos.php?pagina=$pag_ant'>$pag_ant</a></li>"; //páginas anteriores a atual
+		}
+	}
+	
+	echo "<li class='active'>$pagina</li>"; //página atual que usuário está
+	
+	for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
+		if($pag_dep <= $quantidade_pg){
+			echo "<li class='waves-effect'><a href='gerenciarobjetos.php?pagina=$pag_dep'>$pag_dep</a></li>"; // páginas após a atual
+		}
+	}	
+	echo "<li class='waves-effect'><a href='gerenciarobjetos.php?pagina=$quantidade_pg'><i class='material-icons'>chevron_right</i></a></li></center>"; //última página
 
   $banco->close();
 

@@ -53,15 +53,29 @@
 
 	include "conexao.php";
 
-	$consulta = "SELECT objeto.id, objeto.nome, objeto.descricao, objeto.id_usuario, objeto.data_publicacao, objeto.imagem, usuario.nome, usuario.email, usuario.cidade FROM objeto INNER JOIN usuario ON  status_atual = 'aprovado' and objeto.id_usuario = usuario.id";
+	//Recebe o número da página
+	$pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
+	$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+	
+	//Quantidade de itens por página
+	$qtd_result_pg = 11;
+	
+	//Visualização de itens
+	$inicio = ($qtd_result_pg * $pagina) - $qtd_result_pg;
+	
+	
+	$consulta = "SELECT objeto.id, objeto.nome, objeto.descricao, objeto.id_usuario, objeto.data_publicacao, objeto.imagem, usuario.nome, usuario.email, usuario.cidade FROM objeto INNER JOIN usuario ON  status_atual = 'aprovado' and objeto.id_usuario = usuario.id LIMIT $inicio, $qtd_result_pg";
+		
 	$prepare = $banco->prepare($consulta);
 	$prepare->bind_result($idObjeto, $nome, $descricao, $idUsuario, $data, $imagem, $usuario, $email, $cidade);
-  $prepare->execute();
-  $prepare->store_result();
-  $linhasRetornadas = $prepare->num_rows;
+	$prepare->execute();
+	$prepare->store_result();
+	$linhasRetornadas = $prepare->num_rows;
 	$cont = 1;
 	$num = 1;
 
+	
+	
 	echo "<div class='row distancia-topo'>";
 
   if ($linhasRetornadas == 0) {
@@ -153,6 +167,41 @@
 	}
 
 	echo "</div>";
+	
+	
+	
+	//Quantidade de linhas no BD
+	$result_pg = "SELECT COUNT(id) AS num_result FROM objeto";
+	$resultado_pg = mysqli_query($banco, $result_pg);
+	$row_pg = mysqli_fetch_assoc($resultado_pg);
+	
+	
+	//Quantidade de páginas
+	$quantidade_pg = ceil($row_pg['num_result'] / $qtd_result_pg);
+	
+	//Limitar links antes e depois
+	$max_links = 5;
+	
+    //Paginação
+	echo "<center><ul class='pagination'>
+	<li class='waves-effect'><a href='trocas.php?pagina=1'><i class='material-icons'>chevron_left</i></a></li>";
+		
+	for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
+		if($pag_ant >= 1){
+			echo "<li class='waves-effect'><a href='trocas.php?pagina=$pag_ant'>$pag_ant</a></li>";
+		}
+	}
+	
+	echo "<li class='active'>$pagina</li>";
+	
+	for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
+		if($pag_dep <= $quantidade_pg){
+			echo "<li class='waves-effect'><a href='trocas.php?pagina=$pag_dep'>$pag_dep</a></li>";
+		}
+	}	
+	echo "<li class='waves-effect'><a href='trocas.php?pagina=$quantidade_pg'><i class='material-icons'>chevron_right</i></a></li></center>";
+	
+	
 
 	$prepare-> free_result();
 	$banco->close();
