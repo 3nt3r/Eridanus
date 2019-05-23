@@ -24,7 +24,7 @@
 
   <div class="login-cadastro hide-on-med-and-down">
 
-    <a class='dropdown-button btn menu-login' id="1" style="width: 200px;" href='#' data-activates='dropdown1'> Olá, <?php echo $_SESSION['nome']; ?>! </a>
+    <a class='dropdown-button btn menu-login' id="d1" style="width: 200px;" href='#' data-activates='dropdown1'> Olá, <?php echo $_SESSION['nome']; ?>! </a>
 
     <ul id='dropdown1' class='dropdown-content'>
       <li><a href="acesse-conta.php" class="cor-menu-usuario"> Meu Painel </a></li>
@@ -37,7 +37,7 @@
     </ul>
 
     <script type="text/javascript">
-      $('#1').dropdown({
+      $('#d1').dropdown({
         inDuration: 300,
         outDuration: 225,
         constrainWidth: false,
@@ -59,7 +59,7 @@
 
   <div class="login-cadastro hide-on-med-and-down">
 
-    <a class='dropdown-button btn menu-login' id="1" style="width: 200px;" href='#' data-activates='dropdown1'> Olá, <?php echo $_SESSION['nome_admin']; ?>! </a>
+    <a class='dropdown-button btn menu-login' id="d1" style="width: 200px;" href='#' data-activates='dropdown1'> Olá, <?php echo $_SESSION['nome_admin']; ?>! </a>
 
     <ul id='dropdown1' class='dropdown-content'>
       <li><a href="painel-admin.php" class="cor-menu-usuario"> Meu Painel </a></li>
@@ -72,7 +72,7 @@
     </ul>
 
     <script type="text/javascript">
-      $('#1').dropdown({
+      $('#d1').dropdown({
         inDuration: 300,
         outDuration: 225,
         constrainWidth: false,

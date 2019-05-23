@@ -8,19 +8,10 @@ if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
 
 include "conexao.php";
 
-	//Recebe o número da página Ex: Pagina1, Pagina2...
-	$pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
-	$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
-	
-	//Quantidade de itens por página
-	$qtd_result_pg = 4;
-	
-	//Visualização de itens
-	$inicio = ($qtd_result_pg * $pagina) - $qtd_result_pg;
 
 $id =(int) $_SESSION["id"];
 
-$consulta = "select id, nome, descricao, observacoes, data_publicacao, status_atual from objeto where id_usuario = ? LIMIT $inicio, $qtd_result_pg";
+$consulta = "select id, nome, descricao, observacoes, data_publicacao, status_atual from objeto where id_usuario = ?";
 $prepare = $banco->prepare($consulta);
 $prepare->bind_param('i', $id);
 $prepare->bind_result($id_obje, $nome, $descricao, $observacoes, $data_publicacao, $status_atual);
@@ -34,7 +25,6 @@ $linhasRetornadas = $prepare->num_rows;
 <script type="text/javascript" src="js/materialize.js"></script>
 <script type="text/javascript" src="js/painel-usuario.js"></script>
 <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-
 <h5 class="titulo-pagina flow-text"> Gerenciar Meus Objetos </h5>
 
 <table class="striped responsive-table">
@@ -43,9 +33,9 @@ $linhasRetornadas = $prepare->num_rows;
 
   $cont = 1;
   $num = 2000;
-
+  $pag = 1;
   if ($linhasRetornadas == 0) {
-    
+
     ?>
 
     <div class="row">
@@ -62,7 +52,19 @@ $linhasRetornadas = $prepare->num_rows;
 
   }else{
     ?>
-
+    <ul class="pagination" style="text-align: center">
+      <li class="disabled" id="voltar"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+      <?php
+        $divisao = $linhasRetornadas / 4;
+        $resto = $linhasRetornadas % 4 == 0 ? 0 : 1;
+        $numDepag = $divisao + $resto;
+        echo "<li class='active linkpag' style='background-color: #64dd17' id='1' data='$numDepag'><a href='#!'>1</a></li>";
+        for($i = 2; $i < $numDepag; $i++){
+          echo "<li class='linkpag' id='$i'><a href='#!'>$i</a></li>";
+        }
+      ?>
+      <li id="ir"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
       <tr>
         <th>#</th>
         <th>Nome</th>
@@ -79,7 +81,7 @@ $linhasRetornadas = $prepare->num_rows;
     while ($prepare->fetch()) {
 
       if ($status_atual != "excluido") {
-      
+
         if($status_atual == "em avaliacao"){
           $cor = "rgb(255, 163, 41)";
           $status_certo = "Em avaliação";
@@ -90,12 +92,15 @@ $linhasRetornadas = $prepare->num_rows;
           $cor = "rgb(255, 9, 0)";
           $status_certo = "Reprovado";
         }
-
         $num = rand($num,$num + 1000);
         $_SESSION[md5($num)] = $id_obje;
 
+        if($pag == 1){
+          echo "<tr class='pagina$pag'>";
+        }else{
+          echo "<tr class='pagina$pag esconde'>";
+        }
         echo "
-          <tr>
             <td>$cont</td>
 
             <td>$nome</td>
@@ -149,49 +154,97 @@ $linhasRetornadas = $prepare->num_rows;
 
           </tr>
         ";
-
+        if($cont % 4 == 0){
+          $pag++;
+        }
         $cont++;
-      
+
       }
 
 
     }
 
   }
-  
-  //Quantidade de linhas no BD
-	$result_pg = "SELECT COUNT(id) AS num_result FROM objeto";
-	$resultado_pg = mysqli_query($banco, $result_pg);
-	$row_pg = mysqli_fetch_assoc($resultado_pg);
-	
-	
-	//Quantidade de páginas
-	$quantidade_pg = ceil($row_pg['num_result'] / $qtd_result_pg);
-	
-	//Limitar links antes e depois
-	$max_links = 5;
-	
-    //Paginação
-	echo "<center><ul class='pagination'>
-	<li class='waves-effect'><a href='gerenciarobjetos.php?pagina=1'><i class='material-icons'>chevron_left</i></a></li>"; //primeira página
-		
-	for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
-		if($pag_ant >= 1){
-			echo "<li class='waves-effect'><a href='gerenciarobjetos.php?pagina=$pag_ant'>$pag_ant</a></li>"; //páginas anteriores a atual
-		}
-	}
-	
-	echo "<li class='active'>$pagina</li>"; //página atual que usuário está
-	
-	for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
-		if($pag_dep <= $quantidade_pg){
-			echo "<li class='waves-effect'><a href='gerenciarobjetos.php?pagina=$pag_dep'>$pag_dep</a></li>"; // páginas após a atual
-		}
-	}	
-	echo "<li class='waves-effect'><a href='gerenciarobjetos.php?pagina=$quantidade_pg'><i class='material-icons'>chevron_right</i></a></li></center>"; //última página
-
   $banco->close();
 
 ?>
 
 </table>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var pagAtual = 1;
+    var totalDePag = Math.trunc($("#1").attr("data"));
+    $(".linkpag").click(function(event){
+      event.preventDefault();
+      var id = $(this).attr("id");
+      if(id != pagAtual){
+        $("#"+pagAtual).removeClass("active");
+        $(".pagina"+id).removeClass("esconde");
+        $("#"+id).css("background-color", "#64dd17");
+        $("#"+pagAtual).css("background-color", "inherit");
+        $(".pagina"+pagAtual).addClass("esconde");
+        $("#"+id).addClass("active");
+        pagAtual = id;
+      }
+      if(pagAtual == 1){
+        $("#voltar").addClass("disabled");
+      }else if(pagAtual == totalDePag){
+        $("#ir").addClass("disabled");
+      }else if(totalDePag == 1){
+        $("#ir").addClass("disabled");
+        $("#voltar").addClass("disabled");
+      }else{
+        $("#voltar").removeClass("disabled");
+        $("#ir").removeClass("disabled");
+      }
+    });
+    $("#voltar").click(function(event){
+      if(!$(this).hasClass("disabled")){
+        event.preventDefault();
+        let id = pagAtual-1;
+        $("#"+pagAtual).removeClass("active");
+        $(".pagina"+id).removeClass("esconde");
+        $("#"+id).css("background-color", "#64dd17");
+        $("#"+pagAtual).css("background-color", "inherit");
+        $(".pagina"+pagAtual).addClass("esconde");
+        $("#"+id).addClass("active");
+        pagAtual -= 1;
+        if(pagAtual == 1){
+          $("#voltar").addClass("disabled");
+        }else if(pagAtual == totalDePag){
+          $("#ir").addClass("disabled");
+        }else if(totalDePag == 1){
+          $("#ir").addClass("disabled");
+          $("#voltar").addClass("disabled");
+        }else{
+          $("#voltar").removeClass("disabled");
+          $("#ir").removeClass("disabled");
+        }
+      }
+    });
+    $("#ir").click(function(event){
+      if(!$(this).hasClass("disabled")){
+        event.preventDefault();
+        let id = pagAtual+1;
+        $("#"+pagAtual).removeClass("active");
+        $(".pagina"+id).removeClass("esconde");
+        $("#"+id).css("background-color", "#64dd17");
+        $("#"+pagAtual).css("background-color", "inherit");
+        $(".pagina"+pagAtual).addClass("esconde");
+        $("#"+id).addClass("active");
+        pagAtual += 1;
+        if(pagAtual == 1){
+          $("#voltar").addClass("disabled");
+        }else if(pagAtual == totalDePag){
+          $("#ir").addClass("disabled");
+        }else if(totalDePag == 1){
+          $("#ir").addClass("disabled");
+          $("#voltar").addClass("disabled");
+        }else{
+          $("#voltar").removeClass("disabled");
+          $("#ir").removeClass("disabled");
+        }
+      }
+    });
+  });
+</script>
