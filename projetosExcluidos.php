@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	include "conexao.php";
 
@@ -20,7 +20,7 @@
 
 <h5 class="titulo-pagina flow-text"> Projetos Excluídos: </h5>
 
-<?php 
+<?php
 
 	if ($linhasRetornadas == 0) {
     ?>
@@ -33,9 +33,22 @@
           </div>
         <div class="col s3"></div>
       </div>
-    <?php 
+    <?php
 	}else{
 		?>
+		<ul class="pagination" style="text-align: center">
+      <li class="disabled" id="voltar"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+      <?php
+        $divisao = $linhasRetornadas / 4;
+        $resto = $linhasRetornadas % 4 == 0 ? 0 : 1;
+        $numDepag = (int) $divisao + $resto;
+        echo "<li class='active linkpag' style='background-color: #64dd17' id='1' data='$numDepag'><a href='#!'>1</a></li>";
+        for($i = 2; $i < $numDepag; $i++){
+          echo "<li class='linkpag' id='$i'><a href='#!'>$i</a></li>";
+        }
+      ?>
+      <li class="<?php if($numDepag == 1){echo "disabled";}?>" id="ir"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
 		<table class="striped estiloProjetosExcluidos centered responsive-table">
 
 		  <tr>
@@ -48,19 +61,23 @@
 		    <th>Vídeo</th>
 		  </tr>
 
-			<?php 
+			<?php
 
 				$cont = 1;
-
+				$pag = 1;
 				while ($prepare->fetch()) {
-
+						if($pag == 1){
+		          echo "<tr class='pagina$pag'>";
+		        }else{
+		          echo "<tr class='pagina$pag esconde'>";
+		        }
 				    echo "
-				      <tr>
+
 				        <td>$codigo</td>
 				        <td> <span class=\"truncate\"> $titulo </span> </td>
 				        <td>$autor</td>
 
-				        <td> 
+				        <td>
 						  <a class=\"btn modal-trigger light-green accent-4\" href=\"#modala$cont\"> Ver </a>
 						  <div id=\"modala$cont\" class=\"modal\">
 						    <div class=\"modal-content\">
@@ -77,12 +94,12 @@
 
 				    ";
 
-					echo date("d/m/Y", strtotime($data));				      
+					echo date("d/m/Y", strtotime($data));
 
 				    echo "
 				        </td>
-				       	
-				        <td> 
+
+				        <td>
 						  <a class=\"btn modal-trigger light-green accent-4\" href=\"#modalb$cont\"> Ver </a>
 						  <div id=\"modalb$cont\" class=\"modal\">
 						    <div class=\"modal-content\">
@@ -111,7 +128,9 @@
 
 				      	</tr>
 				    ";
-
+						if($cont % 4 == 0){
+		          $pag++;
+		        }
 				    $cont++;
 
 				}
@@ -121,6 +140,84 @@
 			?>
 
 		</table>
+		<script type="text/javascript">
+		  $(document).ready(function(){
+		    var pagAtual = 1;
+		    var totalDePag = Math.trunc($("#1").attr("data"));
+		    $(".linkpag").click(function(event){
+		      event.preventDefault();
+		      var id = $(this).attr("id");
+		      if(id != pagAtual){
+		        $("#"+pagAtual).removeClass("active");
+		        $(".pagina"+id).removeClass("esconde");
+		        $("#"+id).css("background-color", "#64dd17");
+		        $("#"+pagAtual).css("background-color", "inherit");
+		        $(".pagina"+pagAtual).addClass("esconde");
+		        $("#"+id).addClass("active");
+		        pagAtual = id;
+		      }
+		      if(pagAtual == 1){
+		        $("#voltar").addClass("disabled");
+		      }else if(pagAtual == totalDePag){
+		        $("#ir").addClass("disabled");
+		      }else if(totalDePag == 1){
+		        $("#ir").addClass("disabled");
+		        $("#voltar").addClass("disabled");
+		      }else{
+		        $("#voltar").removeClass("disabled");
+		        $("#ir").removeClass("disabled");
+		      }
+		    });
+		    $("#voltar").click(function(event){
+		      if(!$(this).hasClass("disabled")){
+		        event.preventDefault();
+		        let id = pagAtual-1;
+		        $("#"+pagAtual).removeClass("active");
+		        $(".pagina"+id).removeClass("esconde");
+		        $("#"+id).css("background-color", "#64dd17");
+		        $("#"+pagAtual).css("background-color", "inherit");
+		        $(".pagina"+pagAtual).addClass("esconde");
+		        $("#"+id).addClass("active");
+		        pagAtual -= 1;
+		        if(pagAtual == 1){
+		          $("#voltar").addClass("disabled");
+		        }else if(pagAtual == totalDePag){
+		          $("#ir").addClass("disabled");
+		        }else if(totalDePag == 1){
+		          $("#ir").addClass("disabled");
+		          $("#voltar").addClass("disabled");
+		        }else{
+		          $("#voltar").removeClass("disabled");
+		          $("#ir").removeClass("disabled");
+		        }
+		      }
+		    });
+		    $("#ir").click(function(event){
+		      if(!$(this).hasClass("disabled")){
+		        event.preventDefault();
+		        let id = pagAtual+1;
+		        $("#"+pagAtual).removeClass("active");
+		        $(".pagina"+id).removeClass("esconde");
+		        $("#"+id).css("background-color", "#64dd17");
+		        $("#"+pagAtual).css("background-color", "inherit");
+		        $(".pagina"+pagAtual).addClass("esconde");
+		        $("#"+id).addClass("active");
+		        pagAtual += 1;
+		        if(pagAtual == 1){
+		          $("#voltar").addClass("disabled");
+		        }else if(pagAtual == totalDePag){
+		          $("#ir").addClass("disabled");
+		        }else if(totalDePag == 1){
+		          $("#ir").addClass("disabled");
+		          $("#voltar").addClass("disabled");
+		        }else{
+		          $("#voltar").removeClass("disabled");
+		          $("#ir").removeClass("disabled");
+		        }
+		      }
+		    });
+		  });
+		</script>
 		<?php
 	}
 

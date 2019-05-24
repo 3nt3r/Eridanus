@@ -57,7 +57,7 @@
         $resto = $linhasRetornadas % 4 == 0 ? 0 : 1;
         $numDepag = (int) $divisao + $resto;
         echo "<li class='active linkpag' style='background-color: #64dd17' id='1' data='$numDepag'><a href='#!'>1</a></li>";
-        for($i = 2; $i < $numDepag; $i++){
+        for($i = 2; $i <= $numDepag; $i++){
           echo "<li class='linkpag' id='$i'><a href='#!'>$i</a></li>";
         }
       ?>
