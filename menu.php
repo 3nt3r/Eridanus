@@ -95,7 +95,7 @@
     <div class="nav-wrapper menu-dispositivo-movel">
 
       <a href="#" data-activates="menu-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-
+		
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "index.php") > 0){echo "class='active'";}?>><a href="index.php">Início</a></li>
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "residuos.php")){echo "class='active'";}?>><a href="residuos.php">Resíduos</a></li>
@@ -103,7 +103,7 @@
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "trocas.php")){echo "class='active'";}?>><a href="trocas.php">Objetos</a></li>
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "projetos-usuarios.php")){echo "class='active'";}?>><a href="projetos-usuarios.php"> Projetos </a></li>
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "contato.php")){echo "class='active'";}?>><a href="contato.php">Contato</a></li>
-      </ul>
+		</ul>
 
       <ul id="menu-mobile" class="side-nav">
 
@@ -132,7 +132,7 @@
 					}
 
 				 ?>
-
+			
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "index.php") > 0){echo "class='active'";}?>><a href="index.php">Início</a></li>
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "residuos.php")){echo "class='active'";}?>><a href="residuos.php">Resíduos</a></li>
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "locais.php")){echo "class='active'";}?>><a href="locais.php">Locais</a></li>

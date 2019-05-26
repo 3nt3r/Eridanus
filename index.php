@@ -67,6 +67,7 @@
  				    usuários da plataforma Eridanus, logo após da equipe Eridanus realizar a aprovação do
  				    mesmo.</p>
          </div>
+		 <br>
          <div class="card-action">
            <center><a href="projetos-usuarios.php" class="btn-centro">Saiba mais</a></center>
          </div>
@@ -111,6 +112,7 @@
            <p class="black-text">Nesta tela, ficará a amostra, todos os anúncios de resíduos dos usuários. Ao
  					clicar no botão, você será redirecionado a bate-papo diretamente com o anunciante.</p>
          </div>
+		 <br>
          <div class="card-action">
            <center><a href="trocas.php" class="btn-centro">Saiba mais</a></center>
          </div>
