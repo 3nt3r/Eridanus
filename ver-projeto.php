@@ -83,8 +83,7 @@
     		<div class="col s6">
       			<div class="card">
         			<div class="card-image">
-          				<img <?php echo "src=\"imagens-projetos/".md5($_GET['email'])."/$imagem\""; ?> class="imagem-ver-projeto responsive-img materialboxed" >
-          				<span class="card-title frase-card-ver-projetos"> Projeto: <?php echo $titulo; ?> </span>
+          				<img <?php echo "src=\"imagens-projetos/".md5($_GET['email'])."/$imagem\""; ?> class="imagem-ver-projeto responsive-img materialboxed">
         			</div>
       			</div>
     		</div>

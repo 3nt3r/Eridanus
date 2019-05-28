@@ -1,7 +1,9 @@
 <?php
 
   if(isset($_POST["email"])){
+
     include "conexao.php";
+    
     $email = $_POST["email"];
     $consulta = "select id from usuario where email = ?";
     $prepare = $banco->prepare($consulta);
@@ -42,7 +44,7 @@
 <html>
 <head>
 
-  <title>Eridanus</title>
+  <title>Envio de E-mail - Eridanus</title>
   <script type="text/javascript" src="js/jquery.min.js"></script>
 
   <?php
@@ -61,9 +63,9 @@
   ?>
 
   <div style="margin-top: 90px;text-align: center;margin-bottom: 90px;">
-    <h3 class="teat-text titulo-pagina">Código para redefinição enviado para seu email!</h3>
+    <h3 class="teat-text titulo-pagina">Código para redefinição enviado para seu e-mail!</h3>
     <i class="material-icons large" style="color: rgb(100,221,23);">check_circle_outline</i>
-    <br><p class='erro'>Se não encontrar o email, verfique sua caixa de Spam!</p>
+    <br><br><p class='erro alerta-email-codigo'>Verfique sua caixa de <b>Spam</b> caso não esteja encontrando o e-mail enviado!</p>
   </div>
 
   <?php

@@ -1,5 +1,8 @@
 <?php
 
+	include 'controleDeLog.php';
+  	inserirLog("O usuário realizou login.");
+
 	include "conexao.php";
 
 	if(isset($_POST['email-entrar']) && isset($_POST['senha-entrar'])){

@@ -43,6 +43,7 @@ body{
 	margin-left: 70px;
 	margin-right: 70px;
 	text-indent: 40px;
+	font-size: 1.2em;
 }
 
 #fonte-residuos{
@@ -61,6 +62,12 @@ body{
 
 .fonte-fim{
 	margin-bottom: .5em;
+}
+
+.titulo-materiais-reciclados{
+	font-size: 1.3em;
+	font-weight: bolder;
+	color: #64DD17;
 }
 
 /* ====================== PAGINA CONTATO E EMAIL ============================ */
@@ -279,6 +286,10 @@ td button{
 	margin-top: -20px;
 }
 
+.fundo-paginacao{
+	background-color: #64dd17 !important;
+}
+
 /* ====================== PAGINA CONTATO ============================ */
 
 #form-contato{
@@ -341,6 +352,7 @@ td button{
 
 .botao-ver-projeto{
 	background-color: #64DD17 !important;
+	margin-bottom: .5em !important;
 }
 
 .titulo-enviar-projeto{
@@ -385,6 +397,25 @@ td button{
 	font-weight: bolder;
 	font-size: 1.7em;
 	color: #64dd17;
+}
+
+/* =====================    AJUDA   =========================== */
+
+.paragrafo-ajuda{
+	text-indent: 25px;
+}
+
+.entrar-em-contato{
+	color: #64DD17;
+	font-weight: bolder;
+}
+
+/* =====================  REPORTAR ERRO =========================== */
+
+.titulo-pagina-reportar{
+	margin-left: 18%; 
+	text-align: left;
+	margin-bottom: -5px;
 }
 
 /* ============================================================ */

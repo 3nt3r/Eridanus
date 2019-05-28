@@ -1,6 +1,9 @@
 <?php
   session_start();
 
+  include 'controleDeLog.php';
+  inserirLog("O usuário alterou a sua senha.");
+
   include "conexao.php";
 
   if(isset($_POST['nome_cad']) && isset($_POST['sobrenome_cad']) && isset($_POST['cidade_cad']) &&  isset($_SESSION['id'])){

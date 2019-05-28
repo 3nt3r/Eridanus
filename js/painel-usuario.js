@@ -52,6 +52,15 @@ $(document).ready(function(){
   });
 
 
+  $('#admVerLog').click(function(event){
+    $("#conteudo").html(preloader);
+    event.preventDefault();
+    $.get("verLogAdmin.php", function(data){
+      $("#conteudo").html(data);
+    });
+  });
+
+
   $('#bntEnviarProj').click(function(event){
     $("#conteudo").html(preloader);
     event.preventDefault();
@@ -206,7 +215,7 @@ $(document).ready(function(){
       }else if(data.indexOf("coincidem") >= 0){
         $('#erroSenhaC').html(data);
       }else if(data.indexOf("certo") >= 0){
-        alert("Senha alterada com sucesso! \n Faço o login novamente!");
+        alert("Senha alterada com sucesso! \n Faça login novamente!");
         window.location.href = "login.php";
       }else{
         alert("erro");

@@ -6,6 +6,9 @@
 		header("Location: login.php");
 	}
 
+	include 'controleDeLog.php';
+	inserirLog("O usuário acessou seu painel de controle.");
+
  ?>
 
 <!DOCTYPE html>
@@ -105,7 +108,7 @@
 								</tr>
 								<tr>
 									<th>Gerenciar Projetos</th>
-									<td>Edite, exclua e acompanhe os projetos enviados por você!</td>
+									<td>Edite, exclua e acompanhe o status dos projetos enviados por você!</td>
 								</tr>
 								<tr>
 									<th>Enviar Objeto</th>
@@ -113,7 +116,7 @@
 								</tr>
 								<tr>
 									<th>Gerenciar Objetos</th>
-									<td>Edite, exclua e acompanhe os objetos enviados por você!</td>
+									<td>Edite, exclua e acompanhe o status dos objetos enviados por você!</td>
 								</tr>
 								<tr>
 									<th>Mensagens Recebidas</th>

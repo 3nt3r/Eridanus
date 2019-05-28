@@ -91,7 +91,7 @@
 
 <div class="container">
 
-<div class="toggle flow-text">
+<div class="toggle">
 	<p id="texto-residuos">
 		Dezoito meses é o tempo médio de vida de um novo smartphone. Conforme um novo aparelho chega às lojas,
 		outros tantos são aposentados e, assim, o que era um artigo quase fundamental, vira um problema.
@@ -109,6 +109,18 @@
 		<br>
 		<span id="fonte-residuos"><b>Fonte:</b> Revista Gallileu - Reportagem de Maio de 2018</span>
 		<br>
+    <br>
+    <span class="titulo-materiais-reciclados">Quais materiais podem ser reciclados?</span> 
+    <br>
+    <br>
+    <p id="texto-residuos">
+      O processo de reciclagem do lixo eletrônico começa com a coleta ou recebimento do material. Em seguida, os aparelhos são desmontados por um processo chamado manufatura reversa, que é o movimento inverso ao de uma linha de montagem. Cada material é classificado de acordo com categorias, por exemplo: plásticos, metais, placas de circuito, vidros, metais pesados, elementos químicos, etc.
+      <br>
+      Os materiais que podem ser reciclados são encaminhados para esse fim. A reciclagem de lixo eletrônico pode ser realizada nos centros que realizam a separação ou em empresas especializadas em cada tipo de material. O material a ser reciclado é reduzido por trituração ou compactação para reduzir os custos com transporte.
+      Também podemos reutilizar materiais como: plásticos, metais, carcaças de computadores e afins, cabos, fios e materiais não contaminantes.
+      <br>
+      <span id="fonte-residuos"><b>Fonte:</b> Resell - Como Funciona a Reciclagem de Lixo Eletrônico? </span>
+    </p>
 	</p>
 </div>  
 

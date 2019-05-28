@@ -106,6 +106,10 @@
       </tr>
 
       <tr>
+        <td> <a href="#" id="admVerLog"> <span> <i class="material-icons">remove_red_eye</i> Registro de Log </span> </a> </td>
+      </tr>      
+
+      <tr>
         <td> <a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> </td>
       </tr>
 

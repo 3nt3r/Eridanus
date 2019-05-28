@@ -6,6 +6,9 @@
 	  header("Location: login.php");
 	}
 
+  include 'controleDeLog.php';
+  inserirLog("O usuário visitou a página minhas mensagens.");
+
 	include "conexao.php";
 
 	$buscar = "SELECT mensagem.id, mensagem.mensagem, mensagem.remetente, mensagem.idObjeto, mensagem.statusResposta, usuario.nome, objeto.nome FROM mensagem INNER JOIN usuario ON mensagem.destinatario = ? and mensagem.remetente = usuario.id INNER JOIN objeto ON objeto.id = mensagem.idObjeto";
@@ -16,6 +19,22 @@
   $prepare->execute();
   $prepare->store_result();
   $linhasRetornadas = $prepare->num_rows;
+
+  $segundaConsulta = "SELECT mensagem.statusResposta FROM mensagem INNER JOIN usuario ON mensagem.destinatario = ? and mensagem.remetente = usuario.id INNER JOIN objeto ON objeto.id = mensagem.idObjeto";
+  $segundaConsultaBanco = $banco->prepare($segundaConsulta);
+  $usuarioReferido = $_SESSION['id'];
+  $segundaConsultaBanco->bind_param("i", $usuarioReferido);
+  $segundaConsultaBanco->bind_result($resultadoQuantidade);
+  $segundaConsultaBanco->execute();
+  $segundaConsultaBanco->store_result();
+
+  $contadorResultadosRespostas = 0;
+
+  while ($segundaConsultaBanco->fetch()) {
+    if ($resultadoQuantidade != "Respondida") {
+      $contadorResultadosRespostas++;
+    }
+  }
 
 ?>
 
@@ -32,7 +51,7 @@
 
   $contador = 1;
 
-  if ($linhasRetornadas == 0) {
+  if ($linhasRetornadas == 0 or $contadorResultadosRespostas == 0) {
 
     ?>
 

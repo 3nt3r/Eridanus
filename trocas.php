@@ -64,10 +64,10 @@
 	$inicio = ($qtd_result_pg * $pagina) - $qtd_result_pg;
 	
 	
-	$consulta = "SELECT objeto.id, objeto.nome, objeto.descricao, objeto.id_usuario, objeto.data_publicacao, objeto.imagem, usuario.nome, usuario.email, usuario.cidade FROM objeto INNER JOIN usuario ON  status_atual = 'aprovado' and objeto.id_usuario = usuario.id LIMIT $inicio, $qtd_result_pg";
+	$consulta = "SELECT objeto.id, objeto.nome, objeto.descricao, objeto.id_usuario, objeto.data_publicacao, objeto.imagem, usuario.nome, usuario.email, usuario.cidade, usuario.sobrenome FROM objeto INNER JOIN usuario ON  status_atual = 'aprovado' and objeto.id_usuario = usuario.id LIMIT $inicio, $qtd_result_pg";
 		
 	$prepare = $banco->prepare($consulta);
-	$prepare->bind_result($idObjeto, $nome, $descricao, $idUsuario, $data, $imagem, $usuario, $email, $cidade);
+	$prepare->bind_result($idObjeto, $nome, $descricao, $idUsuario, $data, $imagem, $usuario, $email, $cidade, $sobrenome);
 	$prepare->execute();
 	$prepare->store_result();
 	$linhasRetornadas = $prepare->num_rows;
@@ -140,7 +140,7 @@
               </div>
 
               <div class='card-action'>
-                  <a href='ver-objeto.php?email=$email&nomeObjeto=$nome&descricaoObjeto=$descricao&idUsuario=$idUsuario&data=$data&imagem=$imagem&nomeUsuario=$usuario&idObjeto=$idObjeto&localidade=$cidade' class='botao-ver-projeto btn'> Negociar </a>
+                  <a href='ver-objeto.php?email=$email&nomeObjeto=$nome&descricaoObjeto=$descricao&idUsuario=$idUsuario&data=$data&imagem=$imagem&nomeUsuario=$usuario&idObjeto=$idObjeto&localidade=$cidade&sobrenome=$sobrenome' class='botao-ver-projeto btn'> Negociar </a>
               </div>
 
             </div>
@@ -192,7 +192,7 @@
 		}
 	}
 	
-	echo "<li class='active'>$pagina</li>";
+	echo "<li class='active fundo-paginacao'>$pagina</li>";
 	
 	for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
 		if($pag_dep <= $quantidade_pg){

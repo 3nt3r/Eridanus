@@ -5,6 +5,9 @@
     header("Location: login.php");
   }
 
+  include 'controleDeLog.php';
+  inserirLog("O usuário esteve na página: enviar projeto.");
+
 ?>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>

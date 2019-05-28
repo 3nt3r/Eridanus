@@ -6,6 +6,10 @@
   if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
     header("Location: login.php");
   }
+
+  include 'controleDeLog.php';
+  inserirLog("O usuário modificou um projeto.");
+
   if(isset($_FILES["imagem"]) && isset($_POST["titulo"]) && isset($_POST["descricao"]) && isset($_POST["materiais"]) && isset($_POST["video"])){
     include "conexao.php";
     $titulo = $_POST["titulo"];

@@ -6,6 +6,9 @@
     header("Location: login.php");
   }
 
+  include 'controleDeLog.php';
+  inserirLog("O usuário excluiu um projeto.");
+
   if(isset($_POST["data"])){
     $id_proj = $_SESSION[$_POST["data"]];
 

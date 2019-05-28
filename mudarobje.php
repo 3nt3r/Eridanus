@@ -6,6 +6,9 @@
     header("Location: login.php");
   }
 
+  include 'controleDeLog.php';
+  inserirLog("O usuário modificou um objeto.");
+
   $id_obje = $_SESSION[$_POST["data"]];
 
   if(isset($_FILES["imagem"]) && isset($_POST["nome"]) && isset($_POST["descricao"])){

@@ -158,7 +158,7 @@
 		}
 	}
 	
-	echo "<li class='active'>$pagina</li>";
+	echo "<li class='active fundo-paginacao'>$pagina</li>";
 	
 	for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
 		if($pag_dep <= $quantidade_pg){

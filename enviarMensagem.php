@@ -2,6 +2,8 @@
 
   session_start();
 
+  include 'controleDeLog.php';
+  
   if(isset($_SESSION['id']) && $_POST['mensagemObjeto']){
 
     include "conexao.php";
@@ -32,13 +34,15 @@
           history.go(-1);
         </script>
       <?php
+      inserirLog("O usuário enviou uma mensagem para o objeto: $objeto do usuário: $destinatario.");
     }else{
       ?>
         <script type="text/javascript">
           alert("Mensagem não enviada. Por favor, tente novamente!");
           history.go(-1);
         </script>
-      <?php      
+      <?php
+      inserirLog("O usuário tentou enviar uma mensagem para o usuário: $destinatario responsável pelo objeto: $objeto.");      
     }
 
   }else{

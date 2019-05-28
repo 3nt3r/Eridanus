@@ -6,6 +6,8 @@
     header("Location: login.php");
   }
 
+  include 'controleDeLog.php';
+  
   include "conexao.php";
 
   $id = (int) $_SESSION['id'];
@@ -29,10 +31,11 @@
   if ($prepare->execute()){
     echo "
       <script>
-        alert('Objeto cadastrado com SUCESSO!'); 
+        alert('Recebemos o seu objeto, agora vamos realizar a análise do mesmo!'); 
         window.location.href = 'acesse-conta.php';
       </script>
     ";
+    inserirLog("O usuário realizou o envio de um objeto.");
   }else{
     echo "
       <script>
@@ -40,6 +43,7 @@
         window.location.href = 'acesse-conta.php';
       </script>
     ";
+    inserirLog("O usuário tentou realizar o envio de um objeto.");
   }
 
   $banco->close();

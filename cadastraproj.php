@@ -6,6 +6,8 @@
     header("Location: login.php");
   }
 
+  include 'controleDeLog.php';
+
   include "conexao.php";
 
   $id = (int) $_SESSION['id'];
@@ -18,8 +20,9 @@
   $tmp = $arquivo["tmp_name"];
   $materiais = $_POST['materiais'];
   $data_atual = date("Y-m-d");
+  $termo = "/youtube/";
 
-  if ($_POST['video']) {
+  if ($_POST['video'] and preg_match($termo, $_POST['video'])){
     $video = explode("=", $_POST['video']);
     $video_certo = "https://youtube.com/embed/".end($video);
   }else{
@@ -39,17 +42,19 @@
   if ($prepare->execute()) {
     echo "
       <script> 
-        alert('Projeto cadastrado com SUCESSO!'); 
+        alert('Recebemos o seu projeto, agora vamos realizar a análise do mesmo!'); 
         window.location.href = 'acesse-conta.php';
       </script>
-  ";
+    ";
+    inserirLog("O usuário realizou o envio de um projeto.");
   }else{
     echo "
       <script> 
         alert('Erro ao cadastrar o projeto! Tente novamente mais tarde!'); 
         window.location.href = 'acesse-conta.php';
       </script>
-  ";    
+  ";
+  inserirLog("O usuário tentou realizar o envio de um projeto.");
   }
 
   $banco->close();

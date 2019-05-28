@@ -5,7 +5,7 @@
 				$email = trim(htmlspecialchars($_POST['email_cad']));
 				$senha = trim(htmlspecialchars($_POST['senha_cad']));
 				$senhacomp = trim(htmlspecialchars($_POST['senhacomp_cad']));
-				$cidade = trim(strtolower(htmlspecialchars($_POST["cidade_cad"])));
+				$cidade = trim(htmlspecialchars($_POST["cidade_cad"]));
 				if(!empty($nome) && !empty($sobrenome) && !empty($email) && !empty($senha) && !empty($senhacomp)){
 
 				include "conexao.php";

@@ -6,6 +6,9 @@
     header("Location: login.php");
   }
 
+  include 'controleDeLog.php';
+  inserirLog("O usuário visitou a página gerenciar projetos.");
+
   include "conexao.php";
 
   $id =(int) $_SESSION["id"];
@@ -97,8 +100,23 @@
           <tr>
             <td>$cont</td>
             <td>$titulo</td>
-            <td>$descricao</td>
-            ";
+            <td>
+
+            <a class=\"btn modal-trigger light-green accent-4\" href=\"#modalz$cont\"> Ver </a>
+
+            <div id=\"modalz$cont\" class=\"modal\">
+              <div class=\"modal-content\">
+                <h4>Descrição do Projeto</h4>
+                <p> $descricao </p>
+              </div>
+              <div class=\"modal-footer\">
+                <a href=\"#!\" class=\"modal-close btn-flat\"> Fechar </a>
+              </div>
+            </div>            
+
+
+            </td>
+          ";
         if($status_atual == "reprovado"){
           echo "
             <td><a style='background-color: #64dd17;' class='cor-menu-usuario waves-effect waves-light btn modal-trigger' href='#modald$cont'><span style='color: white;'>Ver</span></a>

@@ -6,6 +6,9 @@ if(!isset($_SESSION['email']) && !isset($_SESSION['senha'])){
   header("Location: login.php");
 }
 
+include 'controleDeLog.php';
+inserirLog("O usuário visitou a página gerenciar objetos.");
+
 include "conexao.php";
 
 
@@ -105,7 +108,19 @@ $linhasRetornadas = $prepare->num_rows;
 
             <td>$nome</td>
 
-            <td>$descricao</td>
+            <td>
+              <a class=\"light-green accent-4 btn modal-trigger\" href=\"#modalz$cont\"> Ver </a>
+
+              <div id=\"modalz$cont\" class=\"modal\">
+                <div class=\"modal-content\">
+                  <h4>Descrição do Objeto</h4>
+                  <p> $descricao </p>
+                </div>
+                <div class=\"modal-footer\">
+                  <a href=\"#!\" class=\"modal-close btn-flat\"> Fechar </a>
+                </div>
+              </div>
+            </td>
             ";
         if($status_atual == "reprovado"){
           echo "
