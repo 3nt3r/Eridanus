@@ -39,9 +39,9 @@
 		<ul class="pagination" style="text-align: center">
       <li class="disabled" id="voltar"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
       <?php
-        $divisao = $linhasRetornadas / 4;
-        $resto = $linhasRetornadas % 4 == 0 ? 0 : 1;
-        $numDepag = (int) $divisao + $resto;
+        $divisao = $linhasRetornadas / 5;
+        $resto = $linhasRetornadas % 5 == 0 ? 0 : 1;
+        $numDepag = (int) ($divisao + $resto);
         echo "<li class='active linkpag' style='background-color: #64dd17' id='1' data='$numDepag'><a href='#!'>1</a></li>";
         for($i = 2; $i < $numDepag; $i++){
           echo "<li class='linkpag' id='$i'><a href='#!'>$i</a></li>";
@@ -128,7 +128,7 @@
 
 				      	</tr>
 				    ";
-						if($cont % 4 == 0){
+						if($cont % 5 == 0){
 		          $pag++;
 		        }
 				    $cont++;
@@ -147,6 +147,8 @@
 		    $(".linkpag").click(function(event){
 		      event.preventDefault();
 		      var id = $(this).attr("id");
+					$("#voltar").removeClass("disabled");
+		      $("#ir").removeClass("disabled");
 		      if(id != pagAtual){
 		        $("#"+pagAtual).removeClass("active");
 		        $(".pagina"+id).removeClass("esconde");
@@ -156,21 +158,22 @@
 		        $("#"+id).addClass("active");
 		        pagAtual = id;
 		      }
-		      if(pagAtual == 1){
+					if(pagAtual == 1){
 		        $("#voltar").addClass("disabled");
-		      }else if(pagAtual == totalDePag){
+		      }
+		      if(pagAtual == totalDePag){
 		        $("#ir").addClass("disabled");
-		      }else if(totalDePag == 1){
-		        $("#ir").addClass("disabled");
+		      }
+		      if(totalDePag == 1){
 		        $("#voltar").addClass("disabled");
-		      }else{
-		        $("#voltar").removeClass("disabled");
-		        $("#ir").removeClass("disabled");
+		        $("#ir").addClass("disabled");
 		      }
 		    });
 		    $("#voltar").click(function(event){
 		      if(!$(this).hasClass("disabled")){
 		        event.preventDefault();
+						$("#voltar").removeClass("disabled");
+			      $("#ir").removeClass("disabled");
 		        let id = pagAtual-1;
 		        $("#"+pagAtual).removeClass("active");
 		        $(".pagina"+id).removeClass("esconde");
@@ -179,23 +182,24 @@
 		        $(".pagina"+pagAtual).addClass("esconde");
 		        $("#"+id).addClass("active");
 		        pagAtual -= 1;
-		        if(pagAtual == 1){
-		          $("#voltar").addClass("disabled");
-		        }else if(pagAtual == totalDePag){
-		          $("#ir").addClass("disabled");
-		        }else if(totalDePag == 1){
-		          $("#ir").addClass("disabled");
-		          $("#voltar").addClass("disabled");
-		        }else{
-		          $("#voltar").removeClass("disabled");
-		          $("#ir").removeClass("disabled");
-		        }
+						if(pagAtual == 1){
+			        $("#voltar").addClass("disabled");
+			      }
+			      if(pagAtual == totalDePag){
+			        $("#ir").addClass("disabled");
+			      }
+			      if(totalDePag == 1){
+			        $("#voltar").addClass("disabled");
+			        $("#ir").addClass("disabled");
+			      }
 		      }
 		    });
 		    $("#ir").click(function(event){
 		      if(!$(this).hasClass("disabled")){
 		        event.preventDefault();
 		        let id = pagAtual+1;
+						$("#voltar").removeClass("disabled");
+			      $("#ir").removeClass("disabled");
 		        $("#"+pagAtual).removeClass("active");
 		        $(".pagina"+id).removeClass("esconde");
 		        $("#"+id).css("background-color", "#64dd17");
@@ -203,17 +207,16 @@
 		        $(".pagina"+pagAtual).addClass("esconde");
 		        $("#"+id).addClass("active");
 		        pagAtual += 1;
-		        if(pagAtual == 1){
-		          $("#voltar").addClass("disabled");
-		        }else if(pagAtual == totalDePag){
-		          $("#ir").addClass("disabled");
-		        }else if(totalDePag == 1){
-		          $("#ir").addClass("disabled");
-		          $("#voltar").addClass("disabled");
-		        }else{
-		          $("#voltar").removeClass("disabled");
-		          $("#ir").removeClass("disabled");
-		        }
+						if(pagAtual == 1){
+			        $("#voltar").addClass("disabled");
+			      }
+			      if(pagAtual == totalDePag){
+			        $("#ir").addClass("disabled");
+			      }
+			      if(totalDePag == 1){
+			        $("#voltar").addClass("disabled");
+			        $("#ir").addClass("disabled");
+			      }
 		      }
 		    });
 		  });

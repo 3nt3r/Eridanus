@@ -2,7 +2,7 @@
 
 	include "conexao.php";
 
-	$prepare = $banco->prepare("SELECT controleLog.descricao, controleLog.dataLog, controleLog.horario, usuario.nome FROM controleLog INNER JOIN usuario ON controleLog.idUsuario = usuario.id ORDER BY controleLog.horario DESC");
+	$prepare = $banco->prepare("SELECT DISTINCT controleLog.descricao, controleLog.dataLog, controleLog.horario, usuario.nome FROM controleLog INNER JOIN usuario ON controleLog.idUsuario = usuario.id ORDER BY controleLog.horario DESC");
 	$prepare->bind_result($descricao, $data, $horario, $usuario);
 	$prepare->execute();
 	$prepare->store_result();

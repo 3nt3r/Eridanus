@@ -205,7 +205,10 @@ $(document).ready(function(){
       url: "altera.php",
       type: "post",
       data: dados,
-      beforeSend: function(){$('#preloader').css('display','inline'); $('#alteraSenha').addClass('disabled'); }
+      beforeSend: function(){
+        $('#preloader').css('display','inline');
+        $('#alteraSenha').addClass('disabled');
+      }
     })
     .done(function(data){
       $('#preloader').hide();

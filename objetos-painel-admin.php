@@ -48,15 +48,15 @@
     <ul class="pagination" style="text-align: center">
       <li class="disabled" id="voltar"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
       <?php
-        $divisao = $linhasRetornadas / 4;
-        $resto = $linhasRetornadas % 4 == 0 ? 0 : 1;
-        $numDepag = $divisao + $resto;
+        $divisao = $linhasRetornadas / 5;
+        $resto = $linhasRetornadas % 5 == 0 ? 0 : 1;
+        $numDepag = (int)($divisao + $resto);
         echo "<li class='active linkpag' style='background-color: #64dd17' id='1' data='$numDepag'><a href='#!'>1</a></li>";
         for($i = 2; $i <= $numDepag; $i++){
           echo "<li class='linkpag' id='$i'><a href='#!'>$i</a></li>";
         }
       ?>
-      <li id="ir"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+      <li class="<?php if($numDepag == 1){echo "disabled";}?>" id="ir"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
     </ul>
      <table class="striped">
        <tr>
@@ -127,7 +127,7 @@
               </div>
          </tr>
        ";
-       if($cont % 4 == 0){
+       if($cont % 5 == 0){
          $pag++;
        }
        $cont++;
@@ -147,6 +147,8 @@
     var pagAtual = 1;
     var totalDePag = Math.trunc($("#1").attr("data"));
     $(".linkpag").click(function(event){
+      $("#voltar").removeClass("disabled");
+      $("#ir").removeClass("disabled");
       event.preventDefault();
       var id = $(this).attr("id");
       if(id != pagAtual){
@@ -160,18 +162,19 @@
       }
       if(pagAtual == 1){
         $("#voltar").addClass("disabled");
-      }else if(pagAtual == totalDePag){
+      }
+      if(pagAtual == totalDePag){
         $("#ir").addClass("disabled");
-      }else if(totalDePag == 1){
-        $("#ir").addClass("disabled");
+      }
+      if(totalDePag == 1){
         $("#voltar").addClass("disabled");
-      }else{
-        $("#voltar").removeClass("disabled");
-        $("#ir").removeClass("disabled");
+        $("#ir").addClass("disabled");
       }
     });
     $("#voltar").click(function(event){
       if(!$(this).hasClass("disabled")){
+        $("#voltar").removeClass("disabled");
+        $("#ir").removeClass("disabled");
         event.preventDefault();
         let id = pagAtual-1;
         $("#"+pagAtual).removeClass("active");
@@ -183,19 +186,20 @@
         pagAtual -= 1;
         if(pagAtual == 1){
           $("#voltar").addClass("disabled");
-        }else if(pagAtual == totalDePag){
+        }
+        if(pagAtual == totalDePag){
           $("#ir").addClass("disabled");
-        }else if(totalDePag == 1){
-          $("#ir").addClass("disabled");
+        }
+        if(totalDePag == 1){
           $("#voltar").addClass("disabled");
-        }else{
-          $("#voltar").removeClass("disabled");
-          $("#ir").removeClass("disabled");
+          $("#ir").addClass("disabled");
         }
       }
     });
     $("#ir").click(function(event){
       if(!$(this).hasClass("disabled")){
+        $("#voltar").removeClass("disabled");
+        $("#ir").removeClass("disabled");
         event.preventDefault();
         let id = pagAtual+1;
         $("#"+pagAtual).removeClass("active");
@@ -207,14 +211,13 @@
         pagAtual += 1;
         if(pagAtual == 1){
           $("#voltar").addClass("disabled");
-        }else if(pagAtual == totalDePag){
+        }
+        if(pagAtual == totalDePag){
           $("#ir").addClass("disabled");
-        }else if(totalDePag == 1){
-          $("#ir").addClass("disabled");
+        }
+        if(totalDePag == 1){
           $("#voltar").addClass("disabled");
-        }else{
-          $("#voltar").removeClass("disabled");
-          $("#ir").removeClass("disabled");
+          $("#ir").addClass("disabled");
         }
       }
     });
