@@ -112,15 +112,9 @@
                     <div class='modal-content'>
                       Imagem: <br><img src='imagens-projetos/".md5($email)."/$imagem' width='476' height='267'>";
 
-
-
-
                       if ($video) {
                         echo "<br><br>Video: <br><iframe width='476' height='267' src='$video'></iframe>";
                       }
-
-
-
 
                       echo"
 
@@ -170,6 +164,7 @@
 ?>
 
 </table>
+
 <script type="text/javascript">
   $(document).ready(function(){
     var pagAtual = 1;

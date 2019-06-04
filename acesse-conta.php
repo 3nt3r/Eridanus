@@ -7,7 +7,7 @@
 	}
 
 	include 'controleDeLog.php';
-	inserirLog("O usuário acessou seu painel de controle.");
+	inserirLog("O usuário acessou o seu painel de controle.");
 
  ?>
 
@@ -33,7 +33,6 @@
  ?>
 
 <script type="text/javascript" src="js/painel-usuario.js"></script>
-
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -71,13 +70,11 @@
 			<tr>
 				<td> <a href="#" id="gerenciarobjetos"> <span> <i class="material-icons">edit</i> Gerenciar Objeto </span> </a> </td>
 			</tr>
-
 			<tr>
         		<td> 
-        			<a href="#" id="ver-mensagens-objetos"> <span> <i class="material-icons">chat</i> Mensagens Recebidas </span> </a> 
+        			<a href="#" id="ver-mensagens-objetos"> <span> <i class="material-icons">chat</i> Mensagens Recebidas </span> </a>
         		</td>
       		</tr>			
-
 			<tr>
 				<td> 
 					<a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> 

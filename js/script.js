@@ -9,6 +9,7 @@ $(window).resize(function(){
 	}
 });
 
+
 $(document).ready(function(){
 		$('#form').submit(function(){
 			var dados = $( this ).serialize();

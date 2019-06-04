@@ -7,11 +7,12 @@
   }
 
   include 'controleDeLog.php';
-  inserirLog("O usuário excluiu um objeto.");
-
+  
   if(isset($_POST["data"])){
 
     $id_obje = $_SESSION[$_POST["data"]];
+
+    inserirLog("O usuário excluiu o objeto de id: $id_obje");
 
     include "conexao.php";
 

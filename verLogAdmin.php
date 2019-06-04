@@ -1,9 +1,47 @@
+<?php 
+
+	session_start(); 
+
+	if (!$_SESSION['nome_admin']) {
+		header("Location: index.php");
+	}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Resultado Registros de Log - Eridanus</title>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
+	<script type="text/javascript" src="js/painel-usuario.js"></script>
+
+	<?php
+
+		include "cabecalho.php";
+
+	?>
+
+</head>
+<body>
+
 <?php
+
+	include "menu.php";
+
+?>
+
+<?php
+
+	$idUsuarioBuscar = $_POST["usuarioDesejado"];
 
 	include "conexao.php";
 
-	$prepare = $banco->prepare("SELECT DISTINCT controleLog.descricao, controleLog.dataLog, controleLog.horario, usuario.nome FROM controleLog INNER JOIN usuario ON controleLog.idUsuario = usuario.id ORDER BY controleLog.horario DESC");
-	$prepare->bind_result($descricao, $data, $horario, $usuario);
+	$prepare = $banco->prepare("SELECT DISTINCT controleLog.descricao, controleLog.dataLog, controleLog.horario, usuario.nome, usuario.sobrenome FROM controleLog INNER JOIN usuario ON controleLog.idUsuario = ? and controleLog.idusuario = usuario.id ORDER BY controleLog.horario DESC");
+	$prepare->bind_param("i", $idUsuarioBuscar);
+	$prepare->bind_result($descricao, $data, $horario, $usuario, $sobrenome);
 	$prepare->execute();
 	$prepare->store_result();
 	$linhasRetornadas = $prepare->num_rows;
@@ -16,7 +54,11 @@
   	});
 </script>
 
-<h5 class="titulo-pagina flow-text"> Registros de Log: </h5>
+<h5 class="titulo-pagina flow-text"> Registros de Log </h5>
+
+<center> 
+	<a class="waves-effect waves-light btn light-green accent-4 btnPesquisarNovamente pulse" href="painel-admin.php"> Nova Pesquisa </a> 
+</center>
 
 <?php
 
@@ -47,7 +89,7 @@
       ?>
       <li id="ir"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
     </ul>
-		<table class="striped estiloProjetosExcluidos responsive-table">
+		<table class="striped registroDeLogsResultado responsive-table">
 
 		  <tr>
 		    <th>Descrição</th>
@@ -68,7 +110,6 @@
 	        }
 				    echo "
 
-
 				        <td> $descricao </td>
 
 				        <td> $usuario </td>
@@ -76,7 +117,6 @@
 				        <td> $data </td>
 
 				        <td> $horario </td>
-
 
 				      </tr>
 				    ";
@@ -92,6 +132,7 @@
 			?>
 
 		</table>
+		
 		<script type="text/javascript">
 		  $(document).ready(function(){
 		    var pagAtual = 1;
@@ -175,3 +216,13 @@
 	}
 
 ?>
+
+
+<?php
+
+	include "rodape.php";
+
+?>
+
+</body>
+</html>

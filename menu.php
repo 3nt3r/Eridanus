@@ -1,5 +1,7 @@
 <center>
-<a href="index.php"> <img src="imagens/eridanus-menu.png" id="foto-menu"> </a>
+  <a href="index.php"> 
+    <img src="imagens/eridanus-menu.png" id="foto-menu"> 
+  </a>
 </center>
 
 <?php
@@ -103,6 +105,7 @@
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "trocas.php")){echo "class='active'";}?>><a href="trocas.php">Objetos</a></li>
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "projetos-usuarios.php")){echo "class='active'";}?>><a href="projetos-usuarios.php"> Projetos </a></li>
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "contato.php")){echo "class='active'";}?>><a href="contato.php">Contato</a></li>
+          <li <?php if(strpos($_SERVER['REQUEST_URI'], "amigosMeioAmbiente.php")){echo "class='active'";}?>><a href="amigosMeioAmbiente.php">Amigos do Meio Ambiente</a></li>
 		</ul>
 
       <ul id="menu-mobile" class="side-nav">
@@ -139,6 +142,7 @@
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "trocas.php")){echo "class='active'";}?>><a href="trocas.php">Objetos</a></li>
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "projetos-usuarios.php")){echo "class='active'";}?>><a href="projetos-usuarios.php"> Projetos </a></li>
           <li <?php if(strpos($_SERVER['REQUEST_URI'], "contato.php")){echo "class='active'";}?>><a href="contato.php">Contato</a></li>
+          <li <?php if(strpos($_SERVER['REQUEST_URI'], "amigosMeioAmbiente.php")){echo "class='active'";}?>><a href="amigosMeioAmbiente.php">Amigos do Meio Ambiente</a></li>
 
 			</ul>
 

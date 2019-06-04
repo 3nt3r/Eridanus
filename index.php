@@ -21,7 +21,7 @@
 
 	include "menu.php";
 
- ?>
+?>
 
   <div class="slider">
     <ul class="slides">

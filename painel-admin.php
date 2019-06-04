@@ -15,6 +15,7 @@
 	<title>Painel de Controle - Eridanus</title>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/painel-usuario.js"></script>
+
   <script type="text/javascript">
     $(document).ready(function() {
       if($('#linha').height() < $('#conteudo').height())
@@ -88,27 +89,21 @@
       <tr>
         <td> <a href="painel-admin.php"> <span> <i class="material-icons">home</i> Início </span> </a> </td>
       </tr>
-
       <tr>
         <td> <a href="#" id="btnAprovarProjetosAdmin"> <span> <i class="material-icons">check</i> Aprovar Projetos </span> </a> </td>
       </tr>
-
       <tr>
         <td> <a href="#" id="btnverobjetos"> <span> <i class="material-icons">check</i> Aprovar Objetos </span> </a> </td>
       </tr>
-
       <tr>
         <td> <a href="#" id="btnProjetosExcluidos"> <span> <i class="material-icons">close</i> Projetos Excluídos </span> </a> </td>
       </tr>
-
       <tr>
         <td> <a href="#" id="btnObjetosExcluidos"> <span> <i class="material-icons">close</i> Objetos Excluídos </span> </a> </td>
       </tr>
-
       <tr>
         <td> <a href="#" id="admVerLog"> <span> <i class="material-icons">remove_red_eye</i> Registro de Log </span> </a> </td>
       </tr>      
-
       <tr>
         <td> <a href="sair.php"> <span> <i class="material-icons" style="margin-bottom: 30px;">exit_to_app</i> Sair </span> </a> </td>
       </tr>

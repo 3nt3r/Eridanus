@@ -1,1 +1,1 @@
-Resumo sobre o sistema Eridanus.
+Este projeto consiste na implementação de uma plataforma web, na qual poderemos realizar a coleta dos resíduos eletrônicos e reutilizá-los mostrando a todos que aquele material não precisa ser jogado no lixo, pois, ​pode ser reutilizado na forma de objetos para decoração, ornamentos, brinquedos, arte, e até em formato de novos produtos a partir do reaproveitamento dos resíduos.

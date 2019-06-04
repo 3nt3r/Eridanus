@@ -19,7 +19,7 @@
 			$sobrenome = $_GET['sobrenome'];
 
 			include 'controleDeLog.php';
-			inserirLog("O usuário visualizou o objeto: $idObjeto em sua página.");
+			inserirLog("O usuário visualizou o objeto de id: $idObjeto.");
 
 		}else{
 			header("Location: index.php");

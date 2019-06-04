@@ -1,7 +1,7 @@
 <?php
 
 	include 'controleDeLog.php';
-  	inserirLog("O usuário realizou login.");
+  	inserirLog("O usuário fez login.");
 
 	include "conexao.php";
 

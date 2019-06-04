@@ -5,7 +5,9 @@
   if(!isset($_SESSION['email_admin']) && !isset($_SESSION['senha_admin'])){
     header("Location: login.php");
   }
+
   include "conexao.php";
+  
   $id_obje = $_SESSION[$_POST["data"]];
   $status = $_POST["status"];
   $motivo = $_POST["motivo"];

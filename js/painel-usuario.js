@@ -55,7 +55,7 @@ $(document).ready(function(){
   $('#admVerLog').click(function(event){
     $("#conteudo").html(preloader);
     event.preventDefault();
-    $.get("verLogAdmin.php", function(data){
+    $.get("buscarUsuario.php", function(data){
       $("#conteudo").html(data);
     });
   });

@@ -74,8 +74,6 @@
 	$cont = 1;
 	$num = 1;
 
-	
-	
 	echo "<div class='row distancia-topo'>";
 
   if ($linhasRetornadas == 0) {
@@ -168,8 +166,6 @@
 
 	echo "</div>";
 	
-	
-	
 	//Quantidade de linhas no BD
 	$result_pg = "SELECT COUNT(id) AS num_result FROM objeto";
 	$resultado_pg = mysqli_query($banco, $result_pg);
@@ -201,8 +197,6 @@
 	}	
 	echo "<li class='waves-effect'><a href='trocas.php?pagina=$quantidade_pg'><i class='material-icons'>chevron_right</i></a></li></center>";
 	
-	
-
 	$prepare-> free_result();
 	$banco->close();
 

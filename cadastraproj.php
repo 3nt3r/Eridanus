@@ -46,7 +46,7 @@
         window.location.href = 'acesse-conta.php';
       </script>
     ";
-    inserirLog("O usuário realizou o envio de um projeto.");
+    inserirLog("O usuário fez o envio de um projeto.");
   }else{
     echo "
       <script> 
@@ -54,7 +54,7 @@
         window.location.href = 'acesse-conta.php';
       </script>
   ";
-  inserirLog("O usuário tentou realizar o envio de um projeto.");
+  inserirLog("O usuário tentou fazer o envio de um projeto.");
   }
 
   $banco->close();

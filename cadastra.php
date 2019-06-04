@@ -34,8 +34,11 @@
 				$prepare->execute();
 				mkdir("imagens-projetos/".md5($email), 0777);
 				mkdir("imagens-objetos/".md5($email), 0777);
-				echo "<h3 class=\"teat-text titulo-pagina\">Cadastro efetuado com sucesso!</h3>
-				<i class=\"material-icons large\" style=\"color: rgb(100,221,23);\">check_circle_outline</i>";
+				echo "
+					<h3 class=\"teat-text titulo-pagina\">Cadastro efetuado com sucesso!</h3>
+					<i class=\"material-icons large\" style=\"color: rgb(100,221,23);\">check_circle_outline</i>
+					<h3 class=\"teat-text titulo-pagina\"> Agora faça login no menu principal! </h3>
+				";
 				$banco->close();
 			}
 			}else{

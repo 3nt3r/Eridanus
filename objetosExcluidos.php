@@ -59,7 +59,6 @@
 		  </tr>
 
 			<?php
-
 				$cont = 1;
 				$pag = 1;
 				while ($prepare->fetch()) {
@@ -117,7 +116,6 @@
 		          $pag++;
 		        }
 				    $cont++;
-
 				}
 
 				$banco->close();
@@ -125,6 +123,7 @@
 			?>
 
 		</table>
+		
 		<script type="text/javascript">
 		  $(document).ready(function(){
 		    var pagAtual = 1;

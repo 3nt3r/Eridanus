@@ -34,7 +34,7 @@
           history.go(-1);
         </script>
       <?php
-      inserirLog("O usuário enviou uma mensagem para o objeto: $objeto do usuário: $destinatario.");
+      inserirLog("Foi enviada uma mensagem para o usuario: $destinatario do objeto: $objeto.");
     }else{
       ?>
         <script type="text/javascript">
@@ -42,7 +42,7 @@
           history.go(-1);
         </script>
       <?php
-      inserirLog("O usuário tentou enviar uma mensagem para o usuário: $destinatario responsável pelo objeto: $objeto.");      
+      inserirLog("O usuário tentou enviar uma mensagem para o usuario: $destinatario do objeto: $objeto.");      
     }
 
   }else{

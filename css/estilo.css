@@ -379,6 +379,15 @@ td button{
 	color: #64DD17 !important;
 }
 
+.registroDeLogsResultado{
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.btnPesquisarNovamente{
+	margin-bottom: 1.5em;
+}
+
 /* ==================== ENVIAR MENSAGEM ========================== */
 
 .distancia-aviso{
@@ -416,6 +425,24 @@ td button{
 	margin-left: 18%; 
 	text-align: left;
 	margin-bottom: -5px;
+}
+
+/* =====================  REPORTAR ERRO =========================== */
+
+.btnBuscarUsuario{
+	margin-top: 2.5em;
+	background-color: #64DD17 !important;
+}
+
+/* =====================  AMIGOS =========================== */
+
+.descricaoAmigo{
+	font-size: .9em;
+	margin-top: 80px;
+	margin-bottom: 60px;
+	text-indent: 20px;
+	font-style: oblique;
+	font-weight: bolder;
 }
 
 /* ============================================================ */

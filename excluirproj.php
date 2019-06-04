@@ -7,10 +7,11 @@
   }
 
   include 'controleDeLog.php';
-  inserirLog("O usuário excluiu um projeto.");
 
   if(isset($_POST["data"])){
     $id_proj = $_SESSION[$_POST["data"]];
+
+     inserirLog("O usuário excluiu o projeto de id: $id_proj.");
 
     include "conexao.php";
 

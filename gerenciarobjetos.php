@@ -11,7 +11,6 @@ inserirLog("O usuário visitou a página gerenciar objetos.");
 
 include "conexao.php";
 
-
 $id =(int) $_SESSION["id"];
 
 $consulta = "select id, nome, descricao, observacoes, data_publicacao, status_atual from objeto where id_usuario = ?";
@@ -79,7 +78,6 @@ $linhasRetornadas = $prepare->num_rows;
       </tr>
 
     <?php
-
 
     while ($prepare->fetch()) {
 
@@ -176,7 +174,6 @@ $linhasRetornadas = $prepare->num_rows;
 
       }
 
-
     }
 
   }
@@ -185,6 +182,7 @@ $linhasRetornadas = $prepare->num_rows;
 ?>
 
 </table>
+
 <script type="text/javascript">
   $(document).ready(function(){
     var pagAtual = 1;
