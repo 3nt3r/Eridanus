@@ -35,29 +35,27 @@
 
 
   <div class="row">
-    <div class="col s6">
+		<div class="col s12 m12 l6" style="float: right">
+      <img src="imagens/OroNet.png" class="imagens-empresas">
+		</div>
+		<div class="col s12 m12 l6" style="float: left">
       <p class="descricaoAmigo">
         A Oronet Telecom é um provedor de internet banda larga que procura fornecer um serviço de qualidade ao cidadão que procura se conectar com o mundo digital. Temos uma equipe técnica atuando diariamente para atender de forma rápida aos nossos clientes. Atuamos no município de Orocó-PE, a pouco mais de um ano e vem a cada dia crescendo e aperfeiçoando o seu sinal com equipamentos de última geração. A Oronet Telecom procura chegar a localidades remotas, como áreas rurais. Procuramos manter nossos técnicos atualizados e preparados para melhor atender nossos clientes.
       </p>
-    </div>
-      <div class="col s5">
-        <img src="imagens/OroNet.png">
-    </div>
-    <div class="col s1"></div>
-  </div>
+		</div>
+	</div>
 
 
   <div class="row">
-    <div class="col s5">
-      <img src="imagens/maCursos.jpg">
-    </div>    
-    <div class="col s6">
+	  <div class="col s12 m12 l5">
+      <img src="imagens/maCursos.jpg" class="imagens-empresas">
+    </div>
+		<div class="col s12 m12 l6">
       <p class="descricaoAmigo">
         MA Cursos é uma empresa educacional que disponibiliza vários cursos em diversas áreas de ensino. Trabalhamos com cursos presenciais e à distancia. Nosso intuito é levar até você o melhor material didático possível e as melhores metodologias de ensino da região. Estamos localizados na R. Cel. Manoel de Sá, em frente a igreja matriz no centro de Salgueiro - PE.
       </p>
     </div>
-    <div class="col s1"></div>
-  </div>  
+  </div>
 
 
 <?php

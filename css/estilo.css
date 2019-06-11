@@ -24,17 +24,14 @@ body{
 	font-weight: bolder;
 }
 
-.conteudo-carousel{
-	background-color: rgba(100, 221, 23, .3) !important;
-}
-
 .conteudo-carousel-titulo{
-	background-color: rgba(100, 221, 23, .3) !important;
 	margin: 0 3em;
 }
 
 .conteudo-slide-index{
 	margin-top: 13em !important;
+	width: 100%;
+	background-color: rgba(100, 221, 23, .3) !important;
 }
 
 /* ====================== PAGINA RESIDUOS ============================ */
@@ -273,7 +270,7 @@ td button{
 }
 
 .botao-objeto{
-	background-color: #64dd17 !important; 
+	background-color: #64dd17 !important;
 	margin-bottom: 100px !important;
 	margin-top: 20px !important;
 }
@@ -422,7 +419,7 @@ td button{
 /* =====================  REPORTAR ERRO =========================== */
 
 .titulo-pagina-reportar{
-	margin-left: 18%; 
+	margin-left: 18%;
 	text-align: left;
 	margin-bottom: -5px;
 }
@@ -440,9 +437,16 @@ td button{
 	font-size: .9em;
 	margin-top: 80px;
 	margin-bottom: 60px;
+	float: left;
 	text-indent: 20px;
 	font-style: oblique;
 	font-weight: bolder;
+}
+.imagens-empresas{
+	width: 60%;
+	height: 40%;
+	margin-right: 15%;
+	float: right;
 }
 
 /* ============================================================ */
